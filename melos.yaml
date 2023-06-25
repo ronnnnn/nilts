@@ -6,3 +6,24 @@ packages:
 ide:
   intellij: true
   vscode: true
+
+scripts:
+  get:
+    run: |
+      melos exec -- "flutter pub get"
+    description: flutter pub get
+
+  analyze:
+    run: |
+      melos exec -- "flutter analyze --fatal-infos --fatal-warnings"
+    description: flutter analyze --fatal-infos --fatal-warnings
+
+  fix:
+    run: |
+      melos exec -- "dart fix --apply"
+    description: dart fix --apply
+
+  fix:check:
+    run: |
+      melos exec -- "dart fix --dry-run"
+    description: dart fix --dry-run
