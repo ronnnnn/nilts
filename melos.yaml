@@ -1,0 +1,8 @@
+name: nilts
+
+packages:
+  - packages/**
+
+ide:
+  intellij: true
+  vscode: true

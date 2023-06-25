@@ -1,0 +1,20 @@
+# Dart
+**/pubspec.lock
+**/.dart_tool/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/.gitignore
+.idea/dictionaries/
+.idea/libraries/
+.idea/kotlinc.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/saveactions_settings.xml
+.idea/runConfigurations.xml
+.idea/runConfigurations/melos*.xml
+
