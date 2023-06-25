@@ -3,7 +3,7 @@ description: A new Flutter project.
 publish_to: 'none'
 
 environment:
-  sdk: '>=3.0.5 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: '>=3.10.0'
 
 dependencies:
@@ -13,6 +13,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  custom_lint: ^0.4.0
+  nilts:
+    path: ../../packages/nilts
 
 flutter:
   uses-material-design: true
