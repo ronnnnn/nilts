@@ -2,6 +2,7 @@ name: nilts
 
 packages:
   - packages/**
+  - examples/**
 
 ide:
   intellij: true
@@ -17,6 +18,26 @@ scripts:
     run: |
       melos exec -- "flutter analyze --fatal-infos --fatal-warnings"
     description: flutter analyze --fatal-infos --fatal-warnings
+
+  beauty:
+    run: |
+      melos exec -- "melos fix && melos format"
+    description: melos fix && melos format
+
+  beauty:check:
+    run: |
+      melos exec -- "melos fix:check && melos format:check"
+    description: melos fix:check && melos format:check
+
+  format:
+    run: |
+      melos exec -- "dart format ."
+    description: dart format .
+
+  format:check:
+    run: |
+      melos exec -- "dart format --set-exit-if-changed ."
+    description: dart format --set-exit-if-changed .
 
   fix:
     run: |
