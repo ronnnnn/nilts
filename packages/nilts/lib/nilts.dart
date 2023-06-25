@@ -1,5 +1,8 @@
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'package:custom_lint_builder/custom_lint_builder.dart';
+
+PluginBase createPlugin() => _NiltsLint();
+
+class _NiltsLint extends PluginBase {
+  @override
+  List<LintRule> getLintRules(CustomLintConfigs configs) => [];
 }
