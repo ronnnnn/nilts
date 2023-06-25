@@ -9,6 +9,11 @@ ide:
   vscode: true
 
 scripts:
+  prepare:
+    run: |
+      dart pub global activate custom_lint
+    description: Install custom_lint
+
   get:
     run: |
       melos exec -- "flutter pub get"
@@ -48,3 +53,11 @@ scripts:
     run: |
       melos exec -- "dart fix --dry-run"
     description: dart fix --dry-run
+
+  test:
+    run: |
+      melos format:check
+    packageFilters:
+      scope:
+      - nilts_test
+    description: melos format:check

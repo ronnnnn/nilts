@@ -1,0 +1,29 @@
+name: Setup Dart & Flutter 🔧
+description: Download and cache tools for Dart & Flutter
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Extract tool versions from .tool-versions
+      uses: wasabeef/import-asdf-tool-versions-action@396ae6da83370122ec5fbcc4b5fc994239b214b6 # v1.0.1
+      id: versions
+    - name: Download and cache Flutter SDK
+      uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa # v2.10.0
+      with:
+        channel: stable
+        flutter-version: ${{ steps.versions.outputs.flutter }}
+        cache: true
+    - name: Extract Melos version from pubspec
+      id: melos
+      uses: jbutcher5/read-yaml@39cf058cf4ea746b66d7f49f4da10a81204450cc # v1.6
+      with:
+        file: './pubspec.yaml'
+        key-path: '["dev_dependencies", "melos"]'
+    - name: Download Melos and bootstrap
+      uses: bluefireteam/melos-action@dd3c344d731938d2ab2567a261f54a19a68b5f6a # v2
+      with:
+        melos-version: ${{ steps.melos.outputs.data }}
+        run-bootstrap: true
+    - name: Install others
+      shell: bash
+      run: melos prepare
