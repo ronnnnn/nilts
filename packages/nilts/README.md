@@ -13,6 +13,8 @@ nilts is lint rules, quick fixes and assists for Dart and Flutter projects that 
   - [Overview](#overview)
   - [Details](#details)
 - [Assists](#assists)
+- [Feature requests](#feature-requests)
+- [Bug reports](#bug-reports)
 - [Contributing](#contributing)
 
 ## Usage
@@ -107,7 +109,7 @@ See also: [flutter/flutter#114459](https://github.com/flutter/flutter/pull/11445
 
 ## Assists
 
-Upcoming...
+Upcoming... 🚀
 
 ## Feature requests
 
@@ -119,4 +121,5 @@ If you find any bugs, please create [an issue from this template](https://github
 
 ## Contributing
 
-TBD
+Welcome your contributions!!  
+Please read [CONTRIBUTING](https://github.com/ronnnnn/nilts/blob/main/CONTRIBUTING.md) docs before submitting your PR.
