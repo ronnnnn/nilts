@@ -71,7 +71,7 @@ custom_lint:
 Read below to learn about each lint rules intend to.  
 Some of lint rules support quick fixes on IDE.
 
-![Quick fix demo](https://raw.githubusercontent.com/ronnnnn/nilts/main/packages/nilts/resources/quick_fix_demo.gif)
+![Quick fix demo](https://github.com/ronnnnn/nilts/blob/main/packages/nilts/resources/quick_fix_demo.gif?raw=true)
 
 ### Overview
 
