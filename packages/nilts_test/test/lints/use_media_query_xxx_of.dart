@@ -1,3 +1,6 @@
+// ignore_for_file: unused_local_variable
+// ignore_for_file: invalid_null_aware_operator
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,9 +19,8 @@ class MainApp extends StatelessWidget {
 
     // expect_lint: use_media_query_xxx_of
     final size = MediaQuery.of(context).size;
-    final nullableSize =
-        // expect_lint: use_media_query_xxx_of
-        MediaQuery.of(context)?.size; // ignore: invalid_null_aware_operator
+    // expect_lint: use_media_query_xxx_of
+    final nullableSize = MediaQuery.of(context)?.size;
     // expect_lint: use_media_query_xxx_of
     final maybeSize = MediaQuery.maybeOf(context)?.size;
 

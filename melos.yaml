@@ -12,7 +12,7 @@ scripts:
   prepare:
     run: |
       dart pub global activate custom_lint
-    description: Install custom_lint
+    description: install custom_lint
 
   get:
     run: |
@@ -21,17 +21,35 @@ scripts:
 
   analyze:
     run: |
+      melos analyze:flutter
+      melos analyze:dart
+    description: melos analyze:flutter && melos analyze:dart
+
+  analyze:flutter:
+    run: |
       melos exec -- "flutter analyze --fatal-infos --fatal-warnings"
+      melos exec -- "flutter pub run custom_lint"
+    packageFilters:
+      flutter: true
     description: flutter analyze --fatal-infos --fatal-warnings
+
+  analyze:dart:
+    run: |
+      melos exec -- "dart analyze --fatal-infos --fatal-warnings"
+    packageFilters:
+      scope: nilts
+    description: dart analyze --fatal-infos --fatal-warnings
 
   beauty:
     run: |
-      melos exec -- "melos fix && melos format"
+      melos fix
+      melos format
     description: melos fix && melos format
 
   beauty:check:
     run: |
-      melos exec -- "melos fix:check && melos format:check"
+      melos fix:check
+      melos format:check
     description: melos fix:check && melos format:check
 
   format:
@@ -57,7 +75,8 @@ scripts:
   test:
     run: |
       melos format:check
+      melos exec -- "flutter analyze --fatal-infos --fatal-warnings"
+      melos exec -- "flutter pub run custom_lint"
     packageFilters:
-      scope:
-      - nilts_test
-    description: melos format:check
+      scope: nilts_test
+    description: test on nilts_test
