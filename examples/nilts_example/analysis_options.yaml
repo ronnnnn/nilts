@@ -7,3 +7,8 @@ analyzer:
 linter:
   rules:
     public_member_api_docs: false
+
+custom_lint:
+  rules:
+    # Disable particular lint rules if you want ignore them whole package.
+    # - use_media_query_xxx_of: false
