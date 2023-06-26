@@ -1,4 +1,0 @@
-# melos_managed_dependency_overrides: nilts
-dependency_overrides:
-  nilts:
-    path: ../../packages/nilts

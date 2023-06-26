@@ -1,6 +1,7 @@
 # Dart
 **/pubspec.lock
 **/.dart_tool/
+**/pubspec_overrides.yaml
 
 # IntelliJ related
 *.iml
