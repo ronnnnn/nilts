@@ -9,3 +9,5 @@
 *.iws
 **/.idea/
 
+# Miscellaneous
+**/.DS_Store
