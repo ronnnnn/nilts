@@ -1,0 +1,29 @@
+name: Feature request to add a new lint rule, quick fix or assists.
+description: Propose adding a new lint rule, quick fix or assists.
+title: '[Feat]: Title of the proposal'
+labels: ['feat']
+assignees: ['@ronnnnn']
+body:
+  - type: dropdown
+    attributes:
+      label: Which feature type would you like to add?
+      description: Please select one or more types from belows.
+      multiple: true
+      options:
+        - Lint Rule
+        - Quick fix
+        - Assist
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Describe the feature you'd like to add
+      description: Please tell me details you want.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Please describe additional context if you have.
+    validations:
+      required: false

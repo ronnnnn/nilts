@@ -1,0 +1,35 @@
+name: Bug report for an existing lint rule, quick fix or assists.
+description: Report bug details you found and describe clearly as possible.
+title: '[Bug]: Title of the bug'
+labels: ['bug']
+assignees: ['@ronnnnn']
+body:
+  - type: dropdown
+    attributes:
+      label: Which feature types the bug belongs to?
+      description: Please select one or more types from belows.
+      multiple: true
+      options:
+        - Lint Rule
+        - Quick fix
+        - Assist
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Bug details
+      description: Please tell me bug details you found.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Environment
+      description: Which version of nilts, flutter and dart you use.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Additional context
+      description: Please describe additional context if you have.
+    validations:
+      required: false

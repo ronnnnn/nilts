@@ -109,6 +109,14 @@ See also: [flutter/flutter#114459](https://github.com/flutter/flutter/pull/11445
 
 Upcoming...
 
+## Feature requests
+
+If you have any feature requests, please create [an issue from this template](https://github.com/ronnnnn/nilts/issues/new?&labels=feat&template=feat.yml).
+
+## Bug reports
+
+If you find any bugs, please create [an issue from this template](https://github.com/ronnnnn/nilts/issues/new?&labels=bug&template=bug.yml).
+
 ## Contributing
 
 TBD
