@@ -9,6 +9,8 @@ linter:
     public_member_api_docs: false
 
 custom_lint:
+  # Disable all lint rules depends on custom_lint.
+  # enable_all_lint_rules: false
   rules:
     # Disable particular lint rules if you want ignore them whole package.
     # - use_media_query_xxx_of: false

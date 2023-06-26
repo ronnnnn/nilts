@@ -13,8 +13,8 @@ import 'package:nilts/src/change_priority.dart';
 /// instead of `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)`.
 ///
 /// Prefer using
-/// 'MediaQuery.xxxOf(context) or MediaQuery.maybeXxxOf(context)
-/// instead of MediaQuery.of(context) or MediaQuery.maybeOf(context)
+/// `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)`
+/// instead of `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)`
 /// to avoid unnecessary rebuilds.
 ///
 /// **BAD:**
