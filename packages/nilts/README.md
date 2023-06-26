@@ -1,6 +1,6 @@
 # nilts
 
-nilts is lint rules, dart fixes and assists for Dart and Flutter projects that helps you enforce best practices, and avoid errors.
+nilts is lint rules, quick fixes and assists for Dart and Flutter projects that helps you enforce best practices, and avoid errors.
 
 ---
 ## Appendix
@@ -9,7 +9,7 @@ nilts is lint rules, dart fixes and assists for Dart and Flutter projects that h
 - [Configuration](#configuration)
   - [Disabling strategy](#disabling-strategy)
   - [Enabling strategy](#enabling-strategy)
-- [Lint rules and dart fixes](#lint-rules-and-dart-fixes)
+- [Lint rules and quick fixes](#lint-rules-and-quick-fixes)
   - [Overview](#overview)
   - [Details](#details)
 - [Assists](#assists)
@@ -66,11 +66,16 @@ custom_lint:
 
 **NOTE: If you `enable_all_lint_rules` set to `false`, all of lint rules (not only all of nilts's lint rules) depends on `custom_lint` will be disabled by default.**
 
-## Lint rules and dart fixes
+## Lint rules and quick fixes
+
+Read below to learn about each lint rules intend to.  
+Some of lint rules support quick fixes on IDE.
+
+![Quick fix demo](https://raw.githubusercontent.com/ronnnnn/nilts/main/packages/nilts/resources/quick_fix_demo.gif)
 
 ### Overview
 
-| Rule name | Description | Target SDK | Dart fix support |
+| Rule name | Description | Target SDK | Quick fix support |
 | :-- | :-- | :--: | :--: |
 | [use\_media\_query\_xxx\_of](#use_media_query_xxx_of) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | Flutter | ⭕️ |
 
@@ -79,7 +84,7 @@ custom_lint:
 #### use_media_query_xxx_of
 
 - Target SDK: Flutter
-- Dart fix support: ⭕️
+- Quick fix support: ⭕️
   
 **Prefer** using `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` instead of `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` to avoid unnecessary rebuilds.
 
