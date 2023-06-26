@@ -9,5 +9,8 @@
 *.iws
 **/.idea/
 
+# VSCode related
+**/.vscode/
+
 # Miscellaneous
 **/.DS_Store
