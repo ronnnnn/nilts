@@ -1,6 +1,18 @@
+# Additional information about this file can be found at
+# https://dart.dev/tools/pub/pubspec
+
 name: nilts
-description: A new Flutter package project.
-version: 0.0.1
+version: 0.1.0-dev.1
+description: nilts is lint rules, dart fixes and assists for Dart and Flutter projects that helps you enforce best practices, and avoid errors.
+homepage: https://github.com/ronnnnn/nilts
+repository: https://github.com/ronnnnn/nilts
+issue_tracker: https://github.com/ronnnnn/nilts/issues
+topics:
+  - lints
+  - lint
+  - analysis
+  - code-style
+  - tools
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
