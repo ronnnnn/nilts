@@ -21,3 +21,4 @@ dependencies:
   analyzer: ^5.12.0
   analyzer_plugin: ^0.11.2
   custom_lint_builder: ^0.4.0
+  meta: ^1.9.1

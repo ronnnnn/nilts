@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
 import 'package:analyzer/error/error.dart';
@@ -5,6 +7,7 @@ import 'package:analyzer/error/listener.dart';
 import 'package:analyzer/source/source_range.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
+import 'package:nilts/src/dart_version.dart';
 
 /// A class for `use_media_query_xxx_of` rule.
 ///
@@ -12,7 +15,7 @@ import 'package:nilts/src/change_priority.dart';
 /// `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` is used
 /// instead of `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)`.
 ///
-/// - Target SDK: Flutter
+/// - Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
 /// - Rule type: Practice
 /// - Maturity level: Experimental
 /// - Quick fix: ✅
@@ -60,6 +63,12 @@ class UseMediaQueryXxxOf extends DartLintRule {
     CustomLintContext context,
   ) {
     context.registry.addMethodInvocation((node) {
+      // Do nothing if dart version is below 3.0.0.
+      if (DartVersion.fromString(Platform.version) <
+          const DartVersion(major: 3, minor: 0, patch: 0)) {
+        return;
+      }
+
       // Do nothing if the method name is not `of` and not `maybeOf`.
       final methodName = node.methodName;
       if (methodName.name != 'of' && methodName.name != 'maybeOf') return;

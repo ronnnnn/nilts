@@ -77,6 +77,7 @@ scripts:
       melos format:check
       melos exec -- "flutter analyze --fatal-infos --fatal-warnings"
       melos exec -- "flutter pub run custom_lint"
+      melos exec -- "flutter test"
     packageFilters:
       scope: nilts_test
     description: test on nilts_test

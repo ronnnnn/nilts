@@ -79,13 +79,13 @@ Some of lint rules support quick fixes on IDE.
 
 | Rule name | Overview | Target SDK | Rule type | Maturity level | Quick fix |
 | :-- | :-- | :--: | :--: | :--: | :--: |
-| [use\_media\_query\_xxx\_of](#use_media_query_xxx_of) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | Practice | Experimental | Flutter | ✅️ |
+| [use\_media\_query\_xxx\_of](#use_media_query_xxx_of) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | Practice | Experimental | >= Flutter 3.10.0 (Dart 3.0.0) | ✅️ |
 
 ### Details
 
 #### use_media_query_xxx_of
 
-- Target SDK: Flutter
+- Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
 - Rule type: Practice
 - Maturity level: Experimental
 - Quick fix: ✅
