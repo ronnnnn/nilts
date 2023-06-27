@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
 import 'package:analyzer/error/error.dart';
@@ -64,7 +62,7 @@ class UseMediaQueryXxxOf extends DartLintRule {
   ) {
     context.registry.addMethodInvocation((node) {
       // Do nothing if dart version is below 3.0.0.
-      if (DartVersion.fromString(Platform.version) <
+      if (DartVersion.fromPlatform() <
           const DartVersion(major: 3, minor: 0, patch: 0)) {
         return;
       }

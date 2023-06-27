@@ -11,7 +11,7 @@ void main() {
     expect(stable.patch, equals(5));
     expect(stable.pre, isNull);
     expect(stable.prePatch, isNull);
-    expect(stable.channel, isNull);
+    expect(stable.channel, equals(DartReleaseChannel.stable));
 
     final stableShort = DartVersion.fromString('0.1.0');
     expect(stableShort.major, equals(0));
@@ -19,7 +19,7 @@ void main() {
     expect(stableShort.patch, equals(0));
     expect(stableShort.pre, isNull);
     expect(stableShort.prePatch, isNull);
-    expect(stableShort.channel, isNull);
+    expect(stable.channel, equals(DartReleaseChannel.stable));
 
     final beta = DartVersion.fromString(
       '3.0.0-417.4.beta (beta) (Tue May 2 10:26:14 2023 +0000) on '
@@ -30,7 +30,7 @@ void main() {
     expect(beta.patch, equals(0));
     expect(beta.pre, equals(417));
     expect(beta.prePatch, equals(4));
-    expect(beta.channel, equals('beta'));
+    expect(beta.channel, equals(DartReleaseChannel.beta));
 
     final betaShort = DartVersion.fromString('3.1.2-0.0.beta (beta) ');
     expect(betaShort.major, equals(3));
@@ -38,7 +38,7 @@ void main() {
     expect(betaShort.patch, equals(2));
     expect(betaShort.pre, equals(0));
     expect(betaShort.prePatch, equals(0));
-    expect(betaShort.channel, equals('beta'));
+    expect(betaShort.channel, equals(DartReleaseChannel.beta));
 
     final dev = DartVersion.fromString(
       '3.0.0-417.0.dev (dev) (Thu Apr 6 09:10:27 2023 -0700) on "macos_arm64"',
@@ -48,7 +48,7 @@ void main() {
     expect(dev.patch, equals(0));
     expect(dev.pre, equals(417));
     expect(dev.prePatch, equals(0));
-    expect(dev.channel, equals('dev'));
+    expect(dev.channel, equals(DartReleaseChannel.dev));
 
     final devShort = DartVersion.fromString(
       '0.0.0-0.1.dev (dev) (Thu Apr 6 09:10:27 2023 -0700)',
@@ -58,7 +58,7 @@ void main() {
     expect(devShort.patch, equals(0));
     expect(devShort.pre, equals(0));
     expect(devShort.prePatch, equals(1));
-    expect(devShort.channel, equals('dev'));
+    expect(devShort.channel, equals(DartReleaseChannel.dev));
   });
 
   test('Test invalid versioning', () async {
