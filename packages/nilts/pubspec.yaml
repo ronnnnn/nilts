@@ -7,6 +7,13 @@ description: nilts is lint rules, quick fixes and assists for Dart and Flutter p
 homepage: https://github.com/ronnnnn/nilts
 repository: https://github.com/ronnnnn/nilts
 issue_tracker: https://github.com/ronnnnn/nilts/issues
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
 topics:
   - lints
   - lint
