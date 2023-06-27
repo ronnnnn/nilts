@@ -12,6 +12,11 @@ import 'package:nilts/src/change_priority.dart';
 /// `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` is used
 /// instead of `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)`.
 ///
+/// - Target SDK: Flutter
+/// - Rule type: Practice
+/// - Maturity level: Experimental
+/// - Quick fix: ✅
+///
 /// Prefer using
 /// `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)`
 /// instead of `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)`
@@ -31,7 +36,10 @@ import 'package:nilts/src/change_priority.dart';
 /// makes sense in case of observing `MediaQueryData` object changes or
 /// referring to many properties of `MediaQueryData`.
 ///
-/// See also: https://github.com/flutter/flutter/pull/114459
+/// See also:
+///
+/// - [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
+/// - [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
 class UseMediaQueryXxxOf extends DartLintRule {
   /// Create a new instance of UseMediaQueryXxxOf.
   const UseMediaQueryXxxOf() : super(code: _code);
@@ -42,6 +50,7 @@ class UseMediaQueryXxxOf extends DartLintRule {
         'MediaQuery.xxxOf(context) or MediaQuery.maybeXxxOf(context) '
         'instead of MediaQuery.of(context) or MediaQuery.maybeOf(context) '
         'to avoid unnecessary rebuilds.',
+    url: 'https://api.flutter.dev/flutter/widgets/MediaQuery-class.html',
   );
 
   @override

@@ -77,16 +77,18 @@ Some of lint rules support quick fixes on IDE.
 
 ### Overview
 
-| Rule name | Description | Target SDK | Quick fix support |
-| :-- | :-- | :--: | :--: |
-| [use\_media\_query\_xxx\_of](#use_media_query_xxx_of) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | Flutter | ⭕️ |
+| Rule name | Overview | Target SDK | Rule type | Maturity level | Quick fix |
+| :-- | :-- | :--: | :--: | :--: | :--: |
+| [use\_media\_query\_xxx\_of](#use_media_query_xxx_of) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | Practice | Experimental | Flutter | ✅️ |
 
 ### Details
 
 #### use_media_query_xxx_of
 
 - Target SDK: Flutter
-- Quick fix support: ⭕️
+- Rule type: Practice
+- Maturity level: Experimental
+- Quick fix: ✅
   
 **Prefer** using `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` instead of `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` to avoid unnecessary rebuilds.
 
@@ -105,7 +107,10 @@ final size = MediaQuery.sizeOf(context);
 
 Note that using `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` makes sense in case of observing `MediaQueryData` object changes or referring to many properties of `MediaQueryData`.  
   
-See also: [flutter/flutter#114459](https://github.com/flutter/flutter/pull/114459)
+See also:  
+
+- [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
+- [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
 
 ## Assists
 
