@@ -1,5 +1,11 @@
 name: nilts
 
+repository:
+  type: github
+  origin: https://github.com/ronnnnn/nilts
+  owner: ronnnnn
+  name: nilts
+
 packages:
   - packages/**
   - examples/**
@@ -7,6 +13,21 @@ packages:
 ide:
   intellij: true
   vscode: true
+
+command:
+  version:
+    message: |
+      release: publish packages
+      
+      {new_package_versions}
+    includeCommitId: true
+    changelogs:
+      - path: packages/nilts/CHANGELOG.md
+        description: |
+          All notable changes to nilts packages will be documented in this file.
+        packageFilters:
+          scope: nilts
+    releaseUrl: true
 
 scripts:
   prepare:
