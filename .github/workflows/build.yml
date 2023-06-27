@@ -17,7 +17,7 @@ jobs:
       - name: Setup Flutter
         uses: ./.github/actions/setup-flutter
       - name: Check format
-        run: melos beauty:check
+        run: melos pretty:check
       - name: Analyze
         run: melos analyze
 

@@ -22,5 +22,5 @@ Fixes #<issue number>
 - [ ] I have written tests and passed all of them.
     - Use `melos test` to run tests.
 - [ ] I have passed all of the analyzer and formatter.
-    - Use `melos beauty` to automatically apply formatting.
+    - Use `melos pretty` to automatically apply formatting.
 - [ ] I have updated docs (if needed).

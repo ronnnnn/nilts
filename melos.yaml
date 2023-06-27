@@ -40,13 +40,13 @@ scripts:
       scope: nilts
     description: dart analyze --fatal-infos --fatal-warnings
 
-  beauty:
+  pretty:
     run: |
       melos fix
       melos format
     description: melos fix && melos format
 
-  beauty:check:
+  pretty:check:
     run: |
       melos fix:check
       melos format:check
