@@ -15,6 +15,29 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`nilts` - `v0.1.0`](#nilts---v010)
+
+Packages graduated to a stable release (see pre-releases prior to the stable version for changelog entries):
+
+ - `nilts` - `v0.1.0`
+
+---
+
+#### `nilts` - `v0.1.0`
+
+
+## 2023-06-27
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`nilts` - `v0.1.0-dev.1`](#nilts---v010-dev1)
 
 ---
