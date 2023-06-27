@@ -3,7 +3,7 @@
 nilts is lint rules, quick fixes and assists for Dart and Flutter projects that helps you enforce best practices, and avoid errors.
 
 ---
-## Appendix
+## Contents
 
 - [Usage](#usage)
 - [Configuration](#configuration)
