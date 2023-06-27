@@ -13,6 +13,7 @@ body:
         - Lint Rule
         - Quick fix
         - Assist
+        - Other (Docs, CI, etc...)
     validations:
       required: true
   - type: textarea

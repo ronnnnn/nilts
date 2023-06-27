@@ -13,23 +13,48 @@ body:
         - Lint Rule
         - Quick fix
         - Assist
+        - Other (Docs, CI, etc...)
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Bug details
-      description: Please tell me bug details you found.
+      label: Bug overview
+      description: Please tell me summary of the bug.
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Environment
-      description: Which version of nilts, flutter and dart you use.
+      label: Steps reproduce
+      description: Describe how to reproduce the bug step by step.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected result
+      description: Describe expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Actual result
+      description: Describe current behavior.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Affected version
+      description: Which version of nilts you use.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Flutter doctor
+      description: Copy and paste here, `flutter doctor` output.
     validations:
       required: true
   - type: textarea
     attributes:
       label: Additional context
-      description: Please describe additional context if you have.
+      description: Describe additional context if you have.
     validations:
       required: false
