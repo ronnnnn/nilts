@@ -51,7 +51,7 @@ class UseMediaQueryXxxOf extends DartLintRule {
         'MediaQuery.xxxOf(context) or MediaQuery.maybeXxxOf(context) '
         'instead of MediaQuery.of(context) or MediaQuery.maybeOf(context) '
         'to avoid unnecessary rebuilds.',
-    url: 'https://api.flutter.dev/flutter/widgets/MediaQuery-class.html',
+    url: 'https://github.com/ronnnnn/nilts#use_media_query_xxx_of',
   );
 
   @override
