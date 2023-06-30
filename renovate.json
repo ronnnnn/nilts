@@ -11,6 +11,7 @@
   "labels": ["dep"],
   "schedule": ["before 9am"],
   "branchPrefix": "upgrade-renovate-",
+  "dependencyDashboard": false,
   "ignorePaths": [".github/"],
   "major": {
     "stabilityDays": 5
