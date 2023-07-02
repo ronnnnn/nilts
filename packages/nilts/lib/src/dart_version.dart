@@ -71,10 +71,13 @@ class DartVersion {
     switch (channelString) {
       case 'dev':
         channel = DartReleaseChannel.dev;
+        break;
       case 'beta':
         channel = DartReleaseChannel.beta;
+        break;
       case null:
         channel = DartReleaseChannel.stable;
+        break;
       default:
         throw ArgumentError('Invalid Dart versioning string');
     }
