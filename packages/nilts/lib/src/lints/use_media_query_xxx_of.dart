@@ -73,8 +73,8 @@ class UseMediaQueryXxxOf extends DartLintRule {
 
       // Do nothing if the method argument's type is not `BuildContext`.
       final arguments = node.argumentList.arguments;
-      if (arguments.length > 1) return;
-      final firstArgument = node.argumentList.arguments.firstOrNull?.staticType;
+      if (arguments.length != 1) return;
+      final firstArgument = node.argumentList.arguments.first.staticType;
       if (firstArgument == null) return;
       final hasContextParam = const TypeChecker.fromName(
         'BuildContext',
