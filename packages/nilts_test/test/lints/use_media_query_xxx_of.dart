@@ -59,6 +59,46 @@ class MainApp extends StatelessWidget {
     // expect_lint: use_media_query_xxx_of
     final displayFeatures = MediaQuery.of(context).displayFeatures;
 
+    // expect_lint: use_media_query_xxx_of
+    final maybeOrientation = MediaQuery.maybeOf(context)?.orientation;
+    // expect_lint: use_media_query_xxx_of
+    final maybeDevicePixelRatio = MediaQuery.maybeOf(context)?.devicePixelRatio;
+    // expect_lint: use_media_query_xxx_of
+    final maybeTextScaleFactor = MediaQuery.maybeOf(context)?.textScaleFactor;
+    final maybePlatformBrightness =
+        // expect_lint: use_media_query_xxx_of
+        MediaQuery.maybeOf(context)?.platformBrightness;
+    // expect_lint: use_media_query_xxx_of
+    final maybePadding = MediaQuery.maybeOf(context)?.padding;
+    // expect_lint: use_media_query_xxx_of
+    final maybeViewInsets = MediaQuery.maybeOf(context)?.viewInsets;
+    final maybeSystemGestureInsets =
+        // expect_lint: use_media_query_xxx_of
+        MediaQuery.maybeOf(context)?.systemGestureInsets;
+    // expect_lint: use_media_query_xxx_of
+    final maybeViewPadding = MediaQuery.maybeOf(context)?.viewPadding;
+    final maybeAlwaysUse24HourFormat =
+        // expect_lint: use_media_query_xxx_of
+        MediaQuery.maybeOf(context)?.alwaysUse24HourFormat;
+    final maybeAccessibleNavigation =
+        // expect_lint: use_media_query_xxx_of
+        MediaQuery.maybeOf(context)?.accessibleNavigation;
+    // expect_lint: use_media_query_xxx_of
+    final maybeInvertColors = MediaQuery.maybeOf(context)?.invertColors;
+    // expect_lint: use_media_query_xxx_of
+    final maybeHighContrast = MediaQuery.maybeOf(context)?.highContrast;
+    final maybeDisableAnimations =
+        // expect_lint: use_media_query_xxx_of
+        MediaQuery.maybeOf(context)?.disableAnimations;
+    // expect_lint: use_media_query_xxx_of
+    final maybeBoldText = MediaQuery.maybeOf(context)?.boldText;
+    // expect_lint: use_media_query_xxx_of
+    final maybeNavigationMode = MediaQuery.maybeOf(context)?.navigationMode;
+    // expect_lint: use_media_query_xxx_of
+    final maybeGestureSettings = MediaQuery.maybeOf(context)?.gestureSettings;
+    // expect_lint: use_media_query_xxx_of
+    final maybeDisplayFeatures = MediaQuery.maybeOf(context)?.displayFeatures;
+
     return const MaterialApp(
       home: Scaffold(
         body: Center(

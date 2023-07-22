@@ -2,7 +2,6 @@ import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
 import 'package:analyzer/error/error.dart';
 import 'package:analyzer/error/listener.dart';
-import 'package:analyzer/source/source_range.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
 import 'package:nilts/src/dart_version.dart';
@@ -111,15 +110,6 @@ class UseMediaQueryXxxOf extends DartLintRule {
 }
 
 class _ReplaceWithMediaQueryXxxOf extends DartFix {
-  /// Fixed value for range of `of(context).` statement.
-  static const int _rangeDeltaForOf = 12;
-
-  /// Fixed value for range of `of(context)?.` statement.
-  static const int _rangeDeltaForOfWithQuestionPeriod = 13;
-
-  /// Fixed value for range of `maybeOf(context)?.` statement.
-  static const int _rangeDeltaForMaybeOf = 18;
-
   /// All data that `MediaQueryData` depends on.
   ///
   /// See also: https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/media_query.dart#L36C4-L36C4
@@ -160,11 +150,6 @@ class _ReplaceWithMediaQueryXxxOf extends DartFix {
     // Do nothing if the method name which the property depends on
     // is not `of` and not `maybeOf`.
     if (methodName == 'of') {
-      final isQuestionPeriod = operatorToken.type == TokenType.QUESTION_PERIOD;
-      final delta = isQuestionPeriod
-          ? _rangeDeltaForOfWithQuestionPeriod
-          : _rangeDeltaForOf;
-
       reporter
           .createChangeBuilder(
         message: 'Replace With MediaQuery.${property}Of(context)',
@@ -172,9 +157,11 @@ class _ReplaceWithMediaQueryXxxOf extends DartFix {
       )
           .addDartFileEdit((builder) {
         builder.addSimpleReplacement(
-          SourceRange(
-            node.propertyName.sourceRange.offset - delta,
-            node.propertyName.sourceRange.length + delta,
+          methodTarget.methodName.sourceRange.getMoveEnd(
+            (methodTarget.typeArguments?.length ?? 0) +
+                methodTarget.argumentList.length +
+                node.operator.length +
+                node.propertyName.length,
           ),
           '${property}Of(context)',
         );
@@ -189,9 +176,11 @@ class _ReplaceWithMediaQueryXxxOf extends DartFix {
       )
           .addDartFileEdit((builder) {
         builder.addSimpleReplacement(
-          SourceRange(
-            node.propertyName.sourceRange.offset - _rangeDeltaForMaybeOf,
-            node.propertyName.sourceRange.length + _rangeDeltaForMaybeOf,
+          methodTarget.methodName.sourceRange.getMoveEnd(
+            (methodTarget.typeArguments?.length ?? 0) +
+                methodTarget.argumentList.length +
+                node.operator.length +
+                node.propertyName.length,
           ),
           'maybe${maybeProperty}Of(context)',
         );
