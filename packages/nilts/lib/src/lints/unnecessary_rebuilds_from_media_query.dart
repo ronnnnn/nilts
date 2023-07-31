@@ -6,7 +6,7 @@ import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
 import 'package:nilts/src/dart_version.dart';
 
-/// A class for `use_media_query_xxx_of` rule.
+/// A class for `unnecessary_rebuilds_from_media_query` rule.
 ///
 /// This rule checks if
 /// `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` is used
@@ -40,17 +40,18 @@ import 'package:nilts/src/dart_version.dart';
 ///
 /// - [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
 /// - [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
-class UseMediaQueryXxxOf extends DartLintRule {
+class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
   /// Create a new instance of UseMediaQueryXxxOf.
-  const UseMediaQueryXxxOf() : super(code: _code);
+  const UnnecessaryRebuildsFromMediaQuery() : super(code: _code);
 
   static const _code = LintCode(
-    name: 'use_media_query_xxx_of',
+    name: 'unnecessary_rebuilds_from_media_query',
     problemMessage: 'Prefer using '
         'MediaQuery.xxxOf(context) or MediaQuery.maybeXxxOf(context) '
         'instead of MediaQuery.of(context) or MediaQuery.maybeOf(context) '
         'to avoid unnecessary rebuilds.',
-    url: 'https://github.com/ronnnnn/nilts#use_media_query_xxx_of',
+    url:
+        'https://github.com/ronnnnn/nilts#unnecessary_rebuilds_from_media_query',
   );
 
   @override
