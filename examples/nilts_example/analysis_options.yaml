@@ -13,4 +13,4 @@ custom_lint:
   # enable_all_lint_rules: false
   rules:
     # Disable particular lint rules if you want ignore them whole package.
-    # - use_media_query_xxx_of: false
+    # - unnecessary_rebuilds_from_media_query: false

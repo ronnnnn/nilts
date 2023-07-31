@@ -50,7 +50,7 @@ Add lint rule name and set `false` to disable it.
 custom_lint:
   rules:
     # Disable particular lint rules if you want ignore them whole package.
-    - use_media_query_xxx_of: false
+    - unnecessary_rebuilds_from_media_query: false
 ```
 
 ### Enabling strategy
@@ -63,7 +63,7 @@ custom_lint:
   # Disable all lint rules depends on custom_lint.
   enable_all_lint_rules: false
   rules:
-    - use_media_query_xxx_of: true
+    - unnecessary_rebuilds_from_media_query: true
 ```
 
 **NOTE: If you `enable_all_lint_rules` set to `false`, all of lint rules (not only all of nilts's lint rules) depends on `custom_lint` will be disabled by default.**
@@ -79,11 +79,11 @@ Some of lint rules support quick fixes on IDE.
 
 | Rule name | Overview | Target SDK | Rule type | Maturity level | Quick fix |
 | :-- | :-- | :--: | :--: | :--: | :--: |
-| [use\_media\_query\_xxx\_of](#use_media_query_xxx_of) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice | Experimental | ✅️ |
+| [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice | Experimental | ✅️ |
 
 ### Details
 
-#### use_media_query_xxx_of
+#### unnecessary_rebuilds_from_media_query
 
 - Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
 - Rule type: Practice
