@@ -15,14 +15,13 @@ runs:
         cache: true
     - name: Extract Melos version from pubspec
       id: melos
-      uses: jbutcher5/read-yaml@39cf058cf4ea746b66d7f49f4da10a81204450cc # v1.6
+      uses: mikefarah/yq@0b34c9a00de1c575a34eea05af1d956a525c4fc1 # v4.34.2
       with:
-        file: './pubspec.yaml'
-        key-path: '["dev_dependencies", "melos"]'
+        cmd: yq '.dev_dependencies.melos' './pubspec.yaml'
     - name: Download Melos and bootstrap
       uses: bluefireteam/melos-action@dd3c344d731938d2ab2567a261f54a19a68b5f6a # v2
       with:
-        melos-version: ${{ steps.melos.outputs.data }}
+        melos-version: ${{ steps.melos.outputs.result }}
         run-bootstrap: true
     - name: Install others
       shell: bash
