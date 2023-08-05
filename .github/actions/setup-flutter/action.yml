@@ -17,7 +17,7 @@ runs:
       id: melos
       uses: mikefarah/yq@0b34c9a00de1c575a34eea05af1d956a525c4fc1 # v4.34.2
       with:
-        cmd: '.dev_dependencies.melos' ./pubspec.yaml
+        cmd: yq '.dev_dependencies.melos' './pubspec.yaml'
     - name: Download Melos and bootstrap
       uses: bluefireteam/melos-action@dd3c344d731938d2ab2567a261f54a19a68b5f6a # v2
       with:
