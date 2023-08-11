@@ -41,7 +41,7 @@ import 'package:nilts/src/dart_version.dart';
 /// - [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
 /// - [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
 class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
-  /// Create a new instance of UseMediaQueryXxxOf.
+  /// Create a new instance of [UnnecessaryRebuildsFromMediaQuery].
   const UnnecessaryRebuildsFromMediaQuery() : super(code: _code);
 
   static const _code = LintCode(
