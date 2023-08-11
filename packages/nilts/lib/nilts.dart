@@ -1,4 +1,5 @@
 import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:nilts/src/lints/flaky_tests_with_set_up_all.dart';
 import 'package:nilts/src/lints/unnecessary_rebuilds_from_media_query.dart';
 
 /// custom_lint integrates the nilts's plugin from this method on
@@ -9,6 +10,7 @@ PluginBase createPlugin() => _NiltsLint();
 class _NiltsLint extends PluginBase {
   @override
   List<LintRule> getLintRules(CustomLintConfigs configs) => [
+        const FlakyTestsWithSetUpAll(),
         const UnnecessaryRebuildsFromMediaQuery(),
       ];
 }
