@@ -2,6 +2,43 @@
 
 All notable changes to nilts packages will be documented in this file.
 
+## 2023-08-11
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.2.0`](#nilts---v020)
+
+---
+
+#### `nilts` - `v0.2.0`
+
+ - release 0.2.0
+
+ - **REFACTOR**: use_media_query_xxx_of to unnecessary_rebuilds_from_media_query ([#20](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/20)). ([c5d1260f](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/c5d1260feb49e4e05f3a8712ee22febc43a5d582))
+ - **REFACTOR**: source range replacement ([#18](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/18)). ([537e5845](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/537e58456cca61c7062f08a09378e37f188f8207))
+ - **FEAT**: flaky_tests_with_set_up_all ([#23](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/23)). ([89eb16a8](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/89eb16a8f1cf6107d76fd5cce9f14fb05aa5581c))
+ - **DOCS**: update dart docs for UnnecessaryRebuildsFromMediaQuery ([#24](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/24)). ([4554cd83](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4554cd834450d07662342a5ff1a2c5f1bcbbd736))
+ - **DOCS**: update use_media_query_xxx_of url ([#1](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/1)). ([deac30bb](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/deac30bba8f04f213d02b165fb5decc5af7b6b51))
+
+## 0.2.0
+
+ - release 0.2.0
+
+ - **REFACTOR**: use_media_query_xxx_of to unnecessary_rebuilds_from_media_query ([#20](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/20)). ([c5d1260f](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/c5d1260feb49e4e05f3a8712ee22febc43a5d582))
+ - **REFACTOR**: source range replacement ([#18](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/18)). ([537e5845](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/537e58456cca61c7062f08a09378e37f188f8207))
+ - **FEAT**: flaky_tests_with_set_up_all ([#23](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/23)). ([89eb16a8](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/89eb16a8f1cf6107d76fd5cce9f14fb05aa5581c))
+ - **DOCS**: update dart docs for UnnecessaryRebuildsFromMediaQuery ([#24](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/24)). ([4554cd83](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4554cd834450d07662342a5ff1a2c5f1bcbbd736))
+ - **DOCS**: update use_media_query_xxx_of url ([#1](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/1)). ([deac30bb](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/deac30bba8f04f213d02b165fb5decc5af7b6b51))
+
+
 ## 2023-06-27
 
 ### Changes
