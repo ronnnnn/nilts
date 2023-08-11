@@ -6,14 +6,58 @@ import 'package:analyzer/source/source_range.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
 
+/// A class for `flaky_tests_with_set_up_all` rule.
+///
+/// This rule checks if `setUpAll` is used.
+///
+/// - Target SDK: Any versions nilts supports
+/// - Rule type: Practice
+/// - Maturity level: Experimental
+/// - Quick fix: ✅
+///
+/// **Consider** using `setUp` function or
+/// initialization on top level or body of test group.
+/// `setUpAll` may cause flaky tests with concurrency executions.
+///
+/// **BAD:**
+/// ```dart
+/// setUpAll(() {
+///   // ...
+/// }
+/// ```
+///
+/// **GOOD:**
+/// ```dart
+/// setUp(() {
+///   // ...
+/// }
+/// ```
+///
+/// ```dart
+/// void main() {
+///   // do initialization on top level
+///   // ...
+///
+///  group('...', () {
+///   // or do initialization on body of test group
+///   // ...
+///  });
+/// }
+/// ```
+///
+/// See also:
+///
+/// - [setUpAll function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUpAll.html)
+/// - [setUp function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUp.html)
 class FlakyTestsWithSetUpAll extends DartLintRule {
+  /// Create a new instance of [FlakyTestsWithSetUpAll].
   const FlakyTestsWithSetUpAll() : super(code: _code);
 
   static const _code = LintCode(
     name: 'flaky_tests_with_set_up_all',
-    problemMessage: 'Consider using setUp function or '
-        'initialization on top level or body of group. '
-        'setUpAll may cause flaky tests with concurrency executions.',
+    problemMessage: 'Consider using `setUp` function or '
+        'initialization on top level or body of test group. '
+        '`setUpAll` may cause flaky tests with concurrency executions.',
     url: 'https://github.com/ronnnnn/nilts#flaky_tests_with_set_up_all',
   );
 
