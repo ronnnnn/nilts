@@ -1,6 +1,10 @@
+import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/element/type.dart';
+import 'package:analyzer/error/error.dart';
 import 'package:analyzer/error/listener.dart';
+import 'package:analyzer/source/source_range.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:nilts/src/change_priority.dart';
 
 class FlakyTestsWithSetUpAll extends DartLintRule {
   const FlakyTestsWithSetUpAll() : super(code: _code);
@@ -44,5 +48,111 @@ class FlakyTestsWithSetUpAll extends DartLintRule {
   }
 
   @override
-  List<Fix> getFixes() => [];
+  List<Fix> getFixes() => [
+        _ReplaceWithSetUp(),
+        _UnwrapSetUpAll(),
+      ];
+}
+
+class _ReplaceWithSetUp extends DartFix {
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ChangeReporter reporter,
+    CustomLintContext context,
+    AnalysisError analysisError,
+    List<AnalysisError> others,
+  ) {
+    context.registry.addMethodInvocation((node) {
+      if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+
+      // Do nothing if the method name is not `setUpAll`.
+      final methodName = node.methodName;
+      if (methodName.name != 'setUpAll') return;
+
+      reporter
+          .createChangeBuilder(
+        message: 'Replace With setUp',
+        priority: ChangePriority.replaceWithSetUp,
+      )
+          .addDartFileEdit((builder) {
+        builder.addSimpleReplacement(node.methodName.sourceRange, 'setUp');
+      });
+    });
+  }
+}
+
+class _UnwrapSetUpAll extends DartFix {
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ChangeReporter reporter,
+    CustomLintContext context,
+    AnalysisError analysisError,
+    List<AnalysisError> others,
+  ) {
+    context.registry.addMethodInvocation((node) {
+      if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+
+      // Do nothing if the method name is not `setUpAll`.
+      final methodName = node.methodName;
+      if (methodName.name != 'setUpAll') return;
+
+      reporter
+          .createChangeBuilder(
+        message: 'Unwrap setUpAll',
+        priority: ChangePriority.unwrapSetUpAll,
+      )
+          .addDartFileEdit((builder) {
+        final arguments = node.argumentList;
+        final functionArgument = arguments.arguments.first;
+        // Do nothing if the function argument is not `Function`.
+        if (functionArgument is! FunctionExpression) return;
+
+        final parameters = functionArgument.parameters;
+        final typeParameters = functionArgument.typeParameters;
+        final functionBody = functionArgument.body;
+        final star = functionBody.star;
+        final keyword = functionBody.keyword;
+
+        // Delete `);`.
+        builder
+          ..addDeletion(SourceRange(node.endToken.end, 1))
+          ..addDeletion(node.endToken.sourceRange);
+
+        if (functionBody is BlockFunctionBody) {
+          // Delete `{` and `}`.
+          builder
+            ..addDeletion(functionBody.block.leftBracket.sourceRange)
+            ..addDeletion(functionBody.block.rightBracket.sourceRange);
+        } else if (functionBody is ExpressionFunctionBody) {
+          // Delete `=>`.
+          builder.addDeletion(functionBody.functionDefinition.sourceRange);
+        }
+
+        // Delete `*`.
+        if (star != null) {
+          builder.addDeletion(star.sourceRange);
+        }
+        // Delete `async`.
+        if (keyword != null) {
+          builder.addDeletion(keyword.sourceRange);
+        }
+        // Delete `(...)`.
+        if (parameters != null) {
+          builder.addDeletion(parameters.sourceRange);
+        }
+        // Delete `<...>`.
+        if (typeParameters != null) {
+          builder.addDeletion(typeParameters.sourceRange);
+        }
+        // Delete `(`.
+        builder.addDeletion(
+          node.methodName.sourceRange.getMoveEnd(
+            node.argumentList.leftParenthesis.length,
+          ),
+        );
+      });
+    });
+  }
 }
