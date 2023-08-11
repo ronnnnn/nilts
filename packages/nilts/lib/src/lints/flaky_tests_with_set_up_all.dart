@@ -23,14 +23,14 @@ import 'package:nilts/src/change_priority.dart';
 /// ```dart
 /// setUpAll(() {
 ///   // ...
-/// }
+/// });
 /// ```
 ///
 /// **GOOD:**
 /// ```dart
 /// setUp(() {
 ///   // ...
-/// }
+/// });
 /// ```
 ///
 /// ```dart

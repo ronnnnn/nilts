@@ -80,6 +80,7 @@ Some of lint rules support quick fixes on IDE.
 | Rule name | Overview | Target SDK | Rule type | Maturity level | Quick fix |
 | :-- | :-- | :--: | :--: | :--: | :--: |
 | [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice | Experimental | ✅️ |
+| [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all) | Checks `setUpAll` usages. | Any versions nilts supports | Practice | Experimental | ✅️ |
 
 ### Details
 
@@ -111,6 +112,47 @@ See also:
 
 - [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
 - [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
+
+#### flaky_tests_with_set_up_all
+
+- Target SDK: Any versions nilts supports
+- Rule type: Practice
+- Maturity level: Experimental
+- Quick fix: ✅
+
+**Consider** using `setUp` function or initialization on top level or body of test group.
+`setUpAll` may cause flaky tests with concurrency executions.
+
+**BAD:**
+```dart
+setUpAll(() {
+  // ...
+});
+```
+
+**GOOD:**
+```dart
+setUp(() {
+  // ...
+});
+```
+
+```dart
+void main() {
+  // do initialization on top level
+  // ...
+
+ group('...', () {
+  // or do initialization on body of test group
+  // ...
+ });
+}
+```
+
+See also:
+
+- [setUpAll function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUpAll.html)
+- [setUp function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUp.html)
 
 ## Assists
 
