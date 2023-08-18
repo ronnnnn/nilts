@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-08-18
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.3.2`](#nilts---v032)
+
+---
+
+#### `nilts` - `v0.3.2`
+
+ - this version contains dependencies update
+
+
 ## 2023-08-12
 
 ### Changes
