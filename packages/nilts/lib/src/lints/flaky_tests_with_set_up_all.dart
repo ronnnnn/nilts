@@ -5,6 +5,7 @@ import 'package:analyzer/error/listener.dart';
 import 'package:analyzer/source/source_range.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
+import 'package:nilts/src/utils/library_element_ext.dart';
 
 /// A class for `flaky_tests_with_set_up_all` rule.
 ///
@@ -82,10 +83,7 @@ class FlakyTestsWithSetUpAll extends DartLintRule {
       // Do nothing if the package of method is not `flutter_test`.
       final library = methodName.staticElement?.library;
       if (library == null) return;
-      final libraryUri = Uri.tryParse(library.identifier);
-      if (libraryUri == null) return;
-      if (libraryUri.scheme != 'package' ||
-          libraryUri.pathSegments.first != 'flutter_test') return;
+      if (!library.isFlutterTest) return;
 
       reporter.reportErrorForNode(_code, node.methodName);
     });

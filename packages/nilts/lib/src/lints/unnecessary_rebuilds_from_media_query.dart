@@ -5,6 +5,7 @@ import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
 import 'package:nilts/src/dart_version.dart';
+import 'package:nilts/src/utils/library_element_ext.dart';
 
 /// A class for `unnecessary_rebuilds_from_media_query` rule.
 ///
@@ -87,10 +88,7 @@ class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
       // Do nothing if the package of method is not `flutter`.
       final library = methodName.staticElement?.library;
       if (library == null) return;
-      final libraryUri = Uri.tryParse(library.identifier);
-      if (libraryUri == null) return;
-      if (libraryUri.scheme != 'package' ||
-          libraryUri.pathSegments.first != 'flutter') return;
+      if (!library.isFlutter) return;
 
       // Do nothing if the operator of method is not `.`.
       final operatorToken = node.operator;
