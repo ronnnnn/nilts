@@ -2,6 +2,33 @@
 
 All notable changes to nilts packages will be documented in this file.
 
+## 2023-09-02
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.4.0`](#nilts---v040)
+
+---
+
+#### `nilts` - `v0.4.0`
+
+ - **FEAT**: fixed_text_scale_factor_rich_text ([#31](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/31)). ([2a459c18](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/2a459c184921a1b9d03623e969dfb474b34b9677))
+ - **DOCS**: update unnecessary_rebuilds_from_media_query notes ([#30](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/30)). ([6a527870](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/6a527870186c34e894f9e86205c0c038ae4f2a37))
+
+## 0.4.0
+
+ - **FEAT**: fixed_text_scale_factor_rich_text ([#31](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/31)). ([2a459c18](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/2a459c184921a1b9d03623e969dfb474b34b9677))
+ - **DOCS**: update unnecessary_rebuilds_from_media_query notes ([#30](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/30)). ([6a527870](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/6a527870186c34e894f9e86205c0c038ae4f2a37))
+
+
 ## 2023-08-18
 
 ### Changes
