@@ -106,7 +106,10 @@ final size = MediaQuery.of(context).size;
 final size = MediaQuery.sizeOf(context);
 ```
 
-Note that using `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` makes sense in case of observing `MediaQueryData` object changes or referring to many properties of `MediaQueryData`.  
+**Note that using `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` makes sense following cases:**
+
+- wrap Widget with `MediaQuery` overridden `MediaQueryData`
+- observe all changes of `MediaQueryData`  
   
 See also:  
 
