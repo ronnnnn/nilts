@@ -79,42 +79,43 @@ Some of lint rules support quick fixes on IDE.
 
 | Rule name | Overview | Target SDK | Rule type | Maturity level | Quick fix |
 | :-- | :-- | :--: | :--: | :--: | :--: |
-| [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice | Experimental | ✅️ |
+| [fixed\_text\_scale\_factor\_rich\_text](#fixed_text_scale_factor_rich_text) | Checks usage of `textScaleFactor` in `RichText` constructor. | Any versions nilts supports | Practice | Experimental | ✅️ |
 | [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all) | Checks `setUpAll` usages. | Any versions nilts supports | Practice | Experimental | ✅️ |
+| [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice | Experimental | ✅️ |
 
 ### Details
 
-#### unnecessary_rebuilds_from_media_query
+#### fixed_text_scale_factor_rich_text
 
-- Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
+- Target SDK: Any versions nilts supports
 - Rule type: Practice
 - Maturity level: Experimental
 - Quick fix: ✅
-  
-**Prefer** using `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` instead of `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` to avoid unnecessary rebuilds.
+
+**Consider** adding `textScaleFactor` argument to `RichText` constructor to make the text size responsive for user setting.
 
 **BAD:**
-
 ```dart
-final size = MediaQuery.of(context).size;
+RichText(
+  text: TextSpan(
+    text: 'Hello, world!',
+  ),
+)
 ```
-
 
 **GOOD:**
-
 ```dart
-final size = MediaQuery.sizeOf(context);
+RichText(
+  text: TextSpan(
+    text: 'Hello, world!',
+  ),
+  textScaleFactor: MediaQuery.textScaleFactorOf(context),
+)
 ```
 
-**Note that using `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` makes sense following cases:**
+See also:
 
-- wrap Widget with `MediaQuery` overridden `MediaQueryData`
-- observe all changes of `MediaQueryData`  
-  
-See also:  
-
-- [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
-- [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
+- [RichText class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/RichText-class.html)
 
 #### flaky_tests_with_set_up_all
 
@@ -156,6 +157,38 @@ See also:
 
 - [setUpAll function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUpAll.html)
 - [setUp function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUp.html)
+
+#### unnecessary_rebuilds_from_media_query
+
+- Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
+- Rule type: Practice
+- Maturity level: Experimental
+- Quick fix: ✅
+  
+**Prefer** using `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` instead of `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` to avoid unnecessary rebuilds.
+
+**BAD:**
+
+```dart
+final size = MediaQuery.of(context).size;
+```
+
+
+**GOOD:**
+
+```dart
+final size = MediaQuery.sizeOf(context);
+```
+
+**Note that using `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` makes sense following cases:**
+
+- wrap Widget with `MediaQuery` overridden `MediaQueryData`
+- observe all changes of `MediaQueryData`  
+  
+See also:  
+
+- [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
+- [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
 
 ## Assists
 
