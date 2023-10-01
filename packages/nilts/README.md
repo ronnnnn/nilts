@@ -79,11 +79,34 @@ Some of lint rules support quick fixes on IDE.
 
 | Rule name | Overview | Target SDK | Rule type | Maturity level | Quick fix |
 | :-- | :-- | :--: | :--: | :--: | :--: |
+| [defined\_void\_callback\_type](#defined_void_callback_type) | Checks `void Function()` definitions. | Any versions nilts supports | Practice | Experimental | ✅️ |
 | [fixed\_text\_scale\_factor\_rich\_text](#fixed_text_scale_factor_rich_text) | Checks usage of `textScaleFactor` in `RichText` constructor. | Any versions nilts supports | Practice | Experimental | ✅️ |
 | [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all) | Checks `setUpAll` usages. | Any versions nilts supports | Practice | Experimental | ✅️ |
 | [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice | Experimental | ✅️ |
 
 ### Details
+
+#### defined_void_callback_type
+
+- Target SDK: Any versions nilts supports
+- Rule type: Practice
+- Maturity level: Experimental
+- Quick fix: ✅
+
+**Consider** replace `void Function()` with `VoidCallback` which is defined in Flutter SDK.
+
+**BAD:**
+
+```dart
+final void Function() callback;
+```
+
+
+**GOOD:**
+
+```dart
+final VoidCallback callback;
+```
 
 #### fixed_text_scale_factor_rich_text
 
