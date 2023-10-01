@@ -29,6 +29,8 @@ class MainButton extends StatelessWidget {
     void Function() this.onPressed, {
     // expect_lint: defined_void_callback_type
     void Function()? this.onNullablePressed,
+    void Function(int)? this.onParamPressed,
+    int Function()? this.onNotVoidPressed,
     super.key,
   });
 
@@ -36,12 +38,16 @@ class MainButton extends StatelessWidget {
   final void Function() onPressed;
   // expect_lint: defined_void_callback_type
   final void Function()? onNullablePressed;
+  final void Function(int)? onParamPressed;
+  final int Function()? onNotVoidPressed;
 
   void _onPressed(
     // expect_lint: defined_void_callback_type
     void Function() onPressed, {
     // expect_lint: defined_void_callback_type
     void Function()? onNullablePressed,
+    void Function(int)? onParamPressed,
+    int Function()? onNotVoidPressed,
   }) {}
 
   @override
@@ -60,10 +66,14 @@ class MainButton extends StatelessWidget {
 final void Function() globalFunction = () {};
 // expect_lint: defined_void_callback_type
 const void Function()? globalNullableFunction = null;
+const void Function(int)? globalParamFunction = null;
+const int Function()? globalNotVoidFunction = null;
 
 void _globalFunction(
   // expect_lint: defined_void_callback_type
   void Function() onPressed, {
   // expect_lint: defined_void_callback_type
   void Function()? onNullablePressed,
+  void Function(int)? onParamPressed,
+  int Function()? onNotVoidPressed,
 }) {}
