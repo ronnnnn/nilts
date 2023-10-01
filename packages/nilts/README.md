@@ -88,7 +88,7 @@ Some of lint rules support quick fixes on IDE.
 
 #### defined_void_callback_type
 
-- Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
+- Target SDK: Any versions nilts supports
 - Rule type: Practice
 - Maturity level: Experimental
 - Quick fix: ✅
