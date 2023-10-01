@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2023-10-01
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.5.0`](#nilts---v050)
+
+---
+
+#### `nilts` - `v0.5.0`
+
+ - **FEAT**: defined_void_callback_type ([#39](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/39)). ([46e8eb2b](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/46e8eb2b95bbb3f2153ebfb5c4beac00abd05aae))
+
+
 ## 2023-09-02
 
 ### Changes
