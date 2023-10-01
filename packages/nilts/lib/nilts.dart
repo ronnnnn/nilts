@@ -1,4 +1,5 @@
 import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:nilts/src/lints/defined_void_callback_type.dart';
 import 'package:nilts/src/lints/fixed_text_scale_factor_rich_text.dart';
 import 'package:nilts/src/lints/flaky_tests_with_set_up_all.dart';
 import 'package:nilts/src/lints/unnecessary_rebuilds_from_media_query.dart';
@@ -11,6 +12,7 @@ PluginBase createPlugin() => _NiltsLint();
 class _NiltsLint extends PluginBase {
   @override
   List<LintRule> getLintRules(CustomLintConfigs configs) => [
+        const DefinedVoidCallbackType(),
         const FixedTextScaleFactorRichText(),
         const FlakyTestsWithSetUpAll(),
         const UnnecessaryRebuildsFromMediaQuery(),

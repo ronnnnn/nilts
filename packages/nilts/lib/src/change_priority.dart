@@ -11,6 +11,9 @@ class ChangePriority {
   /// The priority for [_ReplaceWithSetUp].
   static const int replaceWithSetUp = 100;
 
+  /// The priority for [_ReplaceWithVoidCallback].
+  static const int replaceWithVoidCallback = 100;
+
   /// The priority for [_UnwrapSetUpAll].
   static const int unwrapSetUpAll = 90;
 }
