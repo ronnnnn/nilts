@@ -4,13 +4,34 @@ import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
 
+/// A class for `defined_void_callback_type` rule.
+///
+/// This rule checks defining `void Function()` type.
+///
+/// - Target SDK: Any versions nilts supports
+/// - Rule type: Practice
+/// - Maturity level: Experimental
+/// - Quick fix: ✅
+///
+/// **Consider** replace `void Function()` with `VoidCallback` which is defined
+/// in Flutter SDK.
+///
+/// **BAD:**
+/// ```dart
+/// final void Function() callback;
+/// ```
+///
+/// **GOOD:**
+/// ```dart
+/// final VoidCallback callback;
+/// ```
 class DefinedVoidCallbackType extends DartLintRule {
   /// Create a new instance of [DefinedVoidCallbackType].
   const DefinedVoidCallbackType() : super(code: _code);
 
   static const _code = LintCode(
     name: 'defined_void_callback_type',
-    problemMessage: 'VoidCallback type is defined in SDK.',
+    problemMessage: 'VoidCallback type is defined in Flutter SDK.',
     url: 'https://github.com/ronnnnn/nilts#defined_void_callback_type',
   );
 
