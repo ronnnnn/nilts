@@ -1,3 +1,5 @@
+// ignore_for_file: comment_references
+
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/error/error.dart';
 import 'package:analyzer/error/listener.dart';
@@ -7,14 +9,14 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 
 /// A class for `fixed_text_scale_factor_rich_text` rule.
 ///
-/// This rule checks if `textScaleFactor` is missing in `RichText` constructor.
+/// This rule checks if `textScaleFactor` is missing in [RichText] constructor.
 ///
 /// - Target SDK: Any versions nilts supports
 /// - Rule type: Practice
 /// - Maturity level: Experimental
 /// - Quick fix: ✅
 ///
-/// **Consider** adding `textScaleFactor` argument to `RichText` constructor to
+/// **Consider** adding `textScaleFactor` argument to [RichText] constructor to
 /// make the text size responsive for user setting.
 ///
 /// **BAD:**
@@ -45,7 +47,7 @@ class FixedTextScaleFactorRichText extends DartLintRule {
 
   static const _code = LintCode(
     name: 'fixed_text_scale_factor_rich_text',
-    problemMessage: 'default textScaleFactor value of RichText constructor is '
+    problemMessage: 'Default `textScaleFactor` value of `RichText` is '
         'fixed value.',
     url: 'https://github.com/ronnnnn/nilts#fixed_text_scale_factor_rich_text',
   );

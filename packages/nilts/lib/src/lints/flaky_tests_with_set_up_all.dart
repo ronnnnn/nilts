@@ -1,3 +1,5 @@
+// ignore_for_file: comment_references
+
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/error/error.dart';
@@ -9,16 +11,16 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 
 /// A class for `flaky_tests_with_set_up_all` rule.
 ///
-/// This rule checks if `setUpAll` is used.
+/// This rule checks if [setUpAll] is used.
 ///
 /// - Target SDK: Any versions nilts supports
 /// - Rule type: Practice
 /// - Maturity level: Experimental
 /// - Quick fix: ✅
 ///
-/// **Consider** using `setUp` function or
+/// **Consider** using [setUp] function or
 /// initialization on top level or body of test group.
-/// `setUpAll` may cause flaky tests with concurrency executions.
+/// [setUpAll] may cause flaky tests with concurrency executions.
 ///
 /// **BAD:**
 /// ```dart
@@ -56,8 +58,7 @@ class FlakyTestsWithSetUpAll extends DartLintRule {
 
   static const _code = LintCode(
     name: 'flaky_tests_with_set_up_all',
-    problemMessage: 'Consider using `setUp` function or '
-        'initialization on top level or body of test group. '
+    problemMessage:
         '`setUpAll` may cause flaky tests with concurrency executions.',
     url: 'https://github.com/ronnnnn/nilts#flaky_tests_with_set_up_all',
   );

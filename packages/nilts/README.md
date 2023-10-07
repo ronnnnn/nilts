@@ -220,7 +220,7 @@ See also:
 - Maturity level: Experimental
 - Quick fix: ✅
   
-**Prefer** using `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` instead of `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` to avoid unnecessary rebuilds.
+**Prefer** using `MediaQuery.xxxOf` or `MediaQuery.maybeXxxOf` instead of `MediaQuery.of` or `MediaQuery.maybeOf` to avoid unnecessary rebuilds.
 
 **BAD:**
 
@@ -235,7 +235,7 @@ final size = MediaQuery.of(context).size;
 final size = MediaQuery.sizeOf(context);
 ```
 
-**Note that using `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` makes sense following cases:**
+**Note that using `MediaQuery.of` or `MediaQuery.maybeOf` makes sense following cases:**
 
 - wrap Widget with `MediaQuery` overridden `MediaQueryData`
 - observe all changes of `MediaQueryData`  
