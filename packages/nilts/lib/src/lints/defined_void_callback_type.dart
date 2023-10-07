@@ -1,3 +1,5 @@
+// ignore_for_file: comment_references
+
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/error/error.dart';
 import 'package:analyzer/error/listener.dart';
@@ -13,7 +15,7 @@ import 'package:nilts/src/change_priority.dart';
 /// - Maturity level: Experimental
 /// - Quick fix: ✅
 ///
-/// **Consider** replace `void Function()` with `VoidCallback` which is defined
+/// **Consider** replace `void Function()` with [VoidCallback] which is defined
 /// in Flutter SDK.
 ///
 /// **BAD:**

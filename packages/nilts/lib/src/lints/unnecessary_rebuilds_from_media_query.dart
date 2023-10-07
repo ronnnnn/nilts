@@ -1,3 +1,5 @@
+// ignore_for_file: comment_references
+
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
 import 'package:analyzer/error/error.dart';
@@ -10,8 +12,8 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// A class for `unnecessary_rebuilds_from_media_query` rule.
 ///
 /// This rule checks if
-/// `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)` is used
-/// instead of `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)`.
+/// [MediaQuery.of] or [MediaQuery.maybeOf] is used
+/// instead of `MediaQuery.xxxOf` or `MediaQuery.maybeXxxOf`.
 ///
 /// - Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
 /// - Rule type: Practice
@@ -19,8 +21,8 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// - Quick fix: ✅
 ///
 /// Prefer using
-/// `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)`
-/// instead of `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)`
+/// `MediaQuery.xxxOf` or `MediaQuery.maybeXxxOf`
+/// instead of [MediaQuery.of] or [MediaQuery.maybeOf]
 /// to avoid unnecessary rebuilds.
 ///
 /// **BAD:**
@@ -33,11 +35,11 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// final size = MediaQuery.sizeOf(context);
 /// ```
 ///
-/// **Note that using `MediaQuery.of(context)` or `MediaQuery.maybeOf(context)`
+/// **Note that using [MediaQuery.of] or [MediaQuery.maybeOf]
 /// makes sense following cases:**
 ///
-/// - wrap Widget with `MediaQuery` overridden `MediaQueryData`
-/// - observe all changes of `MediaQueryData`
+/// - wrap Widget with [MediaQuery] overridden [MediaQueryData]
+/// - observe all changes of [MediaQueryData]
 ///
 /// See also:
 ///
