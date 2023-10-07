@@ -58,8 +58,7 @@ class FlakyTestsWithSetUpAll extends DartLintRule {
 
   static const _code = LintCode(
     name: 'flaky_tests_with_set_up_all',
-    problemMessage: 'Consider using `setUp` function or '
-        'initialization on top level or body of test group. '
+    problemMessage:
         '`setUpAll` may cause flaky tests with concurrency executions.',
     url: 'https://github.com/ronnnnn/nilts#flaky_tests_with_set_up_all',
   );

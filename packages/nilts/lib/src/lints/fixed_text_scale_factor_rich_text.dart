@@ -47,7 +47,7 @@ class FixedTextScaleFactorRichText extends DartLintRule {
 
   static const _code = LintCode(
     name: 'fixed_text_scale_factor_rich_text',
-    problemMessage: 'default textScaleFactor value of RichText constructor is '
+    problemMessage: 'Default `textScaleFactor` value of `RichText` is '
         'fixed value.',
     url: 'https://github.com/ronnnnn/nilts#fixed_text_scale_factor_rich_text',
   );

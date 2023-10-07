@@ -51,10 +51,8 @@ class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
 
   static const _code = LintCode(
     name: 'unnecessary_rebuilds_from_media_query',
-    problemMessage: 'Prefer using '
-        'MediaQuery.xxxOf(context) or MediaQuery.maybeXxxOf(context) '
-        'instead of MediaQuery.of(context) or MediaQuery.maybeOf(context) '
-        'to avoid unnecessary rebuilds.',
+    problemMessage: 'Using `MediaQuery.of` or `MediaQuery.maybeOf` '
+        'may cause unnecessary rebuilds.',
     url:
         'https://github.com/ronnnnn/nilts#unnecessary_rebuilds_from_media_query',
   );
