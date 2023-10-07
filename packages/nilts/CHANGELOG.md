@@ -2,6 +2,35 @@
 
 All notable changes to nilts packages will be documented in this file.
 
+## 2023-10-07
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.6.0`](#nilts---v060)
+
+---
+
+#### `nilts` - `v0.6.0`
+
+ - **FEAT**: shrink_wrapped_scroll_view ([#41](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/41)). ([0ae46f20](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/0ae46f207d2e2960dbe5fc0110ad232c632b6ab8))
+ - **DOCS**: example link ([#43](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/43)). ([5d95f689](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/5d95f689848c4769526f0e03a05630f97f6eec61))
+ - **DOCS**: update api docs and problem messages ([#42](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/42)). ([07a40d37](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/07a40d37c0b1b24649fc838ebe2ba31a74520129))
+
+## 0.6.0
+
+ - **FEAT**: shrink_wrapped_scroll_view ([#41](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/41)). ([0ae46f20](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/0ae46f207d2e2960dbe5fc0110ad232c632b6ab8))
+ - **DOCS**: example link ([#43](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/43)). ([5d95f689](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/5d95f689848c4769526f0e03a05630f97f6eec61))
+ - **DOCS**: update api docs and problem messages ([#42](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/42)). ([07a40d37](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/07a40d37c0b1b24649fc838ebe2ba31a74520129))
+
+
 ## 2023-10-01
 
 ### Changes
