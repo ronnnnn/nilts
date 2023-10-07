@@ -2,6 +2,7 @@ import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/lints/defined_void_callback_type.dart';
 import 'package:nilts/src/lints/fixed_text_scale_factor_rich_text.dart';
 import 'package:nilts/src/lints/flaky_tests_with_set_up_all.dart';
+import 'package:nilts/src/lints/shrink_wrapped_scroll_view.dart';
 import 'package:nilts/src/lints/unnecessary_rebuilds_from_media_query.dart';
 
 /// custom_lint integrates the nilts's plugin from this method on
@@ -15,6 +16,7 @@ class _NiltsLint extends PluginBase {
         const DefinedVoidCallbackType(),
         const FixedTextScaleFactorRichText(),
         const FlakyTestsWithSetUpAll(),
+        const ShrinkWrappedScrollView(),
         const UnnecessaryRebuildsFromMediaQuery(),
       ];
 }

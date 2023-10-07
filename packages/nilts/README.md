@@ -82,6 +82,7 @@ Some of lint rules support quick fixes on IDE.
 | [defined\_void\_callback\_type](#defined_void_callback_type) | Checks `void Function()` definitions. | Any versions nilts supports | Practice | Experimental | ✅️ |
 | [fixed\_text\_scale\_factor\_rich\_text](#fixed_text_scale_factor_rich_text) | Checks usage of `textScaleFactor` in `RichText` constructor. | Any versions nilts supports | Practice | Experimental | ✅️ |
 | [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all) | Checks `setUpAll` usages. | Any versions nilts supports | Practice | Experimental | ✅️ |
+| [shrink\_wrapped\_scroll\_view](#shrink_wrapped_scroll_view) | Checks the content of the scroll view is shrink wrapped. | Any versions nilts supports | Practice | Experimental | ✅️ |
 | [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice | Experimental | ✅️ |
 
 ### Details
@@ -180,6 +181,37 @@ See also:
 
 - [setUpAll function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUpAll.html)
 - [setUp function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUp.html)
+
+#### shrink_wrapped_scroll_view
+
+- Target SDK: Any versions nilts supports
+- Rule type: Practice
+- Maturity level: Experimental
+- Quick fix: ✅
+
+**Consider** removing `shrinkWrap` argument and update the Widget not to shrink wrap.  
+Shrink wrapping the content of the scroll view is significantly more expensive than expanding to the maximum allowed size because the content can expand and contract during scrolling, which means the size of the scroll view needs to be recomputed whenever the scroll position changes.
+
+You can avoid shrink wrap with 3 steps below in case of your scroll view is nested.
+
+1. Replace the parent scroll view with `CustomScrollView`.
+2. Replace the child scroll view with `SliverListView` or `SliverGridView`.
+3. Set `SliverChildBuilderDelegate` to `delegate` argument of the `SliverListView` or `SliverGridView`.
+
+**BAD:**
+```dart
+ListView(shrinkWrap: true)
+```
+
+**GOOD:**
+```dart
+ListView(shrinkWrap: false)
+```
+
+See also:
+
+- [shrinkWrap property - ScrollView class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/ScrollView/shrinkWrap.html)
+- [ShrinkWrap vs Slivers | Decoding Flutter - YouTube](https://youtu.be/LUqDNnv_dh0)
 
 #### unnecessary_rebuilds_from_media_query
 
