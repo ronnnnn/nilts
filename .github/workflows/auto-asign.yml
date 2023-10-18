@@ -9,6 +9,9 @@ jobs:
     if: |
       github.event.pull_request.user.type == 'User'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
     timeout-minutes: 5
     steps:
       - uses: actions/github-script@v6
