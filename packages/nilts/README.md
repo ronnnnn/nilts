@@ -21,6 +21,7 @@ nilts is lint rules, quick fixes and assists for Dart and Flutter projects that 
   - [Overview](#overview)
   - [Details](#details)
 - [Assists](#assists)
+- [Known issues](#known-issues)
 - [Feature requests](#feature-requests)
 - [Bug reports](#bug-reports)
 - [Contributing](#contributing)
@@ -256,6 +257,20 @@ See also:
 ## Assists
 
 Upcoming... 🚀
+
+## Known issues
+
+### Quick fix priorities
+Priorities of quick fixes are not reflected on IntelliJ IDEA and Android Studio.  
+VS Code is supported to list with these priorities.
+
+| VS Code | IntelliJ IDEA / Android Studio |
+| -- | -- |
+| <img width="500" alt="VS Code" src="https://github.com/ronnnnn/nilts/assets/12420269/b756c354-00f1-42f6-9fde-eaffce255811"/> | <img width="500" alt="IntelliJ IDEA / Android Studio" src="https://github.com/ronnnnn/nilts/assets/12420269/99a1032b-db40-4376-8345-c5e960f156a2"/> |
+
+See also:
+
+- [IDEA-336551 Support PrioritizedSourceChange on quick fix.](https://youtrack.jetbrains.com/issue/IDEA-336551/Support-PrioritizedSourceChange-on-quick-fix.)
 
 ## Feature requests
 
