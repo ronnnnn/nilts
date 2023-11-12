@@ -13,7 +13,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
   custom_lint: ^0.5.2
+
   nilts:
     path: ../../packages/nilts
 

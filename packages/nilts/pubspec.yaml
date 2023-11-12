@@ -29,3 +29,6 @@ dependencies:
   analyzer_plugin: ^0.11.2
   custom_lint_builder: ^0.5.2
   meta: ^1.9.1
+
+dev_dependencies:
+  very_good_analysis: ^5.1.0
