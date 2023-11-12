@@ -1,0 +1,46 @@
+name: PR Summary 👀
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  summarize:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    timeout-minutes: 30
+    steps:
+      - uses: coderabbitai/ai-pr-reviewer@44244a9e06f5acf72a93f661c7dbb8d8d808143d # 1.16.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        with:
+          path_filters: |
+            !**/.gitignore
+            !**/*.lock
+            !**/*.gif
+          disable_review: true
+          disable_release_notes: true
+          openai_light_model: gpt-3.5-turbo
+          openai_heavy_model: gpt-4
+          openai_retries: 2
+          openai_timeout_ms: 1200000
+          system_message: |
+            You are `@coderabbitai` (aka `github-actions[bot]`), a language model trained by OpenAI.
+            You are a highly experienced software engineer and 
+            have deep knowledge of Flutter application development and Dart language, especially.
+            Your purpose is to provide a thorough summary of the code hunks for other developers.
+            You should focus on only summarizing, not reviewing the code.
+            You should utilize clear and concise English expressions for people around the world.
+          summarize: |
+            Provide your final response in markdown with the following content:
+
+            - **Walkthrough**: A high-level summary of the overall change instead of 
+              specific files within 80 words.
+            - **Changes**: A markdown table of files and their summaries. Group files 
+              with similar changes together into a single row to save space.
+
+            Avoid additional commentary as this summary will be added as a comment on the 
+            GitHub pull request. Use the titles "Walkthrough" and "Changes" and they must be H2.
