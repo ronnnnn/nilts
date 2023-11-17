@@ -1,4 +1,5 @@
 import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:nilts/src/dart_version.dart';
 import 'package:nilts/src/lints/defined_void_callback_type.dart';
 import 'package:nilts/src/lints/fixed_text_scale_rich_text.dart';
 import 'package:nilts/src/lints/flaky_tests_with_set_up_all.dart';
@@ -11,12 +12,18 @@ PluginBase createPlugin() => _NiltsLint();
 
 /// A class for defining all lint rules and assists managed by nilts.
 class _NiltsLint extends PluginBase {
+  final _dartVersion = DartVersion.fromPlatform();
+
   @override
   List<LintRule> getLintRules(CustomLintConfigs configs) => [
         const DefinedVoidCallbackType(),
-        const FixedTextScaleRichText(),
+        if (_dartVersion >= const DartVersion(major: 3, minor: 2, patch: 0))
+          const FixedTextScaleRichText()
+        else
+          const FixedTextScaleRichTextLegacy(),
         const FlakyTestsWithSetUpAll(),
         const ShrinkWrappedScrollView(),
-        const UnnecessaryRebuildsFromMediaQuery(),
+        if (_dartVersion >= const DartVersion(major: 3, minor: 0, patch: 0))
+          const UnnecessaryRebuildsFromMediaQuery(),
       ];
 }

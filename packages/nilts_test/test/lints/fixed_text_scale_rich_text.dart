@@ -25,6 +25,12 @@ class MainApp extends StatelessWidget {
               text: const TextSpan(
                 text: 'Hello World!',
               ),
+              textScaler: MediaQuery.textScalerOf(context),
+            ),
+            RichText(
+              text: const TextSpan(
+                text: 'Hello World!',
+              ),
               textScaleFactor: MediaQuery.textScaleFactorOf(context),
             ),
           ],

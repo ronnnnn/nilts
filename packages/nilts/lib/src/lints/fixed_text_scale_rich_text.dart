@@ -60,6 +60,87 @@ class FixedTextScaleRichText extends DartLintRule {
 
   static const _code = LintCode(
     name: 'fixed_text_scale_rich_text',
+    problemMessage: 'Default `textScaler` or `textScaleFactor` value of '
+        '`RichText` is fixed value.',
+    url: 'https://github.com/ronnnnn/nilts#fixed_text_scale_rich_text',
+  );
+
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ErrorReporter reporter,
+    CustomLintContext context,
+  ) {
+    context.registry.addInstanceCreationExpression((node) {
+      // Do nothing if the package of constructor is not `flutter`.
+      final constructorName = node.constructorName;
+      final library = constructorName.staticElement?.library;
+      if (library == null) return;
+      if (!library.isFlutter) return;
+
+      // Do nothing if the constructor name is not `RichText`.
+      if (constructorName.type.element?.name != 'RichText') return;
+
+      // Do nothing if the constructor has
+      // `textScaler` or `textScaleFactor` argument.
+      final arguments = node.argumentList.arguments;
+      final isTextScaleFactorSet = arguments.any(
+        (argument) =>
+            argument is NamedExpression &&
+            (argument.name.label.name == 'textScaler' ||
+                argument.name.label.name == 'textScaleFactor'),
+      );
+      if (isTextScaleFactorSet) return;
+
+      reporter.reportErrorForNode(_code, node);
+    });
+  }
+
+  @override
+  List<Fix> getFixes() => [
+        _AddTextScaler(),
+      ];
+}
+
+class _AddTextScaler extends DartFix {
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ChangeReporter reporter,
+    CustomLintContext context,
+    AnalysisError analysisError,
+    List<AnalysisError> others,
+  ) {
+    context.registry.addInstanceCreationExpression((node) {
+      if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+
+      // Do nothing if the constructor name is not `RichText`.
+      final constructorName = node.constructorName;
+      if (constructorName.type.element?.name != 'RichText') return;
+
+      reporter
+          .createChangeBuilder(
+        message: 'Add textScaler',
+        priority: ChangePriority.addTextScaler,
+      )
+          .addDartFileEdit((builder) {
+        builder.addSimpleInsertion(
+          node.argumentList.arguments.last.end,
+          ',\ntextScaler: MediaQuery.textScalerOf(context)',
+        );
+      });
+    });
+  }
+}
+
+/// Legacy version of [FixedTextScaleRichText].
+/// This rule is for under Flutter 3.16.0.
+class FixedTextScaleRichTextLegacy extends DartLintRule {
+  /// Create a new instance of [FixedTextScaleRichTextLegacy].
+  const FixedTextScaleRichTextLegacy() : super(code: _code);
+
+  static const _code = LintCode(
+    name: 'fixed_text_scale_rich_text',
     problemMessage: 'Default `textScaleFactor` value of `RichText` is '
         'fixed value.',
     url: 'https://github.com/ronnnnn/nilts#fixed_text_scale_rich_text',

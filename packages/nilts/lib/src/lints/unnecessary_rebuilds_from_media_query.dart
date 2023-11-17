@@ -6,7 +6,6 @@ import 'package:analyzer/error/error.dart';
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
-import 'package:nilts/src/dart_version.dart';
 import 'package:nilts/src/utils/library_element_ext.dart';
 
 /// A class for `unnecessary_rebuilds_from_media_query` rule.
@@ -64,12 +63,6 @@ class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
     CustomLintContext context,
   ) {
     context.registry.addMethodInvocation((node) {
-      // Do nothing if dart version is below 3.0.0.
-      if (DartVersion.fromPlatform() <
-          const DartVersion(major: 3, minor: 0, patch: 0)) {
-        return;
-      }
-
       // Do nothing if the method name is not `of` and not `maybeOf`.
       final methodName = node.methodName;
       if (methodName.name != 'of' && methodName.name != 'maybeOf') return;
