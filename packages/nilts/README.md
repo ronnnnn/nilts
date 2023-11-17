@@ -125,7 +125,7 @@ final VoidCallback callback;
 - Maturity level: Experimental
 - Quick fix: ✅
 
-**Consider** adding `textScaleFactor` argument to `RichText` constructor to make the text size responsive for user setting.
+**Consider** adding `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above) argument to [RichText] constructor to make the text size responsive for user setting.  
 
 **BAD:**
 ```dart
@@ -137,6 +137,16 @@ RichText(
 ```
 
 **GOOD:**
+```dart
+RichText(
+  text: TextSpan(
+    text: 'Hello, world!',
+  ),
+  textScaler: MediaQuery.textScalerOf(context),
+)
+```
+
+**GOOD (deprecated on Flutter 3.16.0 and above):**
 ```dart
 RichText(
   text: TextSpan(

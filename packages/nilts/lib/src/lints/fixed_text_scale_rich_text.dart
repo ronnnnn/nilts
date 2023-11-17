@@ -9,14 +9,17 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 
 /// A class for `fixed_text_scale_rich_text` rule.
 ///
-/// This rule checks if `textScaleFactor` is missing in [RichText] constructor.
+/// This rule checks if `textScaler` or `textScaleFactor` are missing in
+/// [RichText] constructor.
 ///
 /// - Target SDK: Any versions nilts supports
 /// - Rule type: Practice
 /// - Maturity level: Experimental
 /// - Quick fix: ✅
 ///
-/// **Consider** adding `textScaleFactor` argument to [RichText] constructor to
+/// **Consider** adding
+/// `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above)
+/// argument to [RichText] constructor to
 /// make the text size responsive for user setting.
 ///
 /// **BAD:**
@@ -29,6 +32,16 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// ```
 ///
 /// **GOOD:**
+/// ```dart
+/// RichText(
+///   text: TextSpan(
+///     text: 'Hello, world!',
+///   ),
+///   textScaler: MediaQuery.textScalerOf(context),
+/// )
+/// ```
+///
+/// **GOOD (deprecated on Flutter 3.16.0 and above):**
 /// ```dart
 /// RichText(
 ///   text: TextSpan(
