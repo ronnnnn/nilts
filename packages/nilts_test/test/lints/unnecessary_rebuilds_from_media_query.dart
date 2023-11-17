@@ -1,5 +1,6 @@
 // ignore_for_file: unused_local_variable
 // ignore_for_file: invalid_null_aware_operator
+// ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
 
