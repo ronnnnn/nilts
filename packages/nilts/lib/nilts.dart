@@ -24,6 +24,6 @@ class _NiltsLint extends PluginBase {
         const FlakyTestsWithSetUpAll(),
         const ShrinkWrappedScrollView(),
         if (_dartVersion >= const DartVersion(major: 3, minor: 0, patch: 0))
-          const UnnecessaryRebuildsFromMediaQuery(),
+          UnnecessaryRebuildsFromMediaQuery(_dartVersion),
       ];
 }

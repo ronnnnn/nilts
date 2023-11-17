@@ -32,6 +32,8 @@ class MainApp extends StatelessWidget {
     // expect_lint: unnecessary_rebuilds_from_media_query
     final textScaleFactor = MediaQuery.of(context).textScaleFactor;
     // expect_lint: unnecessary_rebuilds_from_media_query
+    final textScaler = MediaQuery.of(context).textScaler;
+    // expect_lint: unnecessary_rebuilds_from_media_query
     final platformBrightness = MediaQuery.of(context).platformBrightness;
     // expect_lint: unnecessary_rebuilds_from_media_query
     final padding = MediaQuery.of(context).padding;
@@ -50,6 +52,8 @@ class MainApp extends StatelessWidget {
     // expect_lint: unnecessary_rebuilds_from_media_query
     final highContrast = MediaQuery.of(context).highContrast;
     // expect_lint: unnecessary_rebuilds_from_media_query
+    final onOffSwitchLabels = MediaQuery.of(context).onOffSwitchLabels;
+    // expect_lint: unnecessary_rebuilds_from_media_query
     final disableAnimations = MediaQuery.of(context).disableAnimations;
     // expect_lint: unnecessary_rebuilds_from_media_query
     final boldText = MediaQuery.of(context).boldText;
@@ -66,6 +70,8 @@ class MainApp extends StatelessWidget {
     final maybeDevicePixelRatio = MediaQuery.maybeOf(context)?.devicePixelRatio;
     // expect_lint: unnecessary_rebuilds_from_media_query
     final maybeTextScaleFactor = MediaQuery.maybeOf(context)?.textScaleFactor;
+    // expect_lint: unnecessary_rebuilds_from_media_query
+    final maybeTextScaler = MediaQuery.maybeOf(context)?.textScaler;
     final maybePlatformBrightness =
         // expect_lint: unnecessary_rebuilds_from_media_query
         MediaQuery.maybeOf(context)?.platformBrightness;
@@ -88,6 +94,9 @@ class MainApp extends StatelessWidget {
     final maybeInvertColors = MediaQuery.maybeOf(context)?.invertColors;
     // expect_lint: unnecessary_rebuilds_from_media_query
     final maybeHighContrast = MediaQuery.maybeOf(context)?.highContrast;
+    final maybeOnOffSwitchLabels =
+        // expect_lint: unnecessary_rebuilds_from_media_query
+        MediaQuery.maybeOf(context)?.onOffSwitchLabels;
     final maybeDisableAnimations =
         // expect_lint: unnecessary_rebuilds_from_media_query
         MediaQuery.maybeOf(context)?.disableAnimations;
