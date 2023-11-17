@@ -2,6 +2,35 @@
 
 All notable changes to nilts packages will be documented in this file.
 
+## 2023-11-17
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.7.0`](#nilts---v070)
+
+---
+
+#### `nilts` - `v0.7.0`
+
+ - **DOCS**: known issues for quick fix priorities ([#51](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/51)). ([d641cd76](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/d641cd7678a1e58484edeefd54b0a45d6e288f4c))
+ - **DOCS**: notes for ignore fix priority ([#50](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/50)). ([661196eb](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/661196eb093e50ec96dc23a54c831bbacbe76d8a))
+ - **DOCS**: Badges for readme ([#47](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/47)). ([aa98e06e](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/aa98e06e73ddb1e70cb07d6c165889d0bb8bbe8b))
+
+## 0.7.0
+
+ - **DOCS**: known issues for quick fix priorities ([#51](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/51)). ([d641cd76](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/d641cd7678a1e58484edeefd54b0a45d6e288f4c))
+ - **DOCS**: notes for ignore fix priority ([#50](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/50)). ([661196eb](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/661196eb093e50ec96dc23a54c831bbacbe76d8a))
+ - **DOCS**: Badges for readme ([#47](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/47)). ([aa98e06e](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/aa98e06e73ddb1e70cb07d6c165889d0bb8bbe8b))
+
+
 ## 2023-10-07
 
 ### Changes
