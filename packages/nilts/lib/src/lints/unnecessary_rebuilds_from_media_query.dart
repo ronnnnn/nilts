@@ -47,7 +47,10 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// - [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
 class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
   /// Create a new instance of [UnnecessaryRebuildsFromMediaQuery].
-  const UnnecessaryRebuildsFromMediaQuery() : super(code: _code);
+  const UnnecessaryRebuildsFromMediaQuery(this._dartVersion)
+      : super(code: _code);
+
+  final DartVersion _dartVersion;
 
   static const _code = LintCode(
     name: 'unnecessary_rebuilds_from_media_query',
@@ -64,12 +67,6 @@ class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
     CustomLintContext context,
   ) {
     context.registry.addMethodInvocation((node) {
-      // Do nothing if dart version is below 3.0.0.
-      if (DartVersion.fromPlatform() <
-          const DartVersion(major: 3, minor: 0, patch: 0)) {
-        return;
-      }
-
       // Do nothing if the method name is not `of` and not `maybeOf`.
       final methodName = node.methodName;
       if (methodName.name != 'of' && methodName.name != 'maybeOf') return;
@@ -106,15 +103,47 @@ class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
 
   @override
   List<Fix> getFixes() => [
-        _ReplaceWithMediaQueryXxxOf(),
+        _ReplaceWithMediaQueryXxxOf(_dartVersion),
       ];
 }
 
 class _ReplaceWithMediaQueryXxxOf extends DartFix {
+  _ReplaceWithMediaQueryXxxOf(DartVersion dartVersion)
+      : _properties =
+            dartVersion >= const DartVersion(major: 3, minor: 2, patch: 0)
+                ? _propertiesForFlutter316
+                : _propertiesForFlutter310;
+
+  final List<String> _properties;
+
   /// All data that `MediaQueryData` depends on.
   ///
-  /// See also: https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/media_query.dart#L36C4-L36C4
-  static const List<String> _properties = [
+  /// See also:
+  ///   - For >= Flutter 3.10.0 < 3.16.0: https://github.com/flutter/flutter/blob/3.10.0/packages/flutter/lib/src/widgets/media_query.dart#L36-L73
+  ///   - For > Flutter 3.16.0: https://github.com/flutter/flutter/blob/3.16.0/packages/flutter/lib/src/widgets/media_query.dart#L36-L77
+  static const List<String> _propertiesForFlutter316 = [
+    'size',
+    'orientation',
+    'devicePixelRatio',
+    'textScaleFactor',
+    'textScaler',
+    'platformBrightness',
+    'padding',
+    'viewInsets',
+    'systemGestureInsets',
+    'viewPadding',
+    'alwaysUse24HourFormat',
+    'accessibleNavigation',
+    'invertColors',
+    'highContrast',
+    'onOffSwitchLabels',
+    'disableAnimations',
+    'boldText',
+    'navigationMode',
+    'gestureSettings',
+    'displayFeatures',
+  ];
+  static const List<String> _propertiesForFlutter310 = [
     'size',
     'orientation',
     'devicePixelRatio',

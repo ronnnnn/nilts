@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,11 +15,17 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: Column(
           children: [
-            // expect_lint: fixed_text_scale_factor_rich_text
+            // expect_lint: fixed_text_scale_rich_text
             RichText(
               text: const TextSpan(
                 text: 'Hello World!',
               ),
+            ),
+            RichText(
+              text: const TextSpan(
+                text: 'Hello World!',
+              ),
+              textScaler: MediaQuery.textScalerOf(context),
             ),
             RichText(
               text: const TextSpan(

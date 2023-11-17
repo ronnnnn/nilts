@@ -11,6 +11,9 @@ class ChangePriority {
   /// The priority for [_AddTextScaleFactor].
   static const int addTextScaleFactor = 100;
 
+  /// The priority for [_AddTextScaler].
+  static const int addTextScaler = 100;
+
   /// The priority for [_RemoveShrinkWrap].
   static const int removeShrinkWrap = 100;
 
