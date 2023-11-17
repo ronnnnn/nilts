@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: Column(
           children: [
-            // expect_lint: fixed_text_scale_factor_rich_text
+            // expect_lint: fixed_text_scale_rich_text
             RichText(
               text: const TextSpan(
                 text: 'Hello World!',

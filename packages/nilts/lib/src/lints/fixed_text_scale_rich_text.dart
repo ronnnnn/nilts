@@ -7,7 +7,7 @@ import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
 import 'package:nilts/src/utils/library_element_ext.dart';
 
-/// A class for `fixed_text_scale_factor_rich_text` rule.
+/// A class for `fixed_text_scale_rich_text` rule.
 ///
 /// This rule checks if `textScaleFactor` is missing in [RichText] constructor.
 ///
@@ -41,15 +41,15 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// See also:
 ///
 /// - [RichText class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/RichText-class.html)
-class FixedTextScaleFactorRichText extends DartLintRule {
-  /// Create a new instance of [FixedTextScaleFactorRichText].
-  const FixedTextScaleFactorRichText() : super(code: _code);
+class FixedTextScaleRichText extends DartLintRule {
+  /// Create a new instance of [FixedTextScaleRichText].
+  const FixedTextScaleRichText() : super(code: _code);
 
   static const _code = LintCode(
-    name: 'fixed_text_scale_factor_rich_text',
+    name: 'fixed_text_scale_rich_text',
     problemMessage: 'Default `textScaleFactor` value of `RichText` is '
         'fixed value.',
-    url: 'https://github.com/ronnnnn/nilts#fixed_text_scale_factor_rich_text',
+    url: 'https://github.com/ronnnnn/nilts#fixed_text_scale_rich_text',
   );
 
   @override
