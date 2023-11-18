@@ -17,7 +17,7 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// - Maturity level: Experimental
 /// - Quick fix: ✅
 ///
-/// **Consider** adding
+/// **Consider** using `Text.rich` or adding
 /// `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above)
 /// argument to [RichText] constructor to
 /// make the text size responsive for user setting.
@@ -26,6 +26,15 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// ```dart
 /// RichText(
 ///   text: TextSpan(
+///     text: 'Hello, world!',
+///   ),
+/// )
+/// ```
+///
+/// **GOOD:**
+/// ```dart
+/// Text.rich(
+///   TextSpan(
 ///     text: 'Hello, world!',
 ///   ),
 /// )
@@ -53,6 +62,7 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 ///
 /// See also:
 ///
+/// - [Text.rich constructor - Text - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/Text/Text.rich.html)
 /// - [RichText class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/RichText-class.html)
 class FixedTextScaleRichText extends DartLintRule {
   /// Create a new instance of [FixedTextScaleRichText].
@@ -98,8 +108,49 @@ class FixedTextScaleRichText extends DartLintRule {
 
   @override
   List<Fix> getFixes() => [
+        _ReplaceWithTextRich(),
         _AddTextScaler(),
       ];
+}
+
+class _ReplaceWithTextRich extends DartFix {
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ChangeReporter reporter,
+    CustomLintContext context,
+    AnalysisError analysisError,
+    List<AnalysisError> others,
+  ) {
+    context.registry.addInstanceCreationExpression((node) {
+      if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+
+      // Do nothing if the constructor name is not `RichText`.
+      final constructorName = node.constructorName;
+      if (constructorName.type.element?.name != 'RichText') return;
+
+      reporter
+          .createChangeBuilder(
+        message: 'Replace with Text.rich',
+        priority: ChangePriority.replaceWithTextRich,
+      )
+          .addDartFileEdit((builder) {
+        final arguments = node.argumentList.arguments;
+        final textArgument = arguments.firstWhere(
+          (argument) =>
+              argument is NamedExpression && argument.name.label.name == 'text',
+        ) as NamedExpression;
+        final textArgumentRange = textArgument.name.sourceRange;
+
+        builder
+          ..addSimpleReplacement(
+            constructorName.type.sourceRange,
+            'Text.rich',
+          )
+          ..addDeletion(textArgumentRange);
+      });
+    });
+  }
 }
 
 class _AddTextScaler extends DartFix {
@@ -177,6 +228,7 @@ class FixedTextScaleRichTextLegacy extends DartLintRule {
 
   @override
   List<Fix> getFixes() => [
+        _ReplaceWithTextRich(),
         _AddTextScaleFactor(),
       ];
 }
