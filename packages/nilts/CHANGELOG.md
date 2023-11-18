@@ -78,7 +78,7 @@
 
 ---
 
-## nilts-v0.3.2 (2023-08-18)
+# nilts-v0.3.2 (2023-08-18)
 
 ## What's Changed
 * upgrade: update dependency dart to v3.1.0 by @renovate in https://github.com/ronnnnn/nilts/pull/19
@@ -89,7 +89,7 @@
 
 ---
 
-## nilts-v0.3.1 (2023-08-12)
+# nilts-v0.3.1 (2023-08-12)
 
 ## What's Changed
 * upgrade: update analyzer and custom_lint by @ronnnnn in https://github.com/ronnnnn/nilts/pull/25
@@ -99,7 +99,7 @@
 
 ---
 
-## nilts-v0.2.0 (2023-08-11)
+# nilts-v0.2.0 (2023-08-11)
 
 ## What's Changed
 * docs: update use_media_query_xxx_of url by @ronnnnn in https://github.com/ronnnnn/nilts/pull/1
@@ -127,4 +127,4 @@
 
 ---
 
-## nilts-v0.1.0 (2023-06-27)
+# nilts-v0.1.0 (2023-06-27)
