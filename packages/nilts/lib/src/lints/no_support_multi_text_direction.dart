@@ -1,7 +1,9 @@
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
+import 'package:analyzer/error/error.dart';
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
+import 'package:nilts/src/change_priority.dart';
 import 'package:nilts/src/utils/library_element_ext.dart';
 
 class NoSupportMultiTextDirection extends DartLintRule {
@@ -122,5 +124,216 @@ class NoSupportMultiTextDirection extends DartLintRule {
   }
 
   @override
-  List<Fix> getFixes() => [];
+  List<Fix> getFixes() => [
+        _ReplaceWithAlignmentDirectional(),
+        _ReplaceWithEdgeInsetsDirectional(),
+        _ReplaceWithPositionedDirectionalClass(),
+        _ReplaceWithPositionedDirectional(),
+      ];
+}
+
+class _ReplaceWithAlignmentDirectional extends DartFix {
+  final _identifierMap = {
+    'bottomLeft': 'bottomStart',
+    'bottomRight': 'bottomEnd',
+    'centerLeft': 'centerStart',
+    'centerRight': 'centerEnd',
+    'topLeft': 'topStart',
+    'topRight': 'topEnd',
+  };
+
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ChangeReporter reporter,
+    CustomLintContext context,
+    AnalysisError analysisError,
+    List<AnalysisError> others,
+  ) {
+    context.registry.addPrefixedIdentifier((node) {
+      if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+
+      // Do nothing if the class name is not `Alignment`.
+      final isAlignment = node.prefix.name == 'Alignment';
+      if (!isAlignment) return;
+
+      reporter
+          .createChangeBuilder(
+        message: 'Replace with AlignmentDirectional',
+        priority: ChangePriority.replaceWithAlignmentDirectional,
+      )
+          .addDartFileEdit((builder) {
+        builder
+          ..addSimpleReplacement(
+            node.identifier.sourceRange,
+            _identifierMap[node.identifier.name]!,
+          )
+          ..addSimpleReplacement(
+            node.prefix.sourceRange,
+            'AlignmentDirectional',
+          );
+      });
+    });
+  }
+}
+
+class _ReplaceWithEdgeInsetsDirectional extends DartFix {
+  final _argumentMap = {
+    'left': 'start',
+    'right': 'end',
+  };
+
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ChangeReporter reporter,
+    CustomLintContext context,
+    AnalysisError analysisError,
+    List<AnalysisError> others,
+  ) {
+    context.registry.addInstanceCreationExpression((node) {
+      if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+
+      // Do nothing if the class is not `EdgeInsets`.
+      final isEdgeInsets =
+          node.constructorName.type.element?.name == 'EdgeInsets';
+      if (!isEdgeInsets) return;
+
+      reporter
+          .createChangeBuilder(
+        message: 'Replace with EdgeInsetsDirectional',
+        priority: ChangePriority.replaceWithEdgeInsetsDirectional,
+      )
+          .addDartFileEdit((builder) {
+        if (node.constructorName.name?.name == 'fromLTRB') {
+          builder.addSimpleReplacement(
+            node.constructorName.name!.sourceRange,
+            'fromSTEB',
+          );
+        }
+        node.argumentList.arguments.whereType<NamedExpression>().forEach(
+          (argument) {
+            final newArgument = _argumentMap[argument.name.label.name];
+            if (newArgument != null) {
+              builder.addSimpleReplacement(
+                argument.name.label.sourceRange,
+                newArgument,
+              );
+            }
+          },
+        );
+        builder.addSimpleReplacement(
+          node.constructorName.type.sourceRange,
+          'EdgeInsetsDirectional',
+        );
+      });
+    });
+  }
+}
+
+class _ReplaceWithPositionedDirectionalClass extends DartFix {
+  final _argumentMap = {
+    'left': 'start',
+    'right': 'end',
+  };
+
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ChangeReporter reporter,
+    CustomLintContext context,
+    AnalysisError analysisError,
+    List<AnalysisError> others,
+  ) {
+    context.registry.addInstanceCreationExpression((node) {
+      if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+
+      // Do nothing if the class is not `Positioned`.
+      final isEdgeInsets =
+          node.constructorName.type.element?.name == 'Positioned';
+      if (!isEdgeInsets) return;
+
+      reporter
+          .createChangeBuilder(
+        message: 'Replace with PositionedDirectional',
+        priority: ChangePriority.replaceWithPositionedDirectionalClass,
+      )
+          .addDartFileEdit((builder) {
+        node.argumentList.arguments.whereType<NamedExpression>().forEach(
+          (argument) {
+            final newArgument = _argumentMap[argument.name.label.name];
+            if (newArgument != null) {
+              builder.addSimpleReplacement(
+                argument.name.label.sourceRange,
+                newArgument,
+              );
+            }
+          },
+        );
+        builder.addSimpleReplacement(
+          node.constructorName.sourceRange,
+          'PositionedDirectional',
+        );
+      });
+    });
+  }
+}
+
+class _ReplaceWithPositionedDirectional extends DartFix {
+  final _argumentMap = {
+    'left': 'start',
+    'right': 'end',
+  };
+
+  @override
+  void run(
+    CustomLintResolver resolver,
+    ChangeReporter reporter,
+    CustomLintContext context,
+    AnalysisError analysisError,
+    List<AnalysisError> others,
+  ) {
+    context.registry.addInstanceCreationExpression((node) {
+      if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+
+      // Do nothing if the class is not `Positioned`.
+      final isEdgeInsets =
+          node.constructorName.type.element?.name == 'Positioned';
+      if (!isEdgeInsets) return;
+
+      reporter
+          .createChangeBuilder(
+        message: 'Replace with Positioned.directional',
+        priority: ChangePriority.replaceWithPositionedDirectional,
+      )
+          .addDartFileEdit((builder) {
+        final constructorName = node.constructorName.name?.name;
+
+        node.argumentList.arguments.whereType<NamedExpression>().forEach(
+          (argument) {
+            final newArgument = _argumentMap[argument.name.label.name];
+            if (newArgument != null) {
+              builder.addSimpleReplacement(
+                argument.name.label.sourceRange,
+                newArgument,
+              );
+            }
+          },
+        );
+
+        if (constructorName == 'fill') {
+          builder.addSimpleReplacement(
+            node.constructorName.sourceRange,
+            'Positioned.directional',
+          );
+        }
+        if (constructorName == null) {
+          builder.addSimpleInsertion(
+            node.constructorName.type.end,
+            '.directional',
+          );
+        }
+      });
+    });
+  }
 }
