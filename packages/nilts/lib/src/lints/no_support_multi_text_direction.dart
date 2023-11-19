@@ -10,10 +10,10 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 ///
 /// This rule checks if supports `TextDirection` changes.
 ///
-/// - Target SDK: Any versions nilts supports
-/// - Rule type: Practice
-/// - Maturity level: Experimental
-/// - Quick fix: ✅
+/// - Target SDK     : Any versions nilts supports
+/// - Rule type      : Practice
+/// - Maturity level : Experimental
+/// - Quick fix      : ✅
 ///
 /// **Consider** using `TextDirection` aware configurations if your application
 /// supports different `TextDirection` languages.

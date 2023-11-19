@@ -11,10 +11,10 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 ///
 /// This rule checks if the content of the scroll view is shrink wrapped.
 ///
-/// - Target SDK: Any versions nilts supports
-/// - Rule type: Practice
-/// - Maturity level: Experimental
-/// - Quick fix: ✅
+/// - Target SDK     : Any versions nilts supports
+/// - Rule type      : Practice
+/// - Maturity level : Experimental
+/// - Quick fix      : ✅
 ///
 /// **Consider** removing `shrinkWrap` argument and update the Widget not to
 /// shrink wrap.

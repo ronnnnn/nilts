@@ -10,10 +10,10 @@ import 'package:nilts/src/change_priority.dart';
 ///
 /// This rule checks defining `void Function()` type.
 ///
-/// - Target SDK: Any versions nilts supports
-/// - Rule type: Practice
-/// - Maturity level: Experimental
-/// - Quick fix: ✅
+/// - Target SDK     : Any versions nilts supports
+/// - Rule type      : Practice
+/// - Maturity level : Experimental
+/// - Quick fix      : ✅
 ///
 /// **Consider** replace `void Function()` with [VoidCallback] which is defined
 /// in Flutter SDK.

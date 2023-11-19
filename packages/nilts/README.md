@@ -95,7 +95,7 @@ Some of lint rules support quick fixes on IDE.
 | [defined\_void\_callback\_type](#defined_void_callback_type)                        | Checks `void Function()` definitions.                                          |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [fixed\_text\_scale\_rich\_text](#fixed_text_scale_rich_text)                       | Checks usage of `textScaler` or `textScaleFactor` in `RichText` constructor.   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all)                    | Checks `setUpAll` usages.                                                      |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
-| [no\_support\_multi\_text\_direction](#no_support_multi_text_direction)             | Checks if supports `TextDirection` changes                                     |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [no\_support\_multi\_text\_direction](#no_support_multi_text_direction)             | Checks if supports `TextDirection` changes.                                    |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [shrink\_wrapped\_scroll\_view](#shrink_wrapped_scroll_view)                        | Checks the content of the scroll view is shrink wrapped.                       |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice  |  Experimental  |    ✅️     |
 
@@ -103,10 +103,10 @@ Some of lint rules support quick fixes on IDE.
 
 #### defined_void_callback_type
 
-- Target SDK: Any versions nilts supports
-- Rule type: Practice
-- Maturity level: Experimental
-- Quick fix: ✅
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
 
 **Consider** replace `void Function()` with `VoidCallback` which is defined in Flutter SDK.
 
@@ -125,10 +125,10 @@ final VoidCallback callback;
 
 #### fixed_text_scale_rich_text
 
-- Target SDK: Any versions nilts supports
-- Rule type: Practice
-- Maturity level: Experimental
-- Quick fix: ✅
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
 
 **Consider** using `Text.rich` or adding `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above) argument to [RichText] constructor to make the text size responsive for user setting.  
 
@@ -177,10 +177,10 @@ See also:
 
 #### flaky_tests_with_set_up_all
 
-- Target SDK: Any versions nilts supports
-- Rule type: Practice
-- Maturity level: Experimental
-- Quick fix: ✅
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
 
 **Consider** using `setUp` function or initialization on top level or body of test group.
 `setUpAll` may cause flaky tests with concurrency executions.
@@ -218,10 +218,10 @@ See also:
 
 #### no_support_multi_text_direction
 
-- Target SDK: Any versions nilts supports
-- Rule type: Practice
-- Maturity level: Experimental
-- Quick fix: ✅
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
 
 **Consider** using `TextDirection` aware configurations if your application supports different `TextDirection` languages.
 
@@ -281,10 +281,10 @@ See also:
 
 #### shrink_wrapped_scroll_view
 
-- Target SDK: Any versions nilts supports
-- Rule type: Practice
-- Maturity level: Experimental
-- Quick fix: ✅
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
 
 **Consider** removing `shrinkWrap` argument and update the Widget not to shrink wrap.  
 Shrink wrapping the content of the scroll view is significantly more expensive than expanding to the maximum allowed size because the content can expand and contract during scrolling, which means the size of the scroll view needs to be recomputed whenever the scroll position changes.
@@ -312,10 +312,10 @@ See also:
 
 #### unnecessary_rebuilds_from_media_query
 
-- Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
-- Rule type: Practice
-- Maturity level: Experimental
-- Quick fix: ✅
+- Target SDK     : >= Flutter 3.10.0 (Dart 3.0.0)
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
   
 **Prefer** using `MediaQuery.xxxOf` or `MediaQuery.maybeXxxOf` instead of `MediaQuery.of` or `MediaQuery.maybeOf` to avoid unnecessary rebuilds.
 

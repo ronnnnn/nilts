@@ -15,10 +15,10 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// [MediaQuery.of] or [MediaQuery.maybeOf] is used
 /// instead of `MediaQuery.xxxOf` or `MediaQuery.maybeXxxOf`.
 ///
-/// - Target SDK: >= Flutter 3.10.0 (Dart 3.0.0)
-/// - Rule type: Practice
-/// - Maturity level: Experimental
-/// - Quick fix: ✅
+/// - Target SDK     : >= Flutter 3.10.0 (Dart 3.0.0)
+/// - Rule type      : Practice
+/// - Maturity level : Experimental
+/// - Quick fix      : ✅
 ///
 /// Prefer using
 /// `MediaQuery.xxxOf` or `MediaQuery.maybeXxxOf`

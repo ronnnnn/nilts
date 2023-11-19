@@ -13,10 +13,10 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 ///
 /// This rule checks if [setUpAll] is used.
 ///
-/// - Target SDK: Any versions nilts supports
-/// - Rule type: Practice
-/// - Maturity level: Experimental
-/// - Quick fix: ✅
+/// - Target SDK     : Any versions nilts supports
+/// - Rule type      : Practice
+/// - Maturity level : Experimental
+/// - Quick fix      : ✅
 ///
 /// **Consider** using [setUp] function or
 /// initialization on top level or body of test group.
