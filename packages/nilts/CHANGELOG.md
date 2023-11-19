@@ -1,4 +1,14 @@
 
+# nilts-v0.9.0 (2023-11-19)
+
+## What's Changed
+* feat: no_support_multi_text_direction by @ronnnnn in https://github.com/ronnnnn/nilts/pull/62
+
+
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.8.0...nilts-v0.9.0
+
+---
+
 # nilts-v0.8.0 (2023-11-18)
 
 ## What's Changed
