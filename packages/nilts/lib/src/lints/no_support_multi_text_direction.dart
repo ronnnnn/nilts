@@ -6,6 +6,71 @@ import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
 import 'package:nilts/src/utils/library_element_ext.dart';
 
+/// A class for `no_support_multi_text_direction` rule.
+///
+/// This rule checks if supports `TextDirection` changes.
+///
+/// - Target SDK: Any versions nilts supports
+/// - Rule type: Practice
+/// - Maturity level: Experimental
+/// - Quick fix: ✅
+///
+/// **Consider** using `TextDirection` aware configurations if your application
+/// supports different `TextDirection` languages.
+///
+/// **BAD:**
+/// ```dart
+/// Align(
+///   alignment: Alignment.bottomLeft,
+/// )
+/// ```
+///
+/// **BAD:**
+/// ```dart
+/// Padding(
+///   padding: EdgeInsets.only(left: 16, right: 4),
+/// )
+/// ```
+///
+/// **BAD:**
+/// ```dart
+/// Positioned(left: 12, child: SizedBox())
+/// ```
+///
+/// **GOOD:**
+/// ```dart
+/// Align(
+///   alignment: AlignmentDirectional.bottomStart,
+/// )
+/// ```
+///
+/// **GOOD:**
+/// ```dart
+/// Padding(
+///   padding: EdgeInsetsDirectional.only(start: 16, end: 4),
+/// )
+/// ```
+///
+/// **GOOD:**
+/// ```dart
+/// Positioned.directional(
+///   start: 12,
+///   textDirection: TextDirection.ltr,
+///   child: SizedBox(),
+/// )
+///
+/// PositionedDirectional(
+///   start: 12,
+///   child: SizedBox(),
+/// )
+/// ```
+///
+/// See also:
+///
+/// - [TextDirection enum - dart:ui library - Dart API](https://api.flutter.dev/flutter/dart-ui/TextDirection.html)
+/// - [AlignmentDirectional class - painting library - Dart API](https://api.flutter.dev/flutter/painting/AlignmentDirectional-class.html)
+/// - [EdgeInsetsDirectional class - painting library - Dart API](https://api.flutter.dev/flutter/painting/EdgeInsetsDirectional-class.html)
+/// - [PositionedDirectional class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/PositionedDirectional-class.html)
 class NoSupportMultiTextDirection extends DartLintRule {
   /// Create a new instance of [NoSupportMultiTextDirection].
   const NoSupportMultiTextDirection() : super(code: _code);
