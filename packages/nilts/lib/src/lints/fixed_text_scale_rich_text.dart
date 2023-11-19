@@ -12,10 +12,10 @@ import 'package:nilts/src/utils/library_element_ext.dart';
 /// This rule checks if `textScaler` or `textScaleFactor` are missing in
 /// [RichText] constructor.
 ///
-/// - Target SDK: Any versions nilts supports
-/// - Rule type: Practice
-/// - Maturity level: Experimental
-/// - Quick fix: ✅
+/// - Target SDK     : Any versions nilts supports
+/// - Rule type      : Practice
+/// - Maturity level : Experimental
+/// - Quick fix      : ✅
 ///
 /// **Consider** using `Text.rich` or adding
 /// `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above)
