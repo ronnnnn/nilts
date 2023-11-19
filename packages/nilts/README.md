@@ -91,12 +91,13 @@ Some of lint rules support quick fixes on IDE.
 ### Overview
 
 | Rule name                                                                           | Overview                                                                       |           Target SDK           | Rule type | Maturity level | Quick fix |
-|:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:------------------------------:| :--: |:--------------:| :--: |
-| [defined\_void\_callback\_type](#defined_void_callback_type)                        | Checks `void Function()` definitions.                                          |  Any versions nilts supports   | Practice |  Experimental  | ✅️ |
-| [fixed\_text\_scale\_rich\_text](#fixed_text_scale_rich_text)                       | Checks usage of `textScaler` or `textScaleFactor` in `RichText` constructor.   |  Any versions nilts supports   | Practice |  Experimental  | ✅️ |
-| [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all)                    | Checks `setUpAll` usages.                                                      |  Any versions nilts supports   | Practice |  Experimental  | ✅️ |
-| [shrink\_wrapped\_scroll\_view](#shrink_wrapped_scroll_view)                        | Checks the content of the scroll view is shrink wrapped.                       | Any versions nilts supports    | Practice |  Experimental  | ✅️ |
-| [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice |  Experimental  | ✅️ |
+|:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:------------------------------:| :-------: |:--------------:|:---------:|
+| [defined\_void\_callback\_type](#defined_void_callback_type)                        | Checks `void Function()` definitions.                                          |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [fixed\_text\_scale\_rich\_text](#fixed_text_scale_rich_text)                       | Checks usage of `textScaler` or `textScaleFactor` in `RichText` constructor.   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all)                    | Checks `setUpAll` usages.                                                      |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [no\_support\_multi\_text\_direction](#no_support_multi_text_direction)             | Checks if supports `TextDirection` changes                                     |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [shrink\_wrapped\_scroll\_view](#shrink_wrapped_scroll_view)                        | Checks the content of the scroll view is shrink wrapped.                       |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice  |  Experimental  |    ✅️     |
 
 ### Details
 
@@ -215,6 +216,69 @@ See also:
 - [setUpAll function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUpAll.html)
 - [setUp function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUp.html)
 
+#### no_support_multi_text_direction
+
+- Target SDK: Any versions nilts supports
+- Rule type: Practice
+- Maturity level: Experimental
+- Quick fix: ✅
+
+**Consider** using `TextDirection` aware configurations if your application supports different `TextDirection` languages.
+
+**BAD:**
+```dart
+Align(
+  alignment: Alignment.bottomLeft,
+)
+```
+
+**BAD:**
+```dart
+Padding(
+  padding: EdgeInsets.only(left: 16, right: 4),
+)
+```
+
+**BAD:**
+```dart
+Positioned(left: 12, child: SizedBox())
+```
+
+**GOOD:**
+```dart
+Align(
+  alignment: AlignmentDirectional.bottomStart,
+)
+```
+
+**GOOD:**
+```dart
+Padding(
+  padding: EdgeInsetsDirectional.only(start: 16, end: 4),
+)
+```
+
+**GOOD:**
+```dart
+Positioned.directional(
+  start: 12,
+  textDirection: TextDirection.ltr,
+  child: SizedBox(),
+)
+
+PositionedDirectional(
+  start: 12,
+  child: SizedBox(),
+)
+```
+
+See also:
+
+- [TextDirection enum - dart:ui library - Dart API](https://api.flutter.dev/flutter/dart-ui/TextDirection.html)
+- [AlignmentDirectional class - painting library - Dart API](https://api.flutter.dev/flutter/painting/AlignmentDirectional-class.html)
+- [EdgeInsetsDirectional class - painting library - Dart API](https://api.flutter.dev/flutter/painting/EdgeInsetsDirectional-class.html)
+- [PositionedDirectional class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/PositionedDirectional-class.html)
+
 #### shrink_wrapped_scroll_view
 
 - Target SDK: Any versions nilts supports
@@ -288,9 +352,9 @@ Upcoming... 🚀
 Priorities of quick fixes are not reflected on IntelliJ IDEA and Android Studio.  
 VS Code is supported to list with these priorities.
 
-| VS Code | IntelliJ IDEA / Android Studio |
-| -- | -- |
-| <img width="500" alt="VS Code" src="https://github.com/ronnnnn/nilts/assets/12420269/b756c354-00f1-42f6-9fde-eaffce255811"/> | <img width="500" alt="IntelliJ IDEA / Android Studio" src="https://github.com/ronnnnn/nilts/assets/12420269/99a1032b-db40-4376-8345-c5e960f156a2"/> |
+|                                                           VS Code                                                            |                                                            IntelliJ IDEA / Android Studio                                                             |
+|:----------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------:|
+| <img width="500" alt="VS Code" src="https://github.com/ronnnnn/nilts/assets/12420269/b756c354-00f1-42f6-9fde-eaffce255811"/> |  <img width="500" alt="IntelliJ IDEA / Android Studio" src="https://github.com/ronnnnn/nilts/assets/12420269/99a1032b-db40-4376-8345-c5e960f156a2"/>  |
 
 See also:
 

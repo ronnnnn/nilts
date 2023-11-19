@@ -17,8 +17,20 @@ class ChangePriority {
   /// The priority for [_RemoveShrinkWrap].
   static const int removeShrinkWrap = 100;
 
+  /// The priority for [_ReplaceWithAlignmentDirectional].
+  static const int replaceWithAlignmentDirectional = 100;
+
+  /// The priority for [_ReplaceWithEdgeInsetsDirectional].
+  static const int replaceWithEdgeInsetsDirectional = 100;
+
   /// The priority for [_ReplaceWithMediaQueryXxxOf].
   static const int replaceWithMediaQueryXxxOf = 100;
+
+  /// The priority for [_ReplaceWithPositionedDirectional].
+  static const int replaceWithPositionedDirectional = 90;
+
+  /// The priority for [_ReplaceWithPositionedDirectionalClass].
+  static const int replaceWithPositionedDirectionalClass = 100;
 
   /// The priority for [_ReplaceWithSetUp].
   static const int replaceWithSetUp = 100;
