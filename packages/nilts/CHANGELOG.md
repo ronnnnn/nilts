@@ -1,3 +1,12 @@
+# nilts-v0.9.0+1 (2023-11-19)
+
+## What's Changed
+* docs: format docs by @ronnnnn in https://github.com/ronnnnn/nilts/pull/63
+
+
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.9.0...nilts-v0.9.0+1
+
+---
 
 # nilts-v0.9.0 (2023-11-19)
 
