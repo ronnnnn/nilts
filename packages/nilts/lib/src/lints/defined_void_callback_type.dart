@@ -43,6 +43,7 @@ class DefinedVoidCallbackType extends DartLintRule {
     ErrorReporter reporter,
     CustomLintContext context,
   ) {
+    // For VoidCallback.
     context.registry.addTypeAnnotation((node) {
       final type = node.type;
       // Do nothing if the type is not Function.
@@ -54,6 +55,125 @@ class DefinedVoidCallbackType extends DartLintRule {
       // Do nothing if the return type is not void.
       final returnType = type.returnType;
       if (returnType is! VoidType) return;
+
+      reporter.reportErrorForNode(_code, node);
+    });
+
+    // For ValueChanged and ValueSetter.
+    context.registry.addTypeAnnotation((node) {
+      final type = node.type;
+      // Do nothing if the type is not Function.
+      if (type is! FunctionType) return;
+
+      // Do nothing if Function don't have a parameter.
+      if (type.parameters.length != 1) return;
+
+      // Do nothing if the return type is not void.
+      final returnType = type.returnType;
+      if (returnType is! VoidType) return;
+
+      reporter.reportErrorForNode(_code, node);
+    });
+
+    // For ValueGetter.
+    context.registry.addTypeAnnotation((node) {
+      final type = node.type;
+      // Do nothing if the type is not Function.
+      if (type is! FunctionType) return;
+
+      // Do nothing if Function has parameters.
+      if (type.parameters.isNotEmpty) return;
+
+      // Do nothing if the return type is invalid or never.
+      final returnType = type.returnType;
+      if (returnType is InvalidType || returnType is NeverType) return;
+
+      reporter.reportErrorForNode(_code, node);
+    });
+
+    // For IterableFilter.
+    context.registry.addTypeAnnotation((node) {
+      final type = node.type;
+      // Do nothing if the type is not Function.
+      if (type is! FunctionType) return;
+
+      // Do nothing if Function don't have a parameter.
+      if (type.parameters.length != 1) return;
+      // Do nothing if Function don't have a iterable parameter.
+      final parameter = type.parameters.first;
+      if (!parameter.type.isDartCoreIterable) return;
+
+      // Do nothing if the return type is not iterable.
+      final returnType = type.returnType;
+      if (!returnType.isDartCoreIterable) return;
+
+      // Do nothing if the parameter type and return type are not same.
+      if ((parameter.type as ParameterizedType).typeArguments.first.element !=
+          (returnType as ParameterizedType).typeArguments.first.element) return;
+
+      reporter.reportErrorForNode(_code, node);
+    });
+
+    // For AsyncCallback.
+    context.registry.addTypeAnnotation((node) {
+      final type = node.type;
+      // Do nothing if the type is not Function.
+      if (type is! FunctionType) return;
+
+      // Do nothing if Function has parameters.
+      if (type.parameters.isNotEmpty) return;
+
+      // Do nothing if the return type is not future.
+      final returnType = type.returnType;
+      if (!returnType.isDartAsyncFuture) return;
+
+      // Do nothing if the return generics type is not void.
+      final returnParameterizedType =
+          (returnType as ParameterizedType).typeArguments.first;
+      if (returnParameterizedType is! VoidType) return;
+
+      reporter.reportErrorForNode(_code, node);
+    });
+
+    // For AsyncValueSetter.
+    context.registry.addTypeAnnotation((node) {
+      final type = node.type;
+      // Do nothing if the type is not Function.
+      if (type is! FunctionType) return;
+
+      // Do nothing if Function don't have a parameter.
+      if (type.parameters.length != 1) return;
+
+      // Do nothing if the return type is not future.
+      final returnType = type.returnType;
+      if (!returnType.isDartAsyncFuture) return;
+
+      // Do nothing if the return generics type is not void.
+      final returnParameterizedType =
+          (returnType as ParameterizedType).typeArguments.first;
+      if (returnParameterizedType is! VoidType) return;
+
+      reporter.reportErrorForNode(_code, node);
+    });
+
+    // For AsyncValueGetter.
+    context.registry.addTypeAnnotation((node) {
+      final type = node.type;
+      // Do nothing if the type is not Function.
+      if (type is! FunctionType) return;
+
+      // Do nothing if Function has parameters.
+      if (type.parameters.isNotEmpty) return;
+
+      // Do nothing if the return type is not future.
+      final returnType = type.returnType;
+      if (!returnType.isDartAsyncFuture) return;
+
+      // Do nothing if the return generics type is invalid or never.
+      final returnParameterizedType =
+          (returnType as ParameterizedType).typeArguments.first;
+      if (returnParameterizedType is InvalidType ||
+          returnParameterizedType is NeverType) return;
 
       reporter.reportErrorForNode(_code, node);
     });
