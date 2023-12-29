@@ -1,18 +1,15 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base",
-    "group:monorepos",
+    "config:best-practices",
     ":semanticCommits",
     ":semanticCommitTypeAll(upgrade)",
-    ":semanticCommitScopeDisabled"
+    ":semanticCommitScopeDisabled",
+    "schedule:daily"
   ],
   "timezone": "Asia/Tokyo",
   "labels": ["dep"],
-  "schedule": ["before 9am"],
   "branchPrefix": "upgrade-renovate-",
-  "dependencyDashboard": false,
-  "ignorePaths": [".github/"],
   "major": {
     "stabilityDays": 5
   },
