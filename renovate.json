@@ -11,13 +11,13 @@
   "labels": ["dep"],
   "branchPrefix": "upgrade-renovate-",
   "major": {
-    "stabilityDays": 5
+    "minimumReleaseAge": "5 days"
   },
   "minor": {
-    "stabilityDays": 3
+    "minimumReleaseAge": "3 days"
   },
   "patch": {
-    "stabilityDays": 2
+    "minimumReleaseAge": "2 days"
   },
   "assignees": ["@ronnnnn"],
   "assigneesSampleSize": 1
