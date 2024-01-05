@@ -19,7 +19,7 @@ runs:
       with:
         cmd: yq '.dev_dependencies.melos' './pubspec.yaml'
     - name: Download Melos and bootstrap
-      uses: bluefireteam/melos-action@dd3c344d731938d2ab2567a261f54a19a68b5f6a # v2
+      uses: bluefireteam/melos-action@334ecf69189b746dc5bbad895c3d163256b4bc25 # v2
       with:
         melos-version: ${{ steps.melos.outputs.result }}
         run-bootstrap: true
