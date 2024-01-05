@@ -14,7 +14,7 @@ jobs:
       pull-requests: write
     timeout-minutes: 5
     steps:
-      - uses: actions/github-script@v6
+      - uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
         with:
           script: |
             const assignees = context.payload.pull_request.assignees
