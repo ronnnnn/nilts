@@ -8,7 +8,7 @@ runs:
       uses: wasabeef/import-asdf-tool-versions-action@396ae6da83370122ec5fbcc4b5fc994239b214b6 # v1.0.1
       id: versions
     - name: Download and cache Flutter SDK
-      uses: subosito/flutter-action@48cafc24713cca54bbe03cdc3a423187d413aafa # v2.10.0
+      uses: subosito/flutter-action@2783a3f08e1baf891508463f8c6653c258246225 # v2.12.0
       with:
         channel: stable
         flutter-version: ${{ steps.versions.outputs.flutter }}
