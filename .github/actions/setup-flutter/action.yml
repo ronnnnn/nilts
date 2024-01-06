@@ -15,7 +15,7 @@ runs:
         cache: true
     - name: Extract Melos version from pubspec
       id: melos
-      uses: mikefarah/yq@0b34c9a00de1c575a34eea05af1d956a525c4fc1 # v4.34.2
+      uses: mikefarah/yq@dd648994340a5d03225d97abf19c9bf1086c3f07 # v4.40.5
       with:
         cmd: yq '.dev_dependencies.melos' './pubspec.yaml'
     - name: Download Melos and bootstrap
