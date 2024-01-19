@@ -15,6 +15,9 @@ ide:
   vscode: true
 
 command:
+  bootstrap:
+    enforceLockfile: true
+
   version:
     message: |
       release: publish packages
