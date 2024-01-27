@@ -17,6 +17,7 @@ import 'package:nilts/src/change_priority.dart';
 ///
 /// **Consider** replace `void Function(T value)` with [ValueChanged]
 /// which is defined in Flutter SDK.
+/// If the value has been set, use [ValueSetter] instead.
 ///
 /// **BAD:**
 /// ```dart
@@ -27,6 +28,11 @@ import 'package:nilts/src/change_priority.dart';
 /// ```dart
 /// final ValueChanged<int> callback;
 /// ```
+///
+/// See also:
+///
+/// - [ValueChanged typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueChanged.html)
+/// - [ValueSetter typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueSetter.html)
 class DefinedValueChangedType extends _DefinedValueCallbackType {
   /// Create a new instance of [DefinedValueChangedType].
   const DefinedValueChangedType() : super(_code);
@@ -54,6 +60,7 @@ class DefinedValueChangedType extends _DefinedValueCallbackType {
 ///
 /// **Consider** replace `void Function(T value)` with [ValueSetter]
 /// which is defined in Flutter SDK.
+/// If the value has changed, use [ValueChanged] instead.
 ///
 /// **BAD:**
 /// ```dart
@@ -64,6 +71,11 @@ class DefinedValueChangedType extends _DefinedValueCallbackType {
 /// ```dart
 /// final ValueSetter<int> callback;
 /// ```
+///
+/// See also:
+///
+///   - [ValueSetter typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueSetter.html)
+///   - [ValueChanged typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueChanged.html)
 class DefinedValueSetterType extends _DefinedValueCallbackType {
   /// Create a new instance of [DefinedValueSetterType].
   const DefinedValueSetterType() : super(_code);
