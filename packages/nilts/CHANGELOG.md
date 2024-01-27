@@ -1,3 +1,36 @@
+# nilts-v0.10.0 (2024-01-27)
+
+## What's Changed
+* upgrade: melos 3.2.0 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/64
+* upgrade: update kotlin monorepo to v1.9.21 by @renovate in https://github.com/ronnnnn/nilts/pull/65
+* upgrade: update dependency dart to v3.2.2 by @renovate in https://github.com/ronnnnn/nilts/pull/58
+* upgrade: update dependency flutter to v3.16.2 by @renovate in https://github.com/ronnnnn/nilts/pull/66
+* upgrade: update dependency dart to v3.2.3 by @renovate in https://github.com/ronnnnn/nilts/pull/67
+* upgrade: update dependency flutter to v3.16.3 by @renovate in https://github.com/ronnnnn/nilts/pull/68
+* upgrade: update dependency flutter to v3.16.4 by @renovate in https://github.com/ronnnnn/nilts/pull/69
+* upgrade: update dependency flutter to v3.16.5 by @renovate in https://github.com/ronnnnn/nilts/pull/71
+* upgrade: update kotlin monorepo to v1.9.22 by @renovate in https://github.com/ronnnnn/nilts/pull/72
+* upgrade: renovate reconfigure by @ronnnnn in https://github.com/ronnnnn/nilts/pull/73
+* upgrade: pin dependencies by @renovate in https://github.com/ronnnnn/nilts/pull/74
+* upgrade: update bluefireteam/melos-action digest to 334ecf6 by @renovate in https://github.com/ronnnnn/nilts/pull/75
+* upgrade: update mikefarah/yq action to v4.40.5 by @renovate in https://github.com/ronnnnn/nilts/pull/76
+* upgrade: update subosito/flutter-action action to v2.12.0 by @renovate in https://github.com/ronnnnn/nilts/pull/77
+* upgrade: update actions/checkout action to v4 by @renovate in https://github.com/ronnnnn/nilts/pull/78
+* upgrade: update actions/github-script action to v7 by @renovate in https://github.com/ronnnnn/nilts/pull/79
+* upgrade: update bluefireteam/melos-action action to v3 by @renovate in https://github.com/ronnnnn/nilts/pull/80
+* upgrade: bump up flutter and dart by @ronnnnn in https://github.com/ronnnnn/nilts/pull/83
+* clean: remove pr-review workflow by @ronnnnn in https://github.com/ronnnnn/nilts/pull/84
+* update: Renovate reconfigure by @ronnnnn in https://github.com/ronnnnn/nilts/pull/85
+* upgrade: melos 4.0.0 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/86
+* upgrade: update dependency dart to v3.2.6 by @renovate in https://github.com/ronnnnn/nilts/pull/70
+* upgrade: update dependency flutter to v3.16.9 by @renovate in https://github.com/ronnnnn/nilts/pull/81
+* feat: defined_value_changed_type and defined_value_setter_type by @ronnnnn in https://github.com/ronnnnn/nilts/pull/87
+
+
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.9.0+1...nilts-v0.10.0
+
+---
+
 # nilts-v0.9.0+1 (2023-11-19)
 
 ## What's Changed
