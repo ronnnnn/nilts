@@ -38,6 +38,12 @@ class ChangePriority {
   /// The priority for [_ReplaceWithTextRich].
   static const int replaceWithTextRich = 100;
 
+  /// The priority for [_ReplaceWithValueChanged].
+  static const int replaceWithValueChanged = 100;
+
+  /// The priority for [_ReplaceWithValueSetter].
+  static const int replaceWithValueSetter = 100;
+
   /// The priority for [_ReplaceWithVoidCallback].
   static const int replaceWithVoidCallback = 100;
 

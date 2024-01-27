@@ -92,6 +92,8 @@ Some of lint rules support quick fixes on IDE.
 
 | Rule name                                                                           | Overview                                                                       |           Target SDK           | Rule type | Maturity level | Quick fix |
 |:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:------------------------------:| :-------: |:--------------:|:---------:|
+| [defined\_value\_changed\_type](#defined_value_changed_type)                        | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [defined\_value\_setter\_type](#defined_value_setter_type)                          | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_void\_callback\_type](#defined_void_callback_type)                        | Checks `void Function()` definitions.                                          |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [fixed\_text\_scale\_rich\_text](#fixed_text_scale_rich_text)                       | Checks usage of `textScaler` or `textScaleFactor` in `RichText` constructor.   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all)                    | Checks `setUpAll` usages.                                                      |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
@@ -101,7 +103,67 @@ Some of lint rules support quick fixes on IDE.
 
 ### Details
 
+#### defined_value_changed_type
+
+<details>
+
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
+
+**Consider** replace `void Function(T value)` with [ValueChanged] which is defined in Flutter SDK.  
+If the value has been set, use [ValueSetter] instead.
+
+**BAD:**
+```dart
+final void Function(int value) callback;
+```
+
+**GOOD:**
+```dart
+final ValueChanged<int> callback;
+```
+
+See also:
+
+- [ValueChanged typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueChanged.html)
+- [ValueSetter typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueSetter.html)
+
+</details>
+
+#### defined_value_setter_type
+
+<details>
+
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
+
+**Consider** replace `void Function(T value)` with [ValueSetter] which is defined in Flutter SDK.  
+If the value has changed, use [ValueChanged] instead.
+
+**BAD:**
+```dart
+final void Function(int value) callback;
+```
+
+**GOOD:**
+```dart
+final ValueSetter<int> callback;
+```
+
+See also:
+
+- [ValueSetter typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueSetter.html)
+- [ValueChanged typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueChanged.html)
+
+</details>
+
 #### defined_void_callback_type
+
+<details>
 
 - Target SDK     : Any versions nilts supports
 - Rule type      : Practice
@@ -123,7 +185,15 @@ final void Function() callback;
 final VoidCallback callback;
 ```
 
+See also:
+
+- [VoidCallback typedef - dart:ui library - Dart API](https://api.flutter.dev/flutter/dart-ui/VoidCallback.html)
+
+</details>
+
 #### fixed_text_scale_rich_text
+
+<details>
 
 - Target SDK     : Any versions nilts supports
 - Rule type      : Practice
@@ -175,7 +245,11 @@ See also:
 - [Text.rich constructor - Text - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/Text/Text.rich.html)
 - [RichText class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/RichText-class.html)
 
+</details>
+
 #### flaky_tests_with_set_up_all
+
+<details>
 
 - Target SDK     : Any versions nilts supports
 - Rule type      : Practice
@@ -216,7 +290,11 @@ See also:
 - [setUpAll function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUpAll.html)
 - [setUp function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUp.html)
 
+</details>
+
 #### no_support_multi_text_direction
+
+<details>
 
 - Target SDK     : Any versions nilts supports
 - Rule type      : Practice
@@ -279,7 +357,11 @@ See also:
 - [EdgeInsetsDirectional class - painting library - Dart API](https://api.flutter.dev/flutter/painting/EdgeInsetsDirectional-class.html)
 - [PositionedDirectional class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/PositionedDirectional-class.html)
 
+</details>
+
 #### shrink_wrapped_scroll_view
+
+<details>
 
 - Target SDK     : Any versions nilts supports
 - Rule type      : Practice
@@ -310,7 +392,11 @@ See also:
 - [shrinkWrap property - ScrollView class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/ScrollView/shrinkWrap.html)
 - [ShrinkWrap vs Slivers | Decoding Flutter - YouTube](https://youtu.be/LUqDNnv_dh0)
 
+</details>
+
 #### unnecessary_rebuilds_from_media_query
+
+<details>
 
 - Target SDK     : >= Flutter 3.10.0 (Dart 3.0.0)
 - Rule type      : Practice
@@ -341,6 +427,8 @@ See also:
 
 - [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
 - [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
+
+</details>
 
 ## Assists
 

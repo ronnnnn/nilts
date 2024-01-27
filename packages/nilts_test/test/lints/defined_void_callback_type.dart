@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_function_declarations_over_variables
 // ignore_for_file: type_init_formals
 // ignore_for_file: unused_element
+// ignore_for_file: defined_value_changed_type
+// ignore_for_file: defined_value_setter_type
 
 import 'package:flutter/material.dart';
 
