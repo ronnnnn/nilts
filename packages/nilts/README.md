@@ -113,8 +113,8 @@ Some of lint rules support quick fixes on IDE.
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** replace `void Function(T value)` with [ValueChanged] which is defined in Flutter SDK.  
-If the value has been set, use [ValueSetter] instead.
+**Consider** replace `void Function(T value)` with `ValueChanged` which is defined in Flutter SDK.  
+If the value has been set, use `ValueSetter` instead.
 
 **BAD:**
 ```dart
@@ -142,7 +142,7 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** replace `T Function()` with [ValueGetter] which is defined in Flutter SDK.
+**Consider** replace `T Function()` with `ValueGetter` which is defined in Flutter SDK.
 
 **BAD:**
 ```dart
@@ -169,8 +169,8 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** replace `void Function(T value)` with [ValueSetter] which is defined in Flutter SDK.  
-If the value has changed, use [ValueChanged] instead.
+**Consider** replace `void Function(T value)` with `ValueSetter` which is defined in Flutter SDK.  
+If the value has changed, use `ValueChanged` instead.
 
 **BAD:**
 ```dart
@@ -228,7 +228,7 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** using `Text.rich` or adding `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above) argument to [RichText] constructor to make the text size responsive for user setting.  
+**Consider** using `Text.rich` or adding `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above) argument to `RichText` constructor to make the text size responsive for user setting.  
 
 **BAD:**
 ```dart
