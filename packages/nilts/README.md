@@ -93,6 +93,7 @@ Some of lint rules support quick fixes on IDE.
 | Rule name                                                                           | Overview                                                                       |           Target SDK           | Rule type | Maturity level | Quick fix |
 |:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:------------------------------:| :-------: |:--------------:|:---------:|
 | [defined\_value\_changed\_type](#defined_value_changed_type)                        | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [defined\_value\_getter\_type](#defined_value_getter_type)                          | Checks `T Function()` definitions.                                             |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_value\_setter\_type](#defined_value_setter_type)                          | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_void\_callback\_type](#defined_void_callback_type)                        | Checks `void Function()` definitions.                                          |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [fixed\_text\_scale\_rich\_text](#fixed_text_scale_rich_text)                       | Checks usage of `textScaler` or `textScaleFactor` in `RichText` constructor.   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
@@ -112,8 +113,8 @@ Some of lint rules support quick fixes on IDE.
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** replace `void Function(T value)` with [ValueChanged] which is defined in Flutter SDK.  
-If the value has been set, use [ValueSetter] instead.
+**Consider** replace `void Function(T value)` with `ValueChanged` which is defined in Flutter SDK.  
+If the value has been set, use `ValueSetter` instead.
 
 **BAD:**
 ```dart
@@ -132,6 +133,33 @@ See also:
 
 </details>
 
+#### defined_value_getter_type
+
+<details>
+
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
+
+**Consider** replace `T Function()` with `ValueGetter` which is defined in Flutter SDK.
+
+**BAD:**
+```dart
+final int Function() callback;
+```
+
+**GOOD:**
+```dart
+final ValueGetter<int> callback;
+```
+
+See also:
+
+- [ValueGetter typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueGetter.html)
+
+</details>
+
 #### defined_value_setter_type
 
 <details>
@@ -141,8 +169,8 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** replace `void Function(T value)` with [ValueSetter] which is defined in Flutter SDK.  
-If the value has changed, use [ValueChanged] instead.
+**Consider** replace `void Function(T value)` with `ValueSetter` which is defined in Flutter SDK.  
+If the value has changed, use `ValueChanged` instead.
 
 **BAD:**
 ```dart
@@ -200,7 +228,7 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** using `Text.rich` or adding `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above) argument to [RichText] constructor to make the text size responsive for user setting.  
+**Consider** using `Text.rich` or adding `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above) argument to `RichText` constructor to make the text size responsive for user setting.  
 
 **BAD:**
 ```dart

@@ -3,42 +3,48 @@
 // ignore_for_file: unused_element
 // ignore_for_file: defined_value_changed_type
 // ignore_for_file: defined_value_setter_type
-// ignore_for_file: defined_value_getter_type
+// ignore_for_file: defined_void_callback_type
 
 import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton(
-    // expect_lint: defined_void_callback_type
-    void Function() this.onPressed, {
-    // expect_lint: defined_void_callback_type
+    void Function() this.onPressed,
+    // expect_lint: defined_value_getter_type
+    int Function() this.onReturnPressed, {
     void Function()? this.onNullablePressed,
     void Function(int)? this.onParamPressed,
-    int Function()? this.onNotVoidPressed,
+    // expect_lint: defined_value_getter_type
+    int Function()? this.onNullableReturnPressed,
     super.key,
   });
 
-  // expect_lint: defined_void_callback_type
   final void Function() onPressed;
-  // expect_lint: defined_void_callback_type
+  // expect_lint: defined_value_getter_type
+  final int Function() onReturnPressed;
   final void Function()? onNullablePressed;
   final void Function(int)? onParamPressed;
-  final int Function()? onNotVoidPressed;
+  // expect_lint: defined_value_getter_type
+  final int Function()? onNullableReturnPressed;
 
   void _onPressed(
-    // expect_lint: defined_void_callback_type
-    void Function() onPressed, {
-    // expect_lint: defined_void_callback_type
+    void Function() onPressed,
+    // expect_lint: defined_value_getter_type
+    int Function() onReturnPressed, {
     void Function()? onNullablePressed,
     void Function(int)? onParamPressed,
-    int Function()? onNotVoidPressed,
+    // expect_lint: defined_value_getter_type
+    int Function()? onNullableReturnPressed,
   }) {}
 
   @override
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: () {
-        _onPressed(() {});
+        _onPressed(
+          () {},
+          () => 0,
+        );
         onPressed();
       },
       child: const Text('Hello World!'),
@@ -46,18 +52,20 @@ class MainButton extends StatelessWidget {
   }
 }
 
-// expect_lint: defined_void_callback_type
 final void Function() globalFunction = () {};
-// expect_lint: defined_void_callback_type
+// expect_lint: defined_value_getter_type
+final int Function() globalReturnFunction = () => 0;
 const void Function()? globalNullableFunction = null;
 const void Function(int)? globalParamFunction = null;
-const int Function()? globalNotVoidFunction = null;
+// expect_lint: defined_value_getter_type
+const int Function()? globalNullableReturnFunction = null;
 
 void _globalFunction(
-  // expect_lint: defined_void_callback_type
-  void Function() onPressed, {
-  // expect_lint: defined_void_callback_type
+  void Function() onPressed,
+  // expect_lint: defined_value_getter_type
+  int Function() onReturnPressed, {
   void Function()? onNullablePressed,
   void Function(int)? onParamPressed,
-  int Function()? onNotVoidPressed,
+  // expect_lint: defined_value_getter_type
+  int Function()? onNullableReturnPressed,
 }) {}
