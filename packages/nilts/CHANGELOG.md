@@ -1,3 +1,13 @@
+# nilts-v0.11.0 (2024-02-03)
+
+## What's Changed
+* feat: defined_value_getter_type by @ronnnnn in https://github.com/ronnnnn/nilts/pull/88
+
+
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.10.0...nilts-v0.11.0
+
+---
+
 # nilts-v0.10.0 (2024-01-27)
 
 ## What's Changed
