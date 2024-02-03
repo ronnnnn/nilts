@@ -2,6 +2,7 @@
 // ignore_for_file: type_init_formals
 // ignore_for_file: unused_element
 // ignore_for_file: defined_void_callback_type
+// ignore_for_file: defined_value_getter_type
 
 import 'package:flutter/material.dart';
 

@@ -93,6 +93,7 @@ Some of lint rules support quick fixes on IDE.
 | Rule name                                                                           | Overview                                                                       |           Target SDK           | Rule type | Maturity level | Quick fix |
 |:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:------------------------------:| :-------: |:--------------:|:---------:|
 | [defined\_value\_changed\_type](#defined_value_changed_type)                        | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [defined\_value\_getter\_type](#defined_value_getter_type)                          | Checks `T Function()` definitions.                                             |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_value\_setter\_type](#defined_value_setter_type)                          | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_void\_callback\_type](#defined_void_callback_type)                        | Checks `void Function()` definitions.                                          |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [fixed\_text\_scale\_rich\_text](#fixed_text_scale_rich_text)                       | Checks usage of `textScaler` or `textScaleFactor` in `RichText` constructor.   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
@@ -129,6 +130,33 @@ See also:
 
 - [ValueChanged typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueChanged.html)
 - [ValueSetter typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueSetter.html)
+
+</details>
+
+#### defined_value_getter_type
+
+<details>
+
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
+
+**Consider** replace `T Function()` with [ValueGetter] which is defined in Flutter SDK.
+
+**BAD:**
+```dart
+final int Function() callback;
+```
+
+**GOOD:**
+```dart
+final ValueGetter<int> callback;
+```
+
+See also:
+
+- [ValueGetter typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/ValueGetter.html)
 
 </details>
 

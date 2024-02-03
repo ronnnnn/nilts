@@ -41,6 +41,9 @@ class ChangePriority {
   /// The priority for [_ReplaceWithValueChanged].
   static const int replaceWithValueChanged = 100;
 
+  /// The priority for [_ReplaceWithValueGetter].
+  static const int replaceWithValueGetter = 100;
+
   /// The priority for [_ReplaceWithValueSetter].
   static const int replaceWithValueSetter = 100;
 

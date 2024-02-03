@@ -1,6 +1,7 @@
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/dart_version.dart';
 import 'package:nilts/src/lints/defined_value_callback_type.dart';
+import 'package:nilts/src/lints/defined_value_getter_type.dart';
 import 'package:nilts/src/lints/defined_void_callback_type.dart';
 import 'package:nilts/src/lints/fixed_text_scale_rich_text.dart';
 import 'package:nilts/src/lints/flaky_tests_with_set_up_all.dart';
@@ -19,6 +20,7 @@ class _NiltsLint extends PluginBase {
   @override
   List<LintRule> getLintRules(CustomLintConfigs configs) => [
         const DefinedValueChangedType(),
+        const DefinedValueGetterType(),
         const DefinedValueSetterType(),
         const DefinedVoidCallbackType(),
         if (_dartVersion >= const DartVersion(major: 3, minor: 2, patch: 0))
