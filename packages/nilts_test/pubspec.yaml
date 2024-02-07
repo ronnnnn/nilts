@@ -14,7 +14,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  custom_lint: ^0.5.2
+  custom_lint: ^0.6.0
   very_good_analysis: ^5.1.0
 
   nilts:
