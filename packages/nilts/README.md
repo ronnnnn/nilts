@@ -465,8 +465,8 @@ Upcoming... 🚀
 ## Known issues
 
 ### Quick fix priorities
-Priorities of quick fixes are not reflected on IntelliJ IDEA and Android Studio.  
-VS Code is supported to list with these priorities.
+The priorities assigned to quick fixes are not currently visible in IntelliJ IDEA and Android Studio due to the lack of support for `PrioritizedSourceChange` in these environments.  
+In contrast, VS Code does support this feature, allowing quick fixes to be listed along with their respective priorities.
 
 |                                                           VS Code                                                            |                                                            IntelliJ IDEA / Android Studio                                                             |
 |:----------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -475,6 +475,14 @@ VS Code is supported to list with these priorities.
 See also:
 
 - [IDEA-336551 Support PrioritizedSourceChange on quick fix.](https://youtrack.jetbrains.com/issue/IDEA-336551/Support-PrioritizedSourceChange-on-quick-fix.)
+
+### fix-all assist
+The fix-all assist feature has been introduced in [custom_lint_builder 0.6.0](https://github.com/invertase/dart_custom_lint/pull/223).  
+However, this feature is not yet supported in IntelliJ IDEA and Android Studio, owing to their current lack of support for `PrioritizedSourceChange`.
+
+|                                                             VS Code                                                             |                                                             IntelliJ IDEA / Android Studio                                                             |
+|:-------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| <video width="500" alt="VS Code" src="https://github.com/ronnnnn/nilts/assets/12420269/d07e7149-924d-4654-b21e-ef01c9825c7f" /> | <video width="500" alt="IntelliJ IDEA / Android Studio" src="https://github.com/ronnnnn/nilts/assets/12420269/8a09de85-2200-4c49-a92e-ed9e828eff34" /> |
 
 ## Feature requests
 
