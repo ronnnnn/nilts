@@ -1,30 +1,12 @@
-# Change Log
+# nilts-v0.12.0 (2024-02-10)
 
-All notable changes to nilts packages will be documented in this file.
+## What's Changed
+* upgrade: custom_lint and melos by @ronnnnn in https://github.com/ronnnnn/nilts/pull/91
 
-## 2024-02-10
 
-### Changes
-
----
-
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`nilts` - `v0.12.0`](#nilts---v0120)
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.11.0...nilts-v0.12.0
 
 ---
-
-#### `nilts` - `v0.12.0`
-
- - **DOCS**: CHANGELOG. ([1f81aef5](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/1f81aef567be1fd81dc8fc68627b30f2cfddfe15))
-
-## 0.12.0
-
- - **DOCS**: CHANGELOG. ([1f81aef5](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/1f81aef567be1fd81dc8fc68627b30f2cfddfe15))
 
 # nilts-v0.11.0 (2024-02-03)
 
