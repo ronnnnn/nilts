@@ -480,9 +480,9 @@ See also:
 The fix-all assist feature has been introduced in [custom_lint_builder 0.6.0](https://github.com/invertase/dart_custom_lint/pull/223).  
 However, this feature is not yet supported in IntelliJ IDEA and Android Studio, owing to their current lack of support for `PrioritizedSourceChange`.
 
-|                                                             VS Code                                                             |                                                             IntelliJ IDEA / Android Studio                                                             |
-|:-------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| <video width="500" alt="VS Code" src="https://github.com/ronnnnn/nilts/assets/12420269/d07e7149-924d-4654-b21e-ef01c9825c7f" /> | <video width="500" alt="IntelliJ IDEA / Android Studio" src="https://github.com/ronnnnn/nilts/assets/12420269/8a09de85-2200-4c49-a92e-ed9e828eff34" /> |
+|                                                            VS Code                                                            |                                                            IntelliJ IDEA / Android Studio                                                            |
+|:-----------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|
+| <img width="500" alt="VS Code" src="https://github.com/ronnnnn/nilts/assets/12420269/3d8f7d66-5325-4877-b1f9-eb246c8edd00" /> | <img width="500" alt="IntelliJ IDEA / Android Studio" src="https://github.com/ronnnnn/nilts/assets/12420269/ce76bbd3-719c-4bce-8f54-7dea04354b5e" /> |
 
 ## Feature requests
 
