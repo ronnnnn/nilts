@@ -105,3 +105,24 @@ scripts:
     packageFilters:
       scope: nilts_test
     description: test on nilts_test
+
+  build:example:
+    run: |
+      melos build:example:android && melos build:example:ios
+    packageFilters:
+      scope: nilts_example
+    description: build on nilts_example
+
+  build:example:android:
+    run: |
+      melos exec -- "flutter build appbundle"
+    packageFilters:
+      scope: nilts_example
+    description: build android on nilts_example
+
+  build:example:ios:
+    run: |
+      melos exec -- "flutter build ios --no-codesign"
+    packageFilters:
+      scope: nilts_example
+    description: build ios on nilts_example
