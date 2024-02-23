@@ -14,14 +14,14 @@ runs:
         flutter-version: ${{ steps.versions.outputs.flutter }}
         cache: true
     - name: Extract Melos version from pubspec
-      id: melos
-      uses: mikefarah/yq@047694546cad8f9eaac1627bbc8bcc502fdd88bf # v4.41.1
+      id: version
+      uses: pietrobolcato/action-read-yaml@9f13718d61111b69f30ab4ac683e67a56d254e1d # v1.1.0
       with:
-        cmd: yq '.dev_dependencies.melos' './pubspec.yaml'
+        config: ./pubspec.yaml
     - name: Download Melos and bootstrap
       uses: bluefireteam/melos-action@63916098bc0ef1e403907e419b61b284108d755e # v3
       with:
-        melos-version: ${{ steps.melos.outputs.result }}
+        melos-version: ${{ steps.version.outputs.outputs['dev_dependencies']['melos'] }}
         run-bootstrap: true
     - name: Install others
       shell: bash
