@@ -31,3 +31,29 @@ jobs:
         uses: ./.github/actions/setup-flutter
       - name: Test
         run: melos test
+
+  build_example_android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - name: Setup Java
+        uses: ./.github/actions/setup-java
+      - name: Setup Flutter
+        uses: ./.github/actions/setup-flutter
+      - name: Build example Android
+        run: melos build:example:android
+
+  build_example_ios:
+    runs-on: macos-14
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+      - name: Select Xcode
+        uses: ./.github/actions/select-xcode
+      - name: Setup Flutter
+        uses: ./.github/actions/setup-flutter
+      - name: Build example iOS
+        run: melos build:example:ios
