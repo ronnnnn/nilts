@@ -1,3 +1,19 @@
+# nilts-v0.12.1 (2024-02-24)
+
+## What's Changed
+* docs: replace videos to gifs by @ronnnnn in https://github.com/ronnnnn/nilts/pull/92
+* upgrade: update mikefarah/yq action to v4.40.7 by @renovate in https://github.com/ronnnnn/nilts/pull/93
+* upgrade: update mikefarah/yq action to v4.41.1 by @renovate in https://github.com/ronnnnn/nilts/pull/96
+* upgrade: flutter 3.19 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/97
+* upgrade: pin actions/setup-java action to 387ac29 by @renovate in https://github.com/ronnnnn/nilts/pull/98
+* upgrade: update dependency java to v11.0.22+7 by @renovate in https://github.com/ronnnnn/nilts/pull/99
+* fix: ignore defined_value_getter_type if return Future by @ronnnnn in https://github.com/ronnnnn/nilts/pull/100
+
+
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.12.0...nilts-v0.12.1
+
+---
+
 # nilts-v0.12.0 (2024-02-10)
 
 ## What's Changed
