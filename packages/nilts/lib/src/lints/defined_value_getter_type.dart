@@ -59,7 +59,8 @@ class DefinedValueGetterType extends DartLintRule {
       final returnType = type.returnType;
       if (returnType is VoidType ||
           returnType is InvalidType ||
-          returnType is NeverType) return;
+          returnType is NeverType ||
+          returnType.isDartAsyncFuture) return;
 
       reporter.reportErrorForNode(_code, node);
     });
