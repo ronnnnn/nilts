@@ -35,7 +35,7 @@ command:
 scripts:
   prepare:
     run: |
-      dart pub global activate custom_lint 0.5.3
+      dart pub global activate custom_lint 0.6.0
     description: install custom_lint
 
   get:
