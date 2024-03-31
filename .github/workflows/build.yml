@@ -17,9 +17,9 @@ jobs:
       - name: Setup Flutter
         uses: ./.github/actions/setup-flutter
       - name: Check format
-        run: melos pretty:check
+        run: melos pretty:dry
       - name: Analyze
-        run: melos analyze
+        run: melos check
 
   test:
     runs-on: ubuntu-latest

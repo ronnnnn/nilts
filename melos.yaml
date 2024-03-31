@@ -34,95 +34,86 @@ command:
 
 scripts:
   prepare:
-    run: |
-      dart pub global activate custom_lint 0.6.0
-    description: install custom_lint
+    run: dart pub global activate custom_lint 0.6.0
+    description: prepare for develop
 
   get:
-    run: |
-      melos exec -- "flutter pub get"
-    description: flutter pub get
+    exec: flutter pub get
+    description: pub get
 
-  analyze:
-    run: |
-      melos analyze:flutter
-      melos analyze:dart
-    description: melos analyze:flutter && melos analyze:dart
+  check:
+    steps:
+      - check:dart
+      - check:flutter
+      - check:custom_lint
+    description: check static analysis
 
-  analyze:flutter:
-    run: |
-      melos exec -- "flutter analyze --fatal-infos --fatal-warnings"
-      melos exec -- "flutter pub run custom_lint"
-    packageFilters:
-      flutter: true
-    description: flutter analyze --fatal-infos --fatal-warnings
-
-  analyze:dart:
-    run: |
-      melos exec -- "dart analyze --fatal-infos --fatal-warnings"
+  check:dart:
+    exec: dart analyze --fatal-infos --fatal-warnings
     packageFilters:
       scope: nilts
-    description: dart analyze --fatal-infos --fatal-warnings
+    description: check static analysis for dart
+
+  check:flutter:
+    exec: flutter analyze --fatal-infos --fatal-warnings
+    packageFilters:
+      scope: nilts_test
+    description: check static analysis for flutter
+
+  check:custom_lint:
+    exec: flutter pub run custom_lint
+    packageFilters:
+      scope: nilts_test
+    description: check static analysis with custom_lint
 
   pretty:
-    run: |
-      melos fix
-      melos format
-    description: melos fix && melos format
+    steps:
+      - fix
+      - pretty:dart
+    description: format
 
-  pretty:check:
-    run: |
-      melos fix:check
-      melos format:check
-    description: melos fix:check && melos format:check
+  pretty:dry:
+    steps:
+      - fix:dry
+      - pretty:dart:dry
+    description: format (dry-run)
 
-  format:
-    run: |
-      melos exec -- "dart format ."
-    description: dart format .
+  pretty:dart:
+    exec: dart format .
+    description: format dart
 
-  format:check:
-    run: |
-      melos exec -- "dart format --set-exit-if-changed ."
-    description: dart format --set-exit-if-changed .
+  pretty:dart:dry:
+    exec: dart format --set-exit-if-changed .
+    description: format dart (dry-run)
 
   fix:
-    run: |
-      melos exec -- "dart fix --apply"
-    description: dart fix --apply
+    exec: dart fix --apply
+    description: fix dart
 
-  fix:check:
-    run: |
-      melos exec -- "dart fix --dry-run"
-    description: dart fix --dry-run
+  fix:dry:
+    exec: dart fix --dry-run
+    description: fix dart (dry-run)
 
   test:
-    run: |
-      melos format:check
-      melos exec -- "flutter analyze --fatal-infos --fatal-warnings"
-      melos exec -- "flutter pub run custom_lint"
-      melos exec -- "flutter test"
+    exec: flutter test
     packageFilters:
       scope: nilts_test
     description: test on nilts_test
 
   build:example:
-    run: |
-      melos build:example:android && melos build:example:ios
-    packageFilters:
-      scope: nilts_example
+    steps:
+      - build:example:android
+      - build:example:ios
     description: build on nilts_example
 
   build:example:android:
-    run: |
-      melos exec -- "flutter build appbundle"
+    exec: flutter build appbundle
     packageFilters:
       scope: nilts_example
     description: build android on nilts_example
 
   build:example:ios:
-    run: |
-      melos exec -- "flutter build ios --no-codesign"
+    exec: flutter build ios --no-codesign
     packageFilters:
       scope: nilts_example
     description: build ios on nilts_example
