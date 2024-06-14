@@ -99,6 +99,7 @@ Some of lint rules support quick fixes on IDE.
 | [fixed\_text\_scale\_rich\_text](#fixed_text_scale_rich_text)                       | Checks usage of `textScaler` or `textScaleFactor` in `RichText` constructor.   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all)                    | Checks `setUpAll` usages.                                                      |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [no\_support\_multi\_text\_direction](#no_support_multi_text_direction)             | Checks if supports `TextDirection` changes.                                    |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [no\_support\_web\_platform\_check](#no_support_web_platform_check)                 | Checks if `Platform.isXxx` usages.                                             |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [shrink\_wrapped\_scroll\_view](#shrink_wrapped_scroll_view)                        | Checks the content of the scroll view is shrink wrapped.                       |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice  |  Experimental  |    ✅️     |
 
@@ -384,6 +385,37 @@ See also:
 - [AlignmentDirectional class - painting library - Dart API](https://api.flutter.dev/flutter/painting/AlignmentDirectional-class.html)
 - [EdgeInsetsDirectional class - painting library - Dart API](https://api.flutter.dev/flutter/painting/EdgeInsetsDirectional-class.html)
 - [PositionedDirectional class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/PositionedDirectional-class.html)
+
+</details>
+
+#### no_support_web_platform_check
+
+<details>
+
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
+
+Prefer using `defaultTargetPlatform` instead of `Platform` API if you want to know which platform your application is running on.
+This is because
+
+- `Platform` API throws a runtime exception on web application.
+- By combining `kIsWeb` and `defaultTargetPlatform`, you can accurately determine which platform your web application is running on.
+
+**BAD:**
+```dart
+bool get isIOS => !kIsWeb && Platform.isIOS;
+```
+
+**GOOD:**
+```dart
+bool get isIOS => !kIsWeb && defaultTargetPlatform == TargetPlatform.iOS;
+```
+
+See also:
+
+- [defaultTargetPlatform property - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/defaultTargetPlatform.html)
 
 </details>
 
