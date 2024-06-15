@@ -20,6 +20,9 @@ class ChangePriority {
   /// The priority for [_ReplaceWithAlignmentDirectional].
   static const int replaceWithAlignmentDirectional = 100;
 
+  /// The priority for [_ReplaceWithDefaultTargetPlatform].
+  static const int replaceWithDefaultTargetPlatform = 100;
+
   /// The priority for [_ReplaceWithEdgeInsetsDirectional].
   static const int replaceWithEdgeInsetsDirectional = 100;
 

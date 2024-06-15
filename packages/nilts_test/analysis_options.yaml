@@ -7,3 +7,6 @@ analyzer:
 linter:
   rules:
     public_member_api_docs: false
+
+custom_list:
+  debug: true
