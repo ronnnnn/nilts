@@ -1,3 +1,35 @@
+# Change Log
+
+All notable changes to nilts packages will be documented in this file.
+
+## 2024-06-15
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.13.0`](#nilts---v0130)
+
+---
+
+#### `nilts` - `v0.13.0`
+
+ - **FEAT**: no_support_web_platform_check ([#130](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/130)). ([672231d7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/672231d72157aa2d5d7c20d7f07344ab423030ef))
+ - **DOCS**: funding for pubspec ([#126](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/126)). ([c996d783](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/c996d783d26f0e4e1ce6b46ace27c1a2f78e70ab))
+ - **DOCS**: CHANGELOG. ([90d921e3](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/90d921e3312d360239a0b9c26849f53b3773eb66))
+
+## 0.13.0
+
+ - **FEAT**: no_support_web_platform_check ([#130](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/130)). ([672231d7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/672231d72157aa2d5d7c20d7f07344ab423030ef))
+ - **DOCS**: funding for pubspec ([#126](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/126)). ([c996d783](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/c996d783d26f0e4e1ce6b46ace27c1a2f78e70ab))
+ - **DOCS**: CHANGELOG. ([90d921e3](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/90d921e3312d360239a0b9c26849f53b3773eb66))
+
 # nilts-v0.12.1 (2024-02-24)
 
 ## What's Changed
