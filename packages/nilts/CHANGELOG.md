@@ -1,34 +1,34 @@
-# Change Log
+# nilts-v0.13.0 (2024-06-15)
 
-All notable changes to nilts packages will be documented in this file.
+## What's Changed
+* upgrade: update dependency flutter to v3.19.3 by @renovate in https://github.com/ronnnnn/nilts/pull/95
+* upgrade: update dependency dart to v3.3.1 by @renovate in https://github.com/ronnnnn/nilts/pull/105
+* upgrade: update subosito/flutter-action action to v2.13.0 by @renovate in https://github.com/ronnnnn/nilts/pull/104
+* upgrade: update bluefireteam/melos-action digest to cf34423 by @renovate in https://github.com/ronnnnn/nilts/pull/102
+* upgrade: update actions/setup-java digest to 9704b39 by @renovate in https://github.com/ronnnnn/nilts/pull/103
+* upgrade: agp and gradle by @ronnnnn in https://github.com/ronnnnn/nilts/pull/108
+* upgrade: update actions/setup-java digest to 99b8673 by @renovate in https://github.com/ronnnnn/nilts/pull/106
+* upgrade: update subosito/flutter-action action to v2.14.0 by @renovate in https://github.com/ronnnnn/nilts/pull/110
+* upgrade: flutter 3.19.5 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/112
+* upgrade: melos 5.2.2 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/113
+* upgrade: update subosito/flutter-action action to v2.16.0 by @renovate in https://github.com/ronnnnn/nilts/pull/114
+* upgrade: update dependency dart to v3.3.4 by @renovate in https://github.com/ronnnnn/nilts/pull/116
+* upgrade: update dependency java to v17.0.11+9 by @renovate in https://github.com/ronnnnn/nilts/pull/117
+* upgrade: update dependency flutter to v3.19.6 by @renovate in https://github.com/ronnnnn/nilts/pull/118
+* upgrade: update actions/checkout digest to 0ad4b8f by @renovate in https://github.com/ronnnnn/nilts/pull/119
+* upgrade: update bluefireteam/melos-action digest to 6085791 by @renovate in https://github.com/ronnnnn/nilts/pull/120
+* upgrade: update actions/checkout digest to a5ac7e5 by @renovate in https://github.com/ronnnnn/nilts/pull/124
+* upgrade: Flutter 3.22, Dart 3.4 on development by @ronnnnn in https://github.com/ronnnnn/nilts/pull/125
+* upgrade: update dependency melos to v6 by @renovate in https://github.com/ronnnnn/nilts/pull/121
+* docs: funding for pubspec by @ronnnnn in https://github.com/ronnnnn/nilts/pull/126
+* upgrade: update actions/checkout digest to 692973e by @renovate in https://github.com/ronnnnn/nilts/pull/128
+* upgrade: development flutter sdk 3.22.2 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/129
+* feat: no_support_web_platform_check by @ronnnnn in https://github.com/ronnnnn/nilts/pull/130
 
-## 2024-06-15
 
-### Changes
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.12.1...nilts-v0.13.0
 
 ---
-
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`nilts` - `v0.13.0`](#nilts---v0130)
-
----
-
-#### `nilts` - `v0.13.0`
-
- - **FEAT**: no_support_web_platform_check ([#130](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/130)). ([672231d7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/672231d72157aa2d5d7c20d7f07344ab423030ef))
- - **DOCS**: funding for pubspec ([#126](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/126)). ([c996d783](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/c996d783d26f0e4e1ce6b46ace27c1a2f78e70ab))
- - **DOCS**: CHANGELOG. ([90d921e3](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/90d921e3312d360239a0b9c26849f53b3773eb66))
-
-## 0.13.0
-
- - **FEAT**: no_support_web_platform_check ([#130](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/130)). ([672231d7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/672231d72157aa2d5d7c20d7f07344ab423030ef))
- - **DOCS**: funding for pubspec ([#126](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/126)). ([c996d783](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/c996d783d26f0e4e1ce6b46ace27c1a2f78e70ab))
- - **DOCS**: CHANGELOG. ([90d921e3](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/90d921e3312d360239a0b9c26849f53b3773eb66))
 
 # nilts-v0.12.1 (2024-02-24)
 
