@@ -6,7 +6,7 @@ import 'package:meta/meta.dart';
 ///
 /// The Dart versioning string from [Platform.version] is as follows:
 ///
-/// ```
+/// ```txt
 /// // stable channel
 /// 3.0.5 (stable) (Mon Jun 12 18:31:49 2023 +0000) on "macos_arm64"
 /// // beta channel
@@ -71,13 +71,10 @@ class DartVersion {
     switch (channelString) {
       case 'dev':
         channel = DartReleaseChannel.dev;
-        break;
       case 'beta':
         channel = DartReleaseChannel.beta;
-        break;
       case null:
         channel = DartReleaseChannel.stable;
-        break;
       default:
         throw ArgumentError('Invalid Dart versioning string');
     }
