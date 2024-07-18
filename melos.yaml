@@ -7,6 +7,7 @@ repository:
   name: nilts
 
 packages:
+  - .
   - packages/**
   - examples/**
 
@@ -34,7 +35,9 @@ command:
 
 scripts:
   prepare:
-    run: dart pub global activate custom_lint 0.6.0
+    run: |
+      dart pub global activate custom_lint 0.6.0 && \
+      dart pub global activate very_good_cli 0.22.1
     description: prepare for develop
 
   get:
@@ -95,7 +98,7 @@ scripts:
     description: fix dart (dry-run)
 
   test:
-    exec: flutter test
+    exec: very_good test
     packageFilters:
       scope: nilts_test
     description: test on nilts_test
