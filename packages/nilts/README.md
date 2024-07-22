@@ -92,6 +92,7 @@ Some of lint rules support quick fixes on IDE.
 
 | Rule name                                                                           | Overview                                                                       |           Target SDK           | Rule type | Maturity level | Quick fix |
 |:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:------------------------------:| :-------: |:--------------:|:---------:|
+| [defined\_async\_callback\_type](#defined_async_callback_type)                      | Checks `Future<void> Function()` definitions.                                  |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_value\_changed\_type](#defined_value_changed_type)                        | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_value\_getter\_type](#defined_value_getter_type)                          | Checks `T Function()` definitions.                                             |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_value\_setter\_type](#defined_value_setter_type)                          | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
@@ -104,6 +105,36 @@ Some of lint rules support quick fixes on IDE.
 | [unnecessary\_rebuilds\_from\_media\_query](#unnecessary_rebuilds_from_media_query) | Checks `MediaQuery.xxxOf(context)` or `MediaQuery.maybeXxxOf(context)` usages. | >= Flutter 3.10.0 (Dart 3.0.0) | Practice  |  Experimental  |    ✅️     |
 
 ### Details
+
+#### defined_async_callback_type
+
+<details>
+
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
+
+**Consider** replace `Future<void> Function()` with `AsyncCallback` which is defined in Flutter SDK.
+
+**BAD:**
+
+```dart
+final Future<void> Function() callback;
+```
+
+
+**GOOD:**
+
+```dart
+final AsyncCallback callback;
+```
+
+See also:
+
+- [AsyncCallback typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/AsyncCallback.html)
+
+</details>
 
 #### defined_value_changed_type
 
