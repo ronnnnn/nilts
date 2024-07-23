@@ -1,5 +1,35 @@
 # Change Log
 
+All notable changes to nilts packages will be documented in this file.
+
+## 2024-07-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.14.1`](#nilts---v0141)
+
+---
+
+#### `nilts` - `v0.14.1`
+
+ - **FIX**: _ReplaceWithAsyncCallbackType replacement ([#137](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/137)). ([9d8170d5](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/9d8170d5623839982a1b50892f119a3aed3a6041))
+ - **DOCS**: CHANGELOG. ([4a430644](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4a430644992aaf3dbaf6c5c74029f29893873777))
+
+## 0.14.1
+
+ - **FIX**: _ReplaceWithAsyncCallbackType replacement ([#137](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/137)). ([9d8170d5](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/9d8170d5623839982a1b50892f119a3aed3a6041))
+ - **DOCS**: CHANGELOG. ([4a430644](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4a430644992aaf3dbaf6c5c74029f29893873777))
+
+# Change Log
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
