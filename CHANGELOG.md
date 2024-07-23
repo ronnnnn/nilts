@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-23
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.14.0`](#nilts---v0140)
+
+---
+
+#### `nilts` - `v0.14.0`
+
+ - **FEAT**: defined_async_callback_type rule ([#136](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/136)). ([544742d7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/544742d734d08a39479c6d1cbaa44e94b2df771a))
+ - **DOCS**: CAHNGELOG. ([7d2483a7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/7d2483a78a48783e3657a2d486cd897431e54b79))
+
+
 ## 2024-06-15
 
 ### Changes
