@@ -94,7 +94,7 @@ class _ReplaceWithAsyncCallbackType extends DartFix {
         final delta = node.question != null ? -1 : 0;
         builder.addSimpleReplacement(
           node.sourceRange.getMoveEnd(delta),
-          'VoidCallback',
+          'AsyncCallback',
         );
       });
     });
