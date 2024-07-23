@@ -1,32 +1,21 @@
 # Change Log
 
-All notable changes to nilts packages will be documented in this file.
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## 2024-07-23
+# nilts-v0.14.0 (2024-07-23)
 
-### Changes
+## What's Changed
+* style: remove very_good_analysis dependency by @ronnnnn in https://github.com/ronnnnn/nilts/pull/132
+* upgrade: development flutter sdk 3.22.3 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/134
+* upgrade: native dependencies by @ronnnnn in https://github.com/ronnnnn/nilts/pull/135
+* feat: defined_async_callback_type rule by @ronnnnn in https://github.com/ronnnnn/nilts/pull/136
 
----
 
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`nilts` - `v0.14.0`](#nilts---v0140)
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.13.0...nilts-v0.14.0
 
 ---
 
-#### `nilts` - `v0.14.0`
-
- - **FEAT**: defined_async_callback_type rule ([#136](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/136)). ([544742d7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/544742d734d08a39479c6d1cbaa44e94b2df771a))
- - **DOCS**: CAHNGELOG. ([7d2483a7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/7d2483a78a48783e3657a2d486cd897431e54b79))
-
-## 0.14.0
-
- - **FEAT**: defined_async_callback_type rule ([#136](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/136)). ([544742d7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/544742d734d08a39479c6d1cbaa44e94b2df771a))
- - **DOCS**: CAHNGELOG. ([7d2483a7](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/7d2483a78a48783e3657a2d486cd897431e54b79))
 
 # nilts-v0.13.0 (2024-06-15)
 
