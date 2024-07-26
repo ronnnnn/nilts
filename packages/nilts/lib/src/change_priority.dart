@@ -23,6 +23,9 @@ class ChangePriority {
   /// The priority for [_ReplaceWithAsyncCallback].
   static const int replaceWithAsyncCallback = 100;
 
+  /// The priority for [_ReplaceWithAsyncValueGetter].
+  static const int replaceWithAsyncValueGetter = 100;
+
   /// The priority for [_ReplaceWithAsyncValueSetter].
   static const int replaceWithAsyncValueSetter = 100;
 
