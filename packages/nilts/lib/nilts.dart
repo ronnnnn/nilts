@@ -1,6 +1,7 @@
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/dart_version.dart';
 import 'package:nilts/src/lints/defined_async_callback_type.dart';
+import 'package:nilts/src/lints/defined_async_value_setter_type.dart';
 import 'package:nilts/src/lints/defined_value_callback_type.dart';
 import 'package:nilts/src/lints/defined_value_getter_type.dart';
 import 'package:nilts/src/lints/defined_void_callback_type.dart';
@@ -22,6 +23,7 @@ class _NiltsLint extends PluginBase {
   @override
   List<LintRule> getLintRules(CustomLintConfigs configs) => [
         const DefinedAsyncCallbackType(),
+        const DefinedAsyncValueSetterType(),
         const DefinedValueChangedType(),
         const DefinedValueGetterType(),
         const DefinedValueSetterType(),
