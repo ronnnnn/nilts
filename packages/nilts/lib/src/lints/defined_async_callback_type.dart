@@ -58,8 +58,7 @@ class DefinedAsyncCallbackType extends DartLintRule {
       // Do nothing if the return type is not Future<void>.
       final returnType = type.returnType;
       if (returnType is! InterfaceType) return;
-      if (!returnType.element.library.isDartAsync) return;
-      if (returnType.element.name != 'Future') return;
+      if (!returnType.isDartAsyncFuture) return;
       if (returnType.typeArguments.length != 1) return;
       if (returnType.typeArguments.first is! VoidType) return;
 

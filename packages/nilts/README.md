@@ -91,8 +91,9 @@ Some of lint rules support quick fixes on IDE.
 ### Overview
 
 | Rule name                                                                           | Overview                                                                       |           Target SDK           | Rule type | Maturity level | Quick fix |
-|:------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:------------------------------:| :-------: |:--------------:|:---------:|
+|-------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:------------------------------:| :-------: |:--------------:|:---------:|
 | [defined\_async\_callback\_type](#defined_async_callback_type)                      | Checks `Future<void> Function()` definitions.                                  |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [defined\_async\_value\_getter\_type](#defined_async_value_getter_type)             | Checks `Future<T> Function()` definitions.                                     |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_async\_value\_setter\_type](#defined_async_value_setter_type)             | Checks `Future<void> Function(T value)` definitions.                           |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_value\_changed\_type](#defined_value_changed_type)                        | Checks `void Function(T value)` definitions.                                   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [defined\_value\_getter\_type](#defined_value_getter_type)                          | Checks `T Function()` definitions.                                             |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
@@ -137,6 +138,35 @@ See also:
 
 </details>
 
+#### defined_async_value_getter_type
+
+<details>
+
+- Target SDK     : Any versions nilts supports
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
+
+**Consider** replace `Future<T> Function()` with `AsyncValueGetter` which is defined in Flutter SDK.
+
+**BAD:**
+
+```dart
+final Future<int> Function() callback;
+```
+
+**GOOD:**
+
+```dart
+final AsyncValueGetter<int> callback;
+```
+
+See also:
+
+- [AsyncValueGetter typedef - foundation library - Dart API](https://api.flutter.dev/flutter/foundation/AsyncValueGetter.html)
+
+</details>
+
 #### defined_async_value_setter_type
 
 <details>
@@ -153,7 +183,6 @@ See also:
 ```dart
 final Future<void> Function(int value) callback;
 ```
-
 
 **GOOD:**
 
