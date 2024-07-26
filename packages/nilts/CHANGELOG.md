@@ -2,6 +2,35 @@
 
 All notable changes to nilts packages will be documented in this file.
 
+## 2024-07-26
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.15.0`](#nilts---v0150)
+
+---
+
+#### `nilts` - `v0.15.0`
+
+ - **FEAT**: defined_async_value_getter_type rule ([#139](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/139)). ([7c6c304b](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/7c6c304b0a19be419cb35ee98790efc41ac786a3))
+ - **FEAT**: defined_async_value_setter_type ([#138](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/138)). ([da682f1e](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/da682f1e7c9eec2b7b2b00c6fcd7231e050de446))
+ - **DOCS**: CHANGELOG. ([d6523f8f](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/d6523f8f8d79edccc39db01df92fa17281468bd0))
+
+## 0.15.0
+
+ - **FEAT**: defined_async_value_getter_type rule ([#139](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/139)). ([7c6c304b](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/7c6c304b0a19be419cb35ee98790efc41ac786a3))
+ - **FEAT**: defined_async_value_setter_type ([#138](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/138)). ([da682f1e](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/da682f1e7c9eec2b7b2b00c6fcd7231e050de446))
+ - **DOCS**: CHANGELOG. ([d6523f8f](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/d6523f8f8d79edccc39db01df92fa17281468bd0))
+
+
 # nilts-v0.14.1 (2024-07-23)
 
 ## What's Changed
