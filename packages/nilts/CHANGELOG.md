@@ -11,6 +11,7 @@ All notable changes to nilts packages will be documented in this file.
 
 **Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.14.1...nilts-v0.15.0
 
+---
 
 # nilts-v0.14.1 (2024-07-23)
 
@@ -21,7 +22,6 @@ All notable changes to nilts packages will be documented in this file.
 **Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.14.0...nilts-v0.14.1
 
 ---
-
 
 # nilts-v0.14.0 (2024-07-23)
 
@@ -35,7 +35,6 @@ All notable changes to nilts packages will be documented in this file.
 **Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.13.0...nilts-v0.14.0
 
 ---
-
 
 # nilts-v0.13.0 (2024-06-15)
 
