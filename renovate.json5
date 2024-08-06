@@ -1,32 +1,30 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    // https://docs.renovatebot.com/presets-config/#configbest-practices
-    "config:best-practices",
-    ":semanticCommits",
-    ":semanticCommitTypeAll(upgrade)",
-    ":semanticCommitScopeDisabled",
-    "schedule:daily",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'config:best-practices',
+    ':semanticCommits',
+    ':semanticCommitTypeAll(upgrade)',
+    ':semanticCommitScopeDisabled',
+    'schedule:daily',
   ],
-  "timezone": "Asia/Tokyo",
-  "labels": [
-    "dep",
+  timezone: 'Asia/Tokyo',
+  labels: [
+    'dep',
   ],
-  "branchPrefix": "upgrade-renovate-",
-  "major": {
-    "minimumReleaseAge": "5 days",
+  branchPrefix: 'upgrade-renovate-',
+  major: {
+    minimumReleaseAge: '5 days',
   },
-  "minor": {
-    "minimumReleaseAge": "3 days",
+  minor: {
+    minimumReleaseAge: '3 days',
   },
-  "patch": {
-    "minimumReleaseAge": "2 days",
+  patch: {
+    minimumReleaseAge: '2 days',
   },
-  "assignees": [
-    "@ronnnnn",
+  assignees: [
+    '@ronnnnn',
   ],
-  "assigneesSampleSize": 1,
-  // https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts
+  assigneesSampleSize: 1,
   vulnerabilityAlerts: {
     enabled: true,
     labels: [
@@ -34,5 +32,4 @@
       'A-security',
     ],
   },
-  transitiveRemediation: true,
 }
