@@ -2,7 +2,7 @@
 
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
-import 'package:analyzer/error/error.dart';
+import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
@@ -97,7 +97,7 @@ class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
       final isMediaQuery = target.name == 'MediaQuery';
       if (!isMediaQuery) return;
 
-      reporter.reportErrorForNode(_code, node.methodName);
+      reporter.atNode(node.methodName, _code);
     });
   }
 
@@ -223,8 +223,8 @@ class _ReplaceWithMediaQueryXxxOf extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addPropertyAccess((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;

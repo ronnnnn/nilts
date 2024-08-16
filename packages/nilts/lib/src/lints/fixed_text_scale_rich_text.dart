@@ -1,7 +1,7 @@
 // ignore_for_file: comment_references
 
 import 'package:analyzer/dart/ast/ast.dart';
-import 'package:analyzer/error/error.dart';
+import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
@@ -102,7 +102,7 @@ class FixedTextScaleRichText extends DartLintRule {
       );
       if (isTextScaleFactorSet) return;
 
-      reporter.reportErrorForNode(_code, node);
+      reporter.atNode(node, _code);
     });
   }
 
@@ -119,8 +119,8 @@ class _ReplaceWithTextRich extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addInstanceCreationExpression((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
@@ -159,8 +159,8 @@ class _AddTextScaler extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addInstanceCreationExpression((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
@@ -222,7 +222,7 @@ class FixedTextScaleRichTextLegacy extends DartLintRule {
       );
       if (isTextScaleFactorSet) return;
 
-      reporter.reportErrorForNode(_code, node);
+      reporter.atNode(node, _code);
     });
   }
 
@@ -239,8 +239,8 @@ class _AddTextScaleFactor extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addInstanceCreationExpression((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;

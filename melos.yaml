@@ -36,65 +36,59 @@ command:
 scripts:
   prepare:
     run: |
-      dart pub global activate custom_lint 0.6.0 && \
-      dart pub global activate very_good_cli 0.22.1
+      dart pub global activate custom_lint 0.6.5 && \
+      dart pub global activate very_good_cli 0.22.2
     description: prepare for develop
 
   get:
-    exec: flutter pub get
+    run: melos exec -c 1 --fail-fast -- flutter pub get
     description: pub get
 
   check:
-    steps:
-      - check:dart
-      - check:flutter
-      - check:custom_lint
+    run: |
+      melos check:dart && \
+      melos check:flutter && \
+      melos check:custom_lint
     description: check static analysis
 
   check:dart:
-    exec: dart analyze --fatal-infos --fatal-warnings
-    packageFilters:
-      scope: nilts
+    run: melos exec -c 1 --scope="nilts" -- dart analyze --fatal-infos --fatal-warnings
     description: check static analysis for dart
 
   check:flutter:
-    exec: flutter analyze --fatal-infos --fatal-warnings
-    packageFilters:
-      scope: nilts_test
+    run: melos exec -c 1 --scope="nilts_test" -- flutter analyze --fatal-infos --fatal-warnings
     description: check static analysis for flutter
 
   check:custom_lint:
-    exec: flutter pub run custom_lint
-    packageFilters:
-      scope: nilts_test
+    run: melos exec -c 1 --scope="nilts_test" -- flutter pub run custom_lint
     description: check static analysis with custom_lint
 
   pretty:
-    steps:
-      - fix
-      - pretty:dart
+    run: |
+      melos fix && \
+      melos pretty:dart
     description: format
 
   pretty:dry:
-    steps:
-      - fix:dry
-      - pretty:dart:dry
+    run: |
+      melos fix:dry && \
+      melos pretty:dart:dry
     description: format (dry-run)
 
   pretty:dart:
-    exec: dart format .
+    run: melos exec -c 1 --fail-fast -- dart format .
     description: format dart
 
   pretty:dart:dry:
-    exec: dart format --set-exit-if-changed .
+    run: melos exec -c 1 --fail-fast -- dart format --set-exit-if-changed .
     description: format dart (dry-run)
 
   fix:
-    exec: dart fix --apply
+    run: melos exec -c 1 --fail-fast -- dart fix --apply
     description: fix dart
 
   fix:dry:
-    exec: dart fix --dry-run
+    run: melos exec -c 1 --fail-fast -- dart fix --dry-run
     description: fix dart (dry-run)
 
   test:
@@ -104,19 +98,15 @@ scripts:
     description: test on nilts_test
 
   build:example:
-    steps:
-      - build:example:android
-      - build:example:ios
+    run: |
+      melos build:example:android && \
+      melos build:example:ios
     description: build on nilts_example
 
   build:example:android:
-    exec: flutter build appbundle
-    packageFilters:
-      scope: nilts_example
+    run: melos exec -c 1 --scope="nilts_example" -- flutter build appbundle
     description: build android on nilts_example
 
   build:example:ios:
-    exec: flutter build ios --no-codesign
-    packageFilters:
-      scope: nilts_example
+    run: melos exec -c 1 --scope="nilts_example" -- flutter build ios --no-codesign
     description: build ios on nilts_example
