@@ -1,79 +1,38 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to nilts packages will be documented in this file.
 
-## 2024-08-16
+# nilts-v0.16.0 (2024-08-16)
 
-### Changes
+## What's Changed
+* upgrade: update actions/setup-java digest to 6a0805f by @renovate in https://github.com/ronnnnn/nilts/pull/140
+* upgrade: custom_lint 0.6.5 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/144
 
----
 
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`nilts` - `v0.16.0`](#nilts---v0160)
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.15.0...nilts-v0.16.0
 
 ---
 
-#### `nilts` - `v0.16.0`
+# nilts-v0.15.0 (2024-07-26)
 
- - **DOCS**: CHANGELOG. ([fdffd4f8](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/fdffd4f89ecad940786be626f9c1ee68109867ea))
- - **DOCS**: CHANGELOG. ([4bbb1ca9](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4bbb1ca90c6eec84b2f3fca07e8bcbdef6401bf4))
+## What's Changed
+* feat: defined_async_value_setter_type by @ronnnnn in https://github.com/ronnnnn/nilts/pull/138
+* feat: defined_async_value_getter_type rule by @ronnnnn in https://github.com/ronnnnn/nilts/pull/139
 
 
-## 2024-07-26
-
-### Changes
-
----
-
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`nilts` - `v0.15.0`](#nilts---v0150)
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.14.1...nilts-v0.15.0
 
 ---
 
-#### `nilts` - `v0.15.0`
+# nilts-v0.14.1 (2024-07-23)
 
- - **FEAT**: defined_async_value_getter_type rule ([#139](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/139)). ([7c6c304b](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/7c6c304b0a19be419cb35ee98790efc41ac786a3))
- - **FEAT**: defined_async_value_setter_type ([#138](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/138)). ([da682f1e](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/da682f1e7c9eec2b7b2b00c6fcd7231e050de446))
- - **DOCS**: CHANGELOG. ([d6523f8f](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/d6523f8f8d79edccc39db01df92fa17281468bd0))
+## What's Changed
+* fix: _ReplaceWithAsyncCallbackType replacement by @ronnnnn in https://github.com/ronnnnn/nilts/pull/137
 
 
-## 2024-07-23
-
-### Changes
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.14.0...nilts-v0.14.1
 
 ---
-
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`nilts` - `v0.14.1`](#nilts---v0141)
-
----
-
-#### `nilts` - `v0.14.1`
-
- - **FIX**: _ReplaceWithAsyncCallbackType replacement ([#137](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/137)). ([9d8170d5](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/9d8170d5623839982a1b50892f119a3aed3a6041))
- - **DOCS**: CHANGELOG. ([4a430644](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4a430644992aaf3dbaf6c5c74029f29893873777))
-
-## 0.14.1
-
- - **FIX**: _ReplaceWithAsyncCallbackType replacement ([#137](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/137)). ([9d8170d5](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/9d8170d5623839982a1b50892f119a3aed3a6041))
- - **DOCS**: CHANGELOG. ([4a430644](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4a430644992aaf3dbaf6c5c74029f29893873777))
-
 
 # nilts-v0.14.0 (2024-07-23)
 
@@ -87,7 +46,6 @@ Packages with other changes:
 **Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.13.0...nilts-v0.14.0
 
 ---
-
 
 # nilts-v0.13.0 (2024-06-15)
 

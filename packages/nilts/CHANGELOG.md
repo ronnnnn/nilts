@@ -2,32 +2,16 @@
 
 All notable changes to nilts packages will be documented in this file.
 
-## 2024-08-16
+# nilts-v0.16.0 (2024-08-16)
 
-### Changes
+## What's Changed
+* upgrade: update actions/setup-java digest to 6a0805f by @renovate in https://github.com/ronnnnn/nilts/pull/140
+* upgrade: custom_lint 0.6.5 by @ronnnnn in https://github.com/ronnnnn/nilts/pull/144
 
----
 
-Packages with breaking changes:
-
- - There are no breaking changes in this release.
-
-Packages with other changes:
-
- - [`nilts` - `v0.16.0`](#nilts---v0160)
+**Full Changelog**: https://github.com/ronnnnn/nilts/compare/nilts-v0.15.0...nilts-v0.16.0
 
 ---
-
-#### `nilts` - `v0.16.0`
-
- - **DOCS**: CHANGELOG. ([fdffd4f8](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/fdffd4f89ecad940786be626f9c1ee68109867ea))
- - **DOCS**: CHANGELOG. ([4bbb1ca9](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4bbb1ca90c6eec84b2f3fca07e8bcbdef6401bf4))
-
-## 0.16.0
-
- - **DOCS**: CHANGELOG. ([fdffd4f8](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/fdffd4f89ecad940786be626f9c1ee68109867ea))
- - **DOCS**: CHANGELOG. ([4bbb1ca9](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/4bbb1ca90c6eec84b2f3fca07e8bcbdef6401bf4))
-
 
 # nilts-v0.15.0 (2024-07-26)
 
