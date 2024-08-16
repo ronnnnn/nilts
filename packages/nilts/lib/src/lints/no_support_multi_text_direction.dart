@@ -1,6 +1,6 @@
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/ast/token.dart';
-import 'package:analyzer/error/error.dart';
+import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
@@ -120,7 +120,7 @@ class NoSupportMultiTextDirection extends DartLintRule {
         return;
       }
 
-      reporter.reportErrorForNode(_code, node);
+      reporter.atNode(node, _code);
     });
 
     // Check for `EdgeInsets`.
@@ -150,7 +150,7 @@ class NoSupportMultiTextDirection extends DartLintRule {
         if (!_hasLRArgument(node.argumentList)) return;
       }
 
-      reporter.reportErrorForNode(_code, node);
+      reporter.atNode(node, _code);
     });
 
     // Check for `Positioned`.
@@ -174,7 +174,7 @@ class NoSupportMultiTextDirection extends DartLintRule {
       // Do nothing if the constructor has not `left` or `right` parameter.
       if (!_hasLRArgument(node.argumentList)) return;
 
-      reporter.reportErrorForNode(_code, node);
+      reporter.atNode(node, _code);
     });
   }
 
@@ -212,8 +212,8 @@ class _ReplaceWithAlignmentDirectional extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addPrefixedIdentifier((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
@@ -253,8 +253,8 @@ class _ReplaceWithEdgeInsetsDirectional extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addInstanceCreationExpression((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
@@ -307,8 +307,8 @@ class _ReplaceWithPositionedDirectionalClass extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addInstanceCreationExpression((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
@@ -355,8 +355,8 @@ class _ReplaceWithPositionedDirectional extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addInstanceCreationExpression((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;

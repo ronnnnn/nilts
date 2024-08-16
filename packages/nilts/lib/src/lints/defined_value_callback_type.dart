@@ -1,7 +1,7 @@
 // ignore_for_file: comment_references
 
 import 'package:analyzer/dart/element/type.dart';
-import 'package:analyzer/error/error.dart';
+import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
@@ -137,7 +137,7 @@ class _DefinedValueCallbackType extends DartLintRule {
       final returnType = type.returnType;
       if (returnType is! VoidType) return;
 
-      reporter.reportErrorForNode(_lintCode, node);
+      reporter.atNode(node, _lintCode);
     });
   }
 }
@@ -156,8 +156,8 @@ class _ReplaceWithValueCallbackType extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addTypeAnnotation((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;

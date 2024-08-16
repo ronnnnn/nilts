@@ -1,7 +1,7 @@
 // ignore_for_file: comment_references
 
 import 'package:analyzer/dart/ast/token.dart';
-import 'package:analyzer/error/error.dart';
+import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
@@ -92,7 +92,7 @@ class NoSupportWebPlatformCheck extends DartLintRule {
       final isPlatform = prefix.name == 'Platform';
       if (!isPlatform) return;
 
-      reporter.reportErrorForNode(_code, node);
+      reporter.atNode(node, _code);
     });
   }
 
@@ -117,8 +117,8 @@ class _ReplaceWithDefaultTargetPlatform extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addPrefixedIdentifier((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;

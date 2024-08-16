@@ -2,7 +2,7 @@
 
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer/dart/element/type.dart';
-import 'package:analyzer/error/error.dart';
+import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
 import 'package:analyzer/source/source_range.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
@@ -86,7 +86,7 @@ class FlakyTestsWithSetUpAll extends DartLintRule {
       if (library == null) return;
       if (!library.isFlutterTest) return;
 
-      reporter.reportErrorForNode(_code, node.methodName);
+      reporter.atNode(node.methodName, _code);
     });
   }
 
@@ -103,8 +103,8 @@ class _ReplaceWithSetUp extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addMethodInvocation((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
@@ -131,8 +131,8 @@ class _UnwrapSetUpAll extends DartFix {
     CustomLintResolver resolver,
     ChangeReporter reporter,
     CustomLintContext context,
-    AnalysisError analysisError,
-    List<AnalysisError> others,
+    analyzer.AnalysisError analysisError,
+    List<analyzer.AnalysisError> others,
   ) {
     context.registry.addMethodInvocation((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
