@@ -1,5 +1,30 @@
 # Change Log
 
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## 2024-08-20
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`nilts` - `v0.16.1`](#nilts---v0161)
+
+---
+
+#### `nilts` - `v0.16.1`
+
+ - **FIX**: Ignore alias type ([#145](https://github.com/ronnnnn/nilts/ronnnnn/nilts/issues/145)). ([143f84d9](https://github.com/ronnnnn/nilts/ronnnnn/nilts/commit/143f84d9b8acfca718f9d967bdc68d9d58c5099d))
+
+# Change Log
+
 All notable changes to nilts packages will be documented in this file.
 
 # nilts-v0.16.0 (2024-08-16)
