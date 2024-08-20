@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 class MainButton extends StatelessWidget {
   const MainButton(
     void Function() this.onPressed,
+    ValueGetter<int> this.onAliasPressed,
     // expect_lint: defined_value_getter_type
     int Function() this.onReturnPressed,
     Future<int> Function() this.onFutureReturnPressed, {
@@ -23,6 +24,7 @@ class MainButton extends StatelessWidget {
   });
 
   final void Function() onPressed;
+  final ValueGetter<int> onAliasPressed;
   // expect_lint: defined_value_getter_type
   final int Function() onReturnPressed;
   final Future<int> Function() onFutureReturnPressed;

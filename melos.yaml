@@ -13,7 +13,6 @@ packages:
 
 ide:
   intellij: true
-  vscode: true
 
 command:
   bootstrap:
@@ -22,7 +21,7 @@ command:
   version:
     message: |
       release: publish packages
-      
+
       {new_package_versions}
     includeCommitId: true
     changelogs:

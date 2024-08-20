@@ -10,7 +10,8 @@ import 'package:flutter/material.dart';
 class MainButton extends StatelessWidget {
   const MainButton(
     // expect_lint: defined_void_callback_type
-    void Function() this.onPressed, {
+    void Function() this.onPressed,
+    VoidCallback this.onAliasPressed, {
     // expect_lint: defined_void_callback_type
     void Function()? this.onNullablePressed,
     void Function(int)? this.onParamPressed,
@@ -20,6 +21,7 @@ class MainButton extends StatelessWidget {
 
   // expect_lint: defined_void_callback_type
   final void Function() onPressed;
+  final VoidCallback onAliasPressed;
   // expect_lint: defined_void_callback_type
   final void Function()? onNullablePressed;
   final void Function(int)? onParamPressed;

@@ -49,6 +49,10 @@ class DefinedAsyncValueGetterType extends DartLintRule {
   ) {
     context.registry.addTypeAnnotation((node) {
       final type = node.type;
+
+      // Do nothing if the type is instance of type alias.
+      if (type?.alias != null) return;
+
       // Do nothing if the type is not Function.
       if (type is! FunctionType) return;
 
