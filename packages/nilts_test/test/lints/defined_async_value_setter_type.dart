@@ -4,11 +4,13 @@
 // ignore_for_file: defined_async_callback_type
 // ignore_for_file: defined_async_value_getter_type
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton(
     Future<void> Function() this.onPressed,
+    AsyncValueSetter<int> this.onAliasPressed,
     // expect_lint: defined_async_value_setter_type
     Future<void> Function(int) this.onParamPressed,
     // expect_lint: defined_async_value_setter_type
@@ -25,6 +27,7 @@ class MainButton extends StatelessWidget {
   });
 
   final Future<void> Function() onPressed;
+  final AsyncValueSetter<int> onAliasPressed;
 
   // expect_lint: defined_async_value_setter_type
   final Future<void> Function(int) onParamPressed;

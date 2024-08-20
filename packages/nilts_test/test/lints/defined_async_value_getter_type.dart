@@ -7,42 +7,45 @@
 
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class MainButton extends StatelessWidget {
   const MainButton(
     Future<void> Function() this.onPressed,
+    AsyncValueGetter<int> this.onAliasPressed,
     // expect_lint: defined_async_value_getter_type
-    Future<int> Function() this.onReturnPressed,
-    int Function() this.onFutureReturnPressed, {
+    Future<int> Function() this.onFutureReturnPressed,
+    int Function() this.onReturnPressed, {
     Future<void> Function()? this.onNullablePressed,
     Future<void> Function(int)? this.onParamPressed,
     // expect_lint: defined_async_value_getter_type
-    Future<int> Function()? this.onNullableReturnPressed,
-    int Function()? this.onNullableFutureReturnPressed,
+    Future<int> Function()? this.onNullableFutureReturnPressed,
+    int Function()? this.onNullableReturnPressed,
     super.key,
   });
 
   final Future<void> Function() onPressed;
+  final AsyncValueGetter<int> onAliasPressed;
   // expect_lint: defined_async_value_getter_type
-  final Future<int> Function() onReturnPressed;
-  final int Function() onFutureReturnPressed;
+  final Future<int> Function() onFutureReturnPressed;
+  final int Function() onReturnPressed;
   final Future<void> Function()? onNullablePressed;
   final Future<void> Function(int)? onParamPressed;
   // expect_lint: defined_async_value_getter_type
-  final Future<int> Function()? onNullableReturnPressed;
-  final int Function()? onNullableFutureReturnPressed;
+  final Future<int> Function()? onNullableFutureReturnPressed;
+  final int Function()? onNullableReturnPressed;
 
   void _onPressed(
     Future<void> Function() onPressed,
     // expect_lint: defined_async_value_getter_type
-    Future<int> Function() onReturnPressed,
-    int Function() onFutureReturnPressed, {
+    Future<int> Function() onFutureReturnPressed,
+    int Function() onReturnPressed, {
     Future<void> Function()? onNullablePressed,
     Future<void> Function(int)? onParamPressed,
     // expect_lint: defined_async_value_getter_type
-    Future<int> Function()? onNullableReturnPressed,
-    int Function()? onNullableFutureReturnPressed,
+    Future<int> Function()? onNullableFutureReturnPressed,
+    int Function()? onNullableReturnPressed,
   }) {}
 
   @override
@@ -63,22 +66,22 @@ class MainButton extends StatelessWidget {
 
 final Future<void> Function() globalFunction = () async {};
 // expect_lint: defined_async_value_getter_type
-final Future<int> Function() globalReturnFunction = () async => 0;
-final int Function() globalFutureReturnFunction = () => 0;
+final Future<int> Function() globalFutureReturnFunction = () async => 0;
+final int Function() globalReturnFunction = () => 0;
 const Future<void> Function()? globalNullableFunction = null;
 const Future<void> Function(int)? globalParamFunction = null;
 // expect_lint: defined_async_value_getter_type
-const Future<int> Function()? globalNullableReturnFunction = null;
-const int Function()? globalNullableFutureReturnFunction = null;
+const Future<int> Function()? globalNullableFutureReturnFunction = null;
+const int Function()? globalNullableReturnFunction = null;
 
 void _globalFunction(
   Future<void> Function() onPressed,
   // expect_lint: defined_async_value_getter_type
-  Future<int> Function() onReturnPressed,
-  int Function() onFutureReturnPressed, {
+  Future<int> Function() onFutureReturnPressed,
+  int Function() onReturnPressed, {
   Future<void> Function()? onNullablePressed,
   Future<void> Function(int)? onParamPressed,
   // expect_lint: defined_async_value_getter_type
-  Future<int> Function()? onNullableReturnPressed,
-  int Function()? onNullableFutureReturnPressed,
+  Future<int> Function()? onNullableFutureReturnPressed,
+  int Function()? onNullableReturnPressed,
 }) {}

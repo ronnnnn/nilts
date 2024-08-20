@@ -9,6 +9,8 @@ import 'package:flutter/material.dart';
 class MainButton extends StatelessWidget {
   const MainButton(
     void Function() this.onPressed,
+    ValueChanged<int> this.onChangedAliasPressed,
+    ValueSetter<int> this.onSetterAliasPressed,
     // expect_lint: defined_value_changed_type, defined_value_setter_type
     void Function(int) this.onParamPressed,
     // expect_lint: defined_value_changed_type, defined_value_setter_type
@@ -25,6 +27,8 @@ class MainButton extends StatelessWidget {
   });
 
   final void Function() onPressed;
+  final ValueChanged<int> onChangedAliasPressed;
+  final ValueSetter<int> onSetterAliasPressed;
   // expect_lint: defined_value_changed_type, defined_value_setter_type
   final void Function(int) onParamPressed;
   // expect_lint: defined_value_changed_type, defined_value_setter_type
