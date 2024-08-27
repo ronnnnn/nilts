@@ -1,4 +1,7 @@
 {
+  "pull-request-title-pattern": "release: ${component} ${version}",
+  "label": "release",
+  "release-label": "release",
   "packages": {
     "packages/nilts": {
       "package-name": "nilts",
