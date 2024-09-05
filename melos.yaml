@@ -43,42 +43,42 @@ scripts:
     run: melos exec -c 1 --fail-fast -- flutter pub get
     description: pub get
 
-  check:
+  lint:
     run: |
-      melos check:dart && \
-      melos check:flutter && \
-      melos check:custom_lint
-    description: check static analysis
+      melos lint:dart && \
+      melos lint:flutter && \
+      melos lint:custom_lint
+    description: lint
 
-  check:dart:
+  lint:dart:
     run: melos exec -c 1 --scope="nilts" -- dart analyze --fatal-infos --fatal-warnings
-    description: check static analysis for dart
+    description: lint with dart
 
-  check:flutter:
+  lint:flutter:
     run: melos exec -c 1 --scope="nilts_test" -- flutter analyze --fatal-infos --fatal-warnings
-    description: check static analysis for flutter
+    description: lint with flutter
 
-  check:custom_lint:
+  lint:custom_lint:
     run: melos exec -c 1 --scope="nilts_test" -- flutter pub run custom_lint
-    description: check static analysis with custom_lint
+    description: lint with custom_lint
 
-  pretty:
+  fmt:
     run: |
       melos fix && \
-      melos pretty:dart
+      melos fmt:dart
     description: format
 
-  pretty:dry:
+  fmt:dry:
     run: |
       melos fix:dry && \
-      melos pretty:dart:dry
+      melos fmt:dart:dry
     description: format (dry-run)
 
-  pretty:dart:
+  fmt:dart:
     run: melos exec -c 1 --fail-fast -- dart format .
     description: format dart
 
-  pretty:dart:dry:
+  fmt:dart:dry:
     run: melos exec -c 1 --fail-fast -- dart format --set-exit-if-changed .
     description: format dart (dry-run)
 
