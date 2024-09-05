@@ -1,6 +1,6 @@
 {
   "packages": {
-    "packages/nilts": {
+    "./packages/nilts": {
       "package-name": "nilts",
       "changelog-path": "packages/nilts/CHANGELOG.md",
       "release-type": "dart",
