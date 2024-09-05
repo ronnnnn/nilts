@@ -1,12 +1,12 @@
 {
-  "pull-request-title-pattern": "release: ${component} ${version}",
-  "label": "release",
-  "release-label": "release",
   "packages": {
     "packages/nilts": {
       "package-name": "nilts",
       "changelog-path": "packages/nilts/CHANGELOG.md",
       "release-type": "dart",
+      "pull-request-title-pattern": "release: ${component} ${version}",
+      "label": "release",
+      "release-label": "release",
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "draft": false,
