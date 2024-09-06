@@ -1,16 +1,55 @@
 {
   "packages": {
+    ".": {
+      "skip-github-release": true,
+      "release-type": "dart"
+    },
     "./packages/nilts": {
-      "package-name": "nilts",
-      "changelog-path": "packages/nilts/CHANGELOG.md",
-      "release-type": "dart",
-      "pull-request-title-pattern": "release: ${component} ${version}",
-      "label": "release",
-      "release-label": "release",
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
+      "changelog-path": "packages/nilts/CHANGELOG.md",
+      "changelog-sections": [
+        {
+          "type": "feat",
+          "section": "New Features"
+        },
+        {
+          "type": "fix",
+          "section": "Bug Fixes"
+        },
+        {
+          "type": "upgrade",
+          "section": "Dependency Upgrades"
+        },
+        {
+          "type": "docs",
+          "section": "Documentation"
+        },
+        {
+          "type": "refactor",
+          "section": "Code Refactoring"
+        },
+        {
+          "type": "revert",
+          "section": "Reverts"
+        },
+        {
+          "type": "test",
+          "section": "Tests"
+        },
+        {
+          "type": "build",
+          "section": "Build System"
+        }
+      ],
       "draft": false,
-      "prerelease": false
+      "include-v-in-tag": true,
+      "label": "release",
+      "package-name": "nilts",
+      "prerelease": false,
+      "pull-request-title-pattern": "release: ${component} ${version}",
+      "release-label": "release",
+      "release-type": "dart"
     }
   },
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"
