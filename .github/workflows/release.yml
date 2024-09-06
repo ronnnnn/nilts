@@ -12,6 +12,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: googleapis/release-please-action@7987652d64b4581673a76e33ad5e98e3dd56832f # v4
-        with:
-          release-type: dart
-          include-component-in-tag: true
