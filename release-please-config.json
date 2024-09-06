@@ -1,14 +1,22 @@
 {
   "packages": {
-    ".": {
-      "skip-github-release": true,
-      "release-type": "dart"
-    },
     "./packages/nilts": {
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "changelog-path": "packages/nilts/CHANGELOG.md",
       "changelog-sections": [
+        {
+          "type": "build",
+          "section": "Build System"
+        },
+        {
+          "type": "clean",
+          "section": "Code Cleanup"
+        },
+        {
+          "type": "docs",
+          "section": "Documentation"
+        },
         {
           "type": "feat",
           "section": "New Features"
@@ -18,14 +26,6 @@
           "section": "Bug Fixes"
         },
         {
-          "type": "upgrade",
-          "section": "Dependency Upgrades"
-        },
-        {
-          "type": "docs",
-          "section": "Documentation"
-        },
-        {
           "type": "refactor",
           "section": "Code Refactoring"
         },
@@ -33,13 +33,21 @@
           "type": "revert",
           "section": "Reverts"
         },
+                {
+          "type": "style",
+          "section": "Code Style"
+        },
         {
           "type": "test",
           "section": "Tests"
         },
         {
-          "type": "build",
-          "section": "Build System"
+          "type": "update",
+          "section": "Feature Updates"
+        },
+        {
+          "type": "upgrade",
+          "section": "Dependency Upgrades"
         }
       ],
       "draft": false,
