@@ -1,6 +1,6 @@
 {
   "packages": {
-    "./packages/nilts": {
+    "packages/nilts": {
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
       "changelog-path": "packages/nilts/CHANGELOG.md",
