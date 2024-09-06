@@ -1,3 +1,4 @@
 {
-  "nilts": "0.16.1"
+  "nilts": "0.16.1",
+  "packages/nilts": "1.0.0"
 }
