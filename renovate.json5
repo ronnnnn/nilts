@@ -6,33 +6,50 @@
     ":semanticCommits",
     ":semanticCommitTypeAll(upgrade)",
     ":semanticCommitScopeDisabled",
-    "schedule:daily",
+    "schedule:daily"
   ],
   "timezone": "Asia/Tokyo",
   "labels": [
-    "dep",
+    "dep"
   ],
   "branchPrefix": "upgrade-renovate-",
   "major": {
-    "minimumReleaseAge": "5 days",
+    "minimumReleaseAge": "5 days"
   },
   "minor": {
-    "minimumReleaseAge": "3 days",
+    "minimumReleaseAge": "3 days"
   },
   "patch": {
-    "minimumReleaseAge": "2 days",
+    "minimumReleaseAge": "2 days"
   },
   "assignees": [
-    "@ronnnnn",
+    "@ronnnnn"
   ],
   "assigneesSampleSize": 1,
+  // https://docs.renovatebot.com/configuration-options/#configmigration
+  // https://github.com/renovatebot/renovate/issues/16359
+  configMigration: false,
   // https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts
   vulnerabilityAlerts: {
     enabled: true,
     labels: [
-      'A-dependencies',
-      'A-security',
-    ],
+      "A-dependencies",
+      "A-security"
+    ]
   },
-  transitiveRemediation: true,
+  customManagers: [
+    {
+      customType: "regex",
+      fileMatch: [
+        "^melos.yaml$"
+      ],
+      matchStrings: [
+        // https://semver.org/spec/v2.0.0.html
+        "dart pub global activate (?<depName>\\w+) (?<currentValue>(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+(?:[0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)"
+      ],
+      datasourceTemplate: "dart",
+      // same versioning as dart datasource
+      versioningTemplate: "npm"
+    }
+  ]
 }
