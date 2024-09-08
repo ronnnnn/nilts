@@ -51,5 +51,13 @@
       // same versioning as dart datasource
       versioningTemplate: "npm"
     }
+  ],
+  "packageRules": [
+    {
+      groupName: "custom_lint",
+      matchPackageNames: [
+        "/^custom_lint/"
+      ]
+    }
   ]
 }
