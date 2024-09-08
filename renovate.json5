@@ -26,6 +26,9 @@
     "@ronnnnn"
   ],
   "assigneesSampleSize": 1,
+  // https://docs.renovatebot.com/configuration-options/#configmigration
+  // https://github.com/renovatebot/renovate/issues/16359
+  configMigration: false,
   // https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts
   vulnerabilityAlerts: {
     enabled: true,
@@ -34,7 +37,6 @@
       "A-security"
     ]
   },
-  transitiveRemediation: true,
   customManagers: [
     {
       customType: "regex",
