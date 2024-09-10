@@ -1,3 +1,5 @@
+name: Release 🚀
+
 on:
   push:
     branches:
