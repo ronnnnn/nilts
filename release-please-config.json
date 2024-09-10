@@ -3,7 +3,7 @@
     "packages/nilts": {
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
-      "changelog-path": "packages/nilts/CHANGELOG.md",
+      "changelog-path": "CHANGELOG.md",
       "changelog-sections": [
         {
           "type": "build",
