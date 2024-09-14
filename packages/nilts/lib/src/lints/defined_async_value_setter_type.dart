@@ -91,6 +91,7 @@ class _ReplaceWithAsyncValueSetter extends DartFix {
   ) {
     context.registry.addTypeAnnotation((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+      if (node.type is! FunctionType) return;
 
       reporter
           .createChangeBuilder(
