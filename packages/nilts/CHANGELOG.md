@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.16.3](https://github.com/ronnnnn/nilts/compare/nilts-v0.16.2...nilts-v0.16.3) (2024-09-14)
+
+
+### Documentation
+
+* reformat changelog ([6f6ce35](https://github.com/ronnnnn/nilts/commit/6f6ce357de4b66f57715993ea6a4524e0753f8af))
+* Reformat changelog ([#178](https://github.com/ronnnnn/nilts/issues/178)) ([6f6ce35](https://github.com/ronnnnn/nilts/commit/6f6ce357de4b66f57715993ea6a4524e0753f8af))
+
+
+### Bug Fixes
+
+* Quick fix for defined callbacks lint rules which have a param or return type ([#183](https://github.com/ronnnnn/nilts/issues/183)) ([6610ebe](https://github.com/ronnnnn/nilts/commit/6610ebe133cc4749f465d9a7da321011c463465d))
+
 ## [0.16.2](https://github.com/ronnnnn/nilts/compare/nilts-v0.16.1...nilts-v0.16.2) (2024-09-10)
 
 ### Dependency Upgrades
