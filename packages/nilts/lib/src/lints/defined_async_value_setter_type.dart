@@ -1,5 +1,6 @@
 // ignore_for_file: comment_references
 
+import 'package:analyzer/dart/element/nullability_suffix.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
@@ -99,17 +100,16 @@ class _ReplaceWithAsyncValueSetter extends DartFix {
         priority: ChangePriority.replaceWithAsyncValueSetter,
       )
           .addDartFileEdit((builder) {
-        final paramTypeName = (node.type! as FunctionType)
-            .parameters
-            .first
-            .type
-            .element!
-            .displayName;
+        final paramType = (node.type! as FunctionType).parameters.first.type;
+        final isParamTypeNullable =
+            paramType.nullabilitySuffix == NullabilitySuffix.question;
+        final paramTypeName = paramType.element!.displayName;
 
         final delta = node.question != null ? -1 : 0;
+        final suffix = isParamTypeNullable ? '?' : '';
         builder.addSimpleReplacement(
           node.sourceRange.getMoveEnd(delta),
-          'AsyncValueSetter<$paramTypeName>',
+          'AsyncValueSetter<$paramTypeName$suffix>',
         );
       });
     });

@@ -1,5 +1,6 @@
 // ignore_for_file: comment_references
 
+import 'package:analyzer/dart/element/nullability_suffix.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
@@ -99,13 +100,17 @@ class _ReplaceWithAsyncValueGetter extends DartFix {
       )
           .addDartFileEdit((builder) {
         final returnType = (node.type! as FunctionType).returnType;
-        final returnTypeArgumentName =
-            (returnType as InterfaceType).typeArguments.first.element!.name;
+        final returnTypeArgument =
+            (returnType as InterfaceType).typeArguments.first;
+        final isReturnTypeArgumentNullable =
+            returnTypeArgument.nullabilitySuffix == NullabilitySuffix.question;
+        final returnTypeArgumentName = returnTypeArgument.element!.name;
 
         final delta = node.question != null ? -1 : 0;
+        final suffix = isReturnTypeArgumentNullable ? '?' : '';
         builder.addSimpleReplacement(
           node.sourceRange.getMoveEnd(delta),
-          'AsyncValueGetter<$returnTypeArgumentName>',
+          'AsyncValueGetter<$returnTypeArgumentName$suffix>',
         );
       });
     });

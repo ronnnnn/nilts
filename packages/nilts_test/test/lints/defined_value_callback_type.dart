@@ -14,7 +14,11 @@ class MainButton extends StatelessWidget {
     // expect_lint: defined_value_changed_type, defined_value_setter_type
     void Function(int) this.onParamPressed,
     // expect_lint: defined_value_changed_type, defined_value_setter_type
+    void Function(int?) this.onParamNullablePressed,
+    // expect_lint: defined_value_changed_type, defined_value_setter_type
     void Function(int value) this.onNamedParamPressed,
+    // expect_lint: defined_value_changed_type, defined_value_setter_type
+    void Function(int? value) this.onNamedParamNullablePressed,
     void Function({int value}) this.onOptionalParamPressed,
     void Function({required int value}) this.onRequiredParamPressed, {
     void Function()? this.onNullablePressed,
@@ -32,7 +36,11 @@ class MainButton extends StatelessWidget {
   // expect_lint: defined_value_changed_type, defined_value_setter_type
   final void Function(int) onParamPressed;
   // expect_lint: defined_value_changed_type, defined_value_setter_type
+  final void Function(int?) onParamNullablePressed;
+  // expect_lint: defined_value_changed_type, defined_value_setter_type
   final void Function(int value) onNamedParamPressed;
+  // expect_lint: defined_value_changed_type, defined_value_setter_type
+  final void Function(int? value) onNamedParamNullablePressed;
   final void Function({int value}) onOptionalParamPressed;
   final void Function({required int value}) onRequiredParamPressed;
   final void Function()? onNullablePressed;
