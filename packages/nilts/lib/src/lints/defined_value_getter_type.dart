@@ -1,5 +1,6 @@
 // ignore_for_file: comment_references
 
+import 'package:analyzer/dart/element/nullability_suffix.dart';
 import 'package:analyzer/dart/element/type.dart';
 import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
@@ -87,6 +88,7 @@ class _ReplaceWithValueGetter extends DartFix {
   ) {
     context.registry.addTypeAnnotation((node) {
       if (!node.sourceRange.intersects(analysisError.sourceRange)) return;
+      if (node.type is! FunctionType) return;
 
       reporter
           .createChangeBuilder(
@@ -94,13 +96,16 @@ class _ReplaceWithValueGetter extends DartFix {
         priority: ChangePriority.replaceWithValueGetter,
       )
           .addDartFileEdit((builder) {
-        final returnTypeName =
-            (node.type! as FunctionType).returnType.element!.displayName;
+        final returnType = (node.type! as FunctionType).returnType;
+        final isSuffixNullable =
+            returnType.nullabilitySuffix == NullabilitySuffix.question;
+        final returnTypeName = returnType.element!.displayName;
 
         final delta = node.question != null ? -1 : 0;
+        final suffix = isSuffixNullable ? '?' : '';
         builder.addSimpleReplacement(
           node.sourceRange.getMoveEnd(delta),
-          'ValueGetter<$returnTypeName>',
+          'ValueGetter<$returnTypeName$suffix>',
         );
       });
     });

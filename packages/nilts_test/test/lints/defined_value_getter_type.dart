@@ -14,6 +14,8 @@ class MainButton extends StatelessWidget {
     ValueGetter<int> this.onAliasPressed,
     // expect_lint: defined_value_getter_type
     int Function() this.onReturnPressed,
+    // expect_lint: defined_value_getter_type
+    int? Function() this.onReturnNullablePressed,
     Future<int> Function() this.onFutureReturnPressed, {
     void Function()? this.onNullablePressed,
     void Function(int)? this.onParamPressed,
@@ -27,6 +29,8 @@ class MainButton extends StatelessWidget {
   final ValueGetter<int> onAliasPressed;
   // expect_lint: defined_value_getter_type
   final int Function() onReturnPressed;
+  // expect_lint: defined_value_getter_type
+  final int? Function() onReturnNullablePressed;
   final Future<int> Function() onFutureReturnPressed;
   final void Function()? onNullablePressed;
   final void Function(int)? onParamPressed;
