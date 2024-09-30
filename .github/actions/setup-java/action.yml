@@ -5,7 +5,7 @@ runs:
   using: 'composite'
   steps:
     - name: Import .tool-versions
-      uses: wasabeef/import-asdf-tool-versions-action@396ae6da83370122ec5fbcc4b5fc994239b214b6 # v1.0.1
+      uses: wasabeef/import-asdf-tool-versions-action@2049f3fd1a331dc40d2eda76c614c9bd7f1a502d # v1.0.3
       id: asdf
     - name: Extract distribution and version
       id: extract_distribution_and_version
