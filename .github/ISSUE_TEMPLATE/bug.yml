@@ -1,8 +1,8 @@
 name: Bug report for an existing lint rule, quick fix or assists.
 description: Report bug details you found and describe clearly as possible.
-title: '[Bug]: Title of the bug'
+title: 'bug: Title of the bug'
 labels: ['bug']
-assignees: ['@ronnnnn']
+assignees: ['ronnnnn']
 body:
   - type: dropdown
     attributes:
