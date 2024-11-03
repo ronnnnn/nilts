@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.0](https://github.com/ronnnnn/nilts/compare/nilts-v0.16.3...nilts-v0.17.0) (2024-11-03)
+
+
+### Dependency Upgrades
+
+* custom_lint 0.7.0 ([#196](https://github.com/ronnnnn/nilts/issues/196)) ([e91d244](https://github.com/ronnnnn/nilts/commit/e91d244148cafdf13fc18ef04c40ba6c6a3615ab))
+
 ## [0.16.3](https://github.com/ronnnnn/nilts/compare/nilts-v0.16.2...nilts-v0.16.3) (2024-09-14)
 
 
