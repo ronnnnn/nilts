@@ -32,7 +32,7 @@ nilts is lint rules, quick fixes and assists for Dart and Flutter projects that 
 
 ## Usage
 
-nilts depends on [`custom_lint`](https://github.com/invertase/dart_custom_lint).  
+nilts depends on [`custom_lint`](https://github.com/invertase/dart_custom_lint).
 You should add `nilts` and `custom_lint` to your `dev_dependencies` in `pubspec.yaml` file.
 
 ```yaml
@@ -51,12 +51,12 @@ analyzer:
 
 ## Configuration
 
-You can configure all lint rules provided by `nilts` in `analysis_options.yaml` file.  
+You can configure all lint rules provided by `nilts` in `analysis_options.yaml` file.
 Choice one of the following configuration strategies.
 
 ### Disabling strategy
 
-All of `nilts` rules are enabled by default.  
+All of `nilts` rules are enabled by default.
 Add lint rule name and set `false` to disable it.
 
 ```yaml
@@ -68,7 +68,7 @@ custom_lint:
 
 ### Enabling strategy
 
-You can disable all lint rules depends on custom_lint by setting `enable_all_lint_rules` to `false`.  
+You can disable all lint rules depends on custom_lint by setting `enable_all_lint_rules` to `false`.
 Add lint rule name and set `true` to enable it.
 
 ```yaml
@@ -83,7 +83,7 @@ custom_lint:
 
 ## Lint rules and quick fixes
 
-Read below to learn about each lint rules intend to.  
+Read below to learn about each lint rules intend to.
 Some of lint rules support quick fixes on IDE.
 
 ![Quick fix demo](https://github.com/ronnnnn/nilts/assets/12420269/2205daf8-1bbd-4a16-a5eb-47eb75f08536)
@@ -205,7 +205,7 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** replace `void Function(T value)` with `ValueChanged` which is defined in Flutter SDK.  
+**Consider** replace `void Function(T value)` with `ValueChanged` which is defined in Flutter SDK.
 If the value has been set, use `ValueSetter` instead.
 
 **BAD:**
@@ -261,7 +261,7 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** replace `void Function(T value)` with `ValueSetter` which is defined in Flutter SDK.  
+**Consider** replace `void Function(T value)` with `ValueSetter` which is defined in Flutter SDK.
 If the value has changed, use `ValueChanged` instead.
 
 **BAD:**
@@ -320,7 +320,7 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** using `Text.rich` or adding `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above) argument to `RichText` constructor to make the text size responsive for user setting.  
+**Consider** using `Text.rich` or adding `textScaler` or `textScaleFactor` (deprecated on Flutter 3.16.0 and above) argument to `RichText` constructor to make the text size responsive for user setting.
 
 **BAD:**
 ```dart
@@ -361,7 +361,7 @@ RichText(
 ```
 
 See also:
-                           
+
 - [Text.rich constructor - Text - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/Text/Text.rich.html)
 - [RichText class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/RichText-class.html)
 
@@ -519,7 +519,7 @@ See also:
 - Maturity level : Experimental
 - Quick fix      : ✅
 
-**Consider** removing `shrinkWrap` argument and update the Widget not to shrink wrap.  
+**Consider** removing `shrinkWrap` argument and update the Widget not to shrink wrap.
 Shrink wrapping the content of the scroll view is significantly more expensive than expanding to the maximum allowed size because the content can expand and contract during scrolling, which means the size of the scroll view needs to be recomputed whenever the scroll position changes.
 
 You can avoid shrink wrap with 3 steps below in case of your scroll view is nested.
@@ -553,7 +553,7 @@ See also:
 - Rule type      : Practice
 - Maturity level : Experimental
 - Quick fix      : ✅
-  
+
 **Prefer** using `MediaQuery.xxxOf` or `MediaQuery.maybeXxxOf` instead of `MediaQuery.of` or `MediaQuery.maybeOf` to avoid unnecessary rebuilds.
 
 **BAD:**
@@ -572,9 +572,9 @@ final size = MediaQuery.sizeOf(context);
 **Note that using `MediaQuery.of` or `MediaQuery.maybeOf` makes sense following cases:**
 
 - wrap Widget with `MediaQuery` overridden `MediaQueryData`
-- observe all changes of `MediaQueryData`  
-  
-See also:  
+- observe all changes of `MediaQueryData`
+
+See also:
 
 - [MediaQuery as InheritedModel by moffatman · Pull Request #114459 · flutter/flutter](https://github.com/flutter/flutter/pull/114459)
 - [MediaQuery class - widgets library - Dart API](https://api.flutter.dev/flutter/widgets/MediaQuery-class.html)
@@ -587,8 +587,17 @@ Upcoming... 🚀
 
 ## Known issues
 
+### Lint rule errors don't appear and quick fixes don't work in IDE
+
+Since custom_lint 0.6.7, the IDE has not shown lint rule errors in some cases.
+
+See also:
+
+- [analysis.setContextRoots failed - RequestErrorCode.PLUGIN_ERROR ProcessException: / No such file or directory / Command: flutter pub get · Issue #270 · invertase/dart_custom_lint](https://github.com/invertase/dart_custom_lint/issues/270)
+
 ### Quick fix priorities
-The priorities assigned to quick fixes are not currently visible in IntelliJ IDEA and Android Studio due to the lack of support for `PrioritizedSourceChange` in these environments.  
+
+The priorities assigned to quick fixes are not currently visible in IntelliJ IDEA and Android Studio due to the lack of support for `PrioritizedSourceChange` in these environments.
 In contrast, VS Code does support this feature, allowing quick fixes to be listed along with their respective priorities.
 
 |                                                           VS Code                                                            |                                                            IntelliJ IDEA / Android Studio                                                             |
@@ -600,7 +609,8 @@ See also:
 - [IDEA-336551 Support PrioritizedSourceChange on quick fix.](https://youtrack.jetbrains.com/issue/IDEA-336551/Support-PrioritizedSourceChange-on-quick-fix.)
 
 ### fix-all assist
-The fix-all assist feature has been introduced in [custom_lint_builder 0.6.0](https://github.com/invertase/dart_custom_lint/pull/223).  
+
+The fix-all assist feature has been introduced in [custom_lint_builder 0.6.0](https://github.com/invertase/dart_custom_lint/pull/223).
 However, this feature is not yet supported in IntelliJ IDEA and Android Studio, owing to their current lack of support for `PrioritizedSourceChange`.
 
 |                                                            VS Code                                                            |                                                            IntelliJ IDEA / Android Studio                                                            |
@@ -617,5 +627,5 @@ If you find any bugs, please create [an issue from this template](https://github
 
 ## Contributing
 
-Welcome your contributions!!  
+Welcome your contributions!!
 Please read [CONTRIBUTING](https://github.com/ronnnnn/nilts/blob/main/CONTRIBUTING.md) docs before submitting your PR.
