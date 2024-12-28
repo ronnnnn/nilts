@@ -172,7 +172,9 @@ class _ReplaceWithMediaQueryXxxOf extends DartFix {
     // Do nothing if the operator of method is not `.` and not `?.`.
     final operatorToken = node.operator;
     if (operatorToken.type != TokenType.PERIOD &&
-        operatorToken.type != TokenType.QUESTION_PERIOD) return;
+        operatorToken.type != TokenType.QUESTION_PERIOD) {
+      return;
+    }
 
     final methodTarget = node.realTarget;
     if (methodTarget is! MethodInvocation) return;
