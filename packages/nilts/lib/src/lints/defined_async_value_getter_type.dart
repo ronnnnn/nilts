@@ -68,7 +68,9 @@ class DefinedAsyncValueGetterType extends DartLintRule {
       final typeArgument = returnType.typeArguments.first;
       if (typeArgument is VoidType ||
           typeArgument is InvalidType ||
-          typeArgument is NeverType) return;
+          typeArgument is NeverType) {
+        return;
+      }
 
       reporter.atNode(node, _code);
     });

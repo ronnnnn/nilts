@@ -46,7 +46,7 @@ jobs:
         run: melos build:example:android
 
   build_example_ios:
-    runs-on: macos-14
+    runs-on: macos-15
     timeout-minutes: 20
     steps:
       - name: Checkout

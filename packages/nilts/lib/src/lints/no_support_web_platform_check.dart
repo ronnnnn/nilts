@@ -76,7 +76,9 @@ class NoSupportWebPlatformCheck extends DartLintRule {
           identifierName.name != 'isWindows' &&
           identifierName.name != 'isAndroid' &&
           identifierName.name != 'isIOS' &&
-          identifierName.name != 'isFuchsia') return;
+          identifierName.name != 'isFuchsia') {
+        return;
+      }
 
       // Do nothing if the package of identifier is not `dart.io`.
       final library = identifierName.staticElement?.library;
