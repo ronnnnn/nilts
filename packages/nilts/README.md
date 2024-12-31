@@ -101,6 +101,7 @@ Some of lint rules support quick fixes on IDE.
 | [defined\_void\_callback\_type](#defined_void_callback_type)                        | Checks `void Function()` definitions.                                          |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [fixed\_text\_scale\_rich\_text](#fixed_text_scale_rich_text)                       | Checks usage of `textScaler` or `textScaleFactor` in `RichText` constructor.   |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [flaky\_tests\_with\_set\_up\_all](#flaky_tests_with_set_up_all)                    | Checks `setUpAll` usages.                                                      |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
+| [low\_readability\_numeric\_literals](#low_readability_numeric_literals)            | Checks numeric literals with 5 or more digits.                                 | >= Flutter 3.27.0 (Dart 3.6.0) | Practice  |  Experimental  |    ✅️     |
 | [no\_support\_multi\_text\_direction](#no_support_multi_text_direction)             | Checks if supports `TextDirection` changes.                                    |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [no\_support\_web\_platform\_check](#no_support_web_platform_check)                 | Checks if `Platform.isXxx` usages.                                             |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
 | [shrink\_wrapped\_scroll\_view](#shrink_wrapped_scroll_view)                        | Checks the content of the scroll view is shrink wrapped.                       |  Any versions nilts supports   | Practice  |  Experimental  |    ✅️     |
@@ -409,6 +410,34 @@ See also:
 
 - [setUpAll function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUpAll.html)
 - [setUp function - flutter_test library - Dart API](https://api.flutter.dev/flutter/flutter_test/setUp.html)
+
+</details>
+
+#### low_readability_numeric_literals
+
+<details>
+
+- Target SDK     : >= Flutter 3.27.0 (Dart 3.6.0)
+- Rule type      : Practice
+- Maturity level : Experimental
+- Quick fix      : ✅
+
+**Consider** using digit separators for numeric literals with 5 or more digits to improve readability.
+
+**BAD:**
+```dart
+const int value = 123456;
+```
+
+**GOOD:**
+```dart
+const int value = 123_456;
+```
+
+See also:
+
+- [Digit Separators in Dart 3.6](https://medium.com/dartlang/announcing-dart-3-6-778dd7a80983)
+- [Built-in types | Dart](https://dart.dev/language/built-in-types#numbers)
 
 </details>
 
