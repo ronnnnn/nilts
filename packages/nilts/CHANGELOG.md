@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.18.0](https://github.com/ronnnnn/nilts/compare/nilts-v0.17.0...nilts-v0.18.0) (2024-12-31)
+
+
+### New Features
+
+* Add low_readability_numeric_literals lint rule and quick fix ([#210](https://github.com/ronnnnn/nilts/issues/210)) ([764ec8a](https://github.com/ronnnnn/nilts/commit/764ec8a319858e177c29a3a0b3105aa9f1f6cf18))
+
+
+### Dependency Upgrades
+
+* flutter 3.27, dart 3.6 ([#209](https://github.com/ronnnnn/nilts/issues/209)) ([8c984c8](https://github.com/ronnnnn/nilts/commit/8c984c8431cfa2aae42e3b408a281179d43d8b71))
+
 ## [0.17.0](https://github.com/ronnnnn/nilts/compare/nilts-v0.16.3...nilts-v0.17.0) (2024-11-03)
 
 
