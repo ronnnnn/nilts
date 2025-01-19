@@ -1,3 +1,4 @@
+// ignore_for_file: document_ignores
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';

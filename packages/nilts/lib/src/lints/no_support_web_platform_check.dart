@@ -1,4 +1,4 @@
-// ignore_for_file: comment_references
+// ignore_for_file: comment_references to avoid unnecessary imports
 
 import 'package:analyzer/dart/ast/token.dart';
 import 'package:analyzer/error/error.dart' as analyzer;

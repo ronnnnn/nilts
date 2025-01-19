@@ -1,4 +1,4 @@
-// ignore_for_file: comment_references
+// ignore_for_file: comment_references because referencing to private classes
 
 /// A class for defining priorities of quick fix and assist in nilts.
 ///

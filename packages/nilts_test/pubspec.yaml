@@ -14,7 +14,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  custom_lint: ^0.7.0
+  custom_lint: ^0.7.1
+  very_good_analysis: ^7.0.0
 
   nilts:
     path: ../nilts
