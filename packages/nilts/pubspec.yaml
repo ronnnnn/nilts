@@ -27,7 +27,10 @@ environment:
   sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
-  analyzer: ^6.5.0
-  analyzer_plugin: ^0.11.3
-  custom_lint_builder: ^0.7.0
+  analyzer: ^7.0.0
+  analyzer_plugin: ^0.12.0
+  custom_lint_builder: ^0.7.1
   meta: ^1.9.1
+
+dev_dependencies:
+  very_good_analysis: ^7.0.0
