@@ -9,7 +9,7 @@ jobs:
   publish:
     permissions:
       id-token: write # Required for authentication using OIDC
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@e630b99d28a3b71860378cafdc2a067c71107f94 # v1
     with:
       environment: 'pub.dev'
       working-directory: packages/nilts
