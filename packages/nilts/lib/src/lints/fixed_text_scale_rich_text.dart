@@ -72,7 +72,7 @@ class FixedTextScaleRichText extends DartLintRule {
     name: 'fixed_text_scale_rich_text',
     problemMessage: 'Default `textScaler` or `textScaleFactor` value of '
         '`RichText` is fixed value.',
-    url: 'https://github.com/ronnnnn/nilts#fixed_text_scale_rich_text',
+    url: 'https://github.com/dassssshers/nilts#fixed_text_scale_rich_text',
   );
 
   @override
@@ -194,7 +194,7 @@ class FixedTextScaleRichTextLegacy extends DartLintRule {
     name: 'fixed_text_scale_rich_text',
     problemMessage: 'Default `textScaleFactor` value of `RichText` is '
         'fixed value.',
-    url: 'https://github.com/ronnnnn/nilts#fixed_text_scale_rich_text',
+    url: 'https://github.com/dassssshers/nilts#fixed_text_scale_rich_text',
   );
 
   @override

@@ -53,7 +53,7 @@ class NoSupportWebPlatformCheck extends DartLintRule {
     name: 'no_support_web_platform_check',
     problemMessage:
         'Platform check with dart:io API is not supported on web application.',
-    url: 'https://github.com/ronnnnn/nilts#no_support_web_platform_check',
+    url: 'https://github.com/dassssshers/nilts#no_support_web_platform_check',
   );
 
   @override

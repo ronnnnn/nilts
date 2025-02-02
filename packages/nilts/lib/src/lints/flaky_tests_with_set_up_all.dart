@@ -60,7 +60,7 @@ class FlakyTestsWithSetUpAll extends DartLintRule {
     name: 'flaky_tests_with_set_up_all',
     problemMessage:
         '`setUpAll` may cause flaky tests with concurrency executions.',
-    url: 'https://github.com/ronnnnn/nilts#flaky_tests_with_set_up_all',
+    url: 'https://github.com/dassssshers/nilts#flaky_tests_with_set_up_all',
   );
 
   @override

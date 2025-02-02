@@ -41,7 +41,7 @@ class DefinedValueChangedType extends _DefinedValueCallbackType {
   static const _code = LintCode(
     name: 'defined_value_changed_type',
     problemMessage: '`ValueChanged<T>` type is defined in Flutter SDK.',
-    url: 'https://github.com/ronnnnn/nilts#defined_value_changed_type',
+    url: 'https://github.com/dassssshers/nilts#defined_value_changed_type',
   );
 
   @override
@@ -84,7 +84,7 @@ class DefinedValueSetterType extends _DefinedValueCallbackType {
   static const _code = LintCode(
     name: 'defined_value_setter_type',
     problemMessage: '`ValueSetter<T>` type is defined in Flutter SDK.',
-    url: 'https://github.com/ronnnnn/nilts#defined_value_setter_type',
+    url: 'https://github.com/dassssshers/nilts#defined_value_setter_type',
   );
 
   @override

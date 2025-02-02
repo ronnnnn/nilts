@@ -4,9 +4,9 @@
 name: nilts
 version: 0.18.1
 description: nilts is lint rules, quick fixes and assists for Dart and Flutter projects that helps you enforce best practices, and avoid errors.
-homepage: https://github.com/ronnnnn/nilts
-repository: https://github.com/ronnnnn/nilts
-issue_tracker: https://github.com/ronnnnn/nilts/issues
+homepage: https://github.com/dassssshers/nilts
+repository: https://github.com/dassssshers/nilts
+issue_tracker: https://github.com/dassssshers/nilts/issues
 platforms:
   android:
   ios:

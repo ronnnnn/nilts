@@ -55,7 +55,7 @@ class ShrinkWrappedScrollView extends DartLintRule {
     problemMessage: 'Shrink wrapping the content of the scroll view is '
         'significantly more expensive than '
         'expanding to the maximum allowed size.',
-    url: 'https://github.com/ronnnnn/nilts#shrink_wrapped_scroll_view',
+    url: 'https://github.com/dassssshers/nilts#shrink_wrapped_scroll_view',
   );
 
   @override

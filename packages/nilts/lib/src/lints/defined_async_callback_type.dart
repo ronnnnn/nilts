@@ -38,7 +38,7 @@ class DefinedAsyncCallbackType extends DartLintRule {
   static const _code = LintCode(
     name: 'defined_async_callback_type',
     problemMessage: '`AsyncCallback` type is defined in Flutter SDK.',
-    url: 'https://github.com/ronnnnn/nilts#defined_async_callback_type',
+    url: 'https://github.com/dassssshers/nilts#defined_async_callback_type',
   );
 
   @override

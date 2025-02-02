@@ -8,7 +8,7 @@
 ## Create or find an issue
 
 Before your contribute, you should find an issue that you want to contribute first.
-If you can't find an issue that you want to contribute, you should [create a new issue from here](https://github.com/ronnnnn/nilts/issues/new/choose).
+If you can't find an issue that you want to contribute, you should [create a new issue from here](https://github.com/dassssshers/nilts/issues/new/choose).
 
 ## Fork this repository and setup
 
@@ -16,7 +16,7 @@ Fork this repository and clone it to your local machine.
 
 ### Setup asdf (optional)
 
-Using asdf is optional, but you **must** use SDK versions that managed by [`.tool-versions`](https://github.com/ronnnnn/nilts/blob/main/.tool-versions) file.
+Using asdf is optional, but you **must** use SDK versions that managed by [`.tool-versions`](https://github.com/dassssshers/nilts/blob/main/.tool-versions) file.
 
 This project use [asdf](https://asdf-vm.com) to manage Dart and Flutter SDK versions.
 If you want to use asdf, you should install asdf.
@@ -92,5 +92,5 @@ Quick fix message should give details of the quick fix.
 ## Create a new Pull Request
 
 After you make commit your changes, you can create a new Pull Request.
-You should write a description of your changes with following [template](https://github.com/ronnnnn/nilts/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
+You should write a description of your changes with following [template](https://github.com/dassssshers/nilts/blob/main/.github/PULL_REQUEST_TEMPLATE.md).
 Ensure that all of checks are passed with following check list in the template.
