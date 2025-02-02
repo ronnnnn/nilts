@@ -38,7 +38,7 @@ class DefinedVoidCallbackType extends DartLintRule {
   static const _code = LintCode(
     name: 'defined_void_callback_type',
     problemMessage: '`VoidCallback` type is defined in Flutter SDK.',
-    url: 'https://github.com/ronnnnn/nilts#defined_void_callback_type',
+    url: 'https://github.com/dassssshers/nilts#defined_void_callback_type',
   );
 
   @override

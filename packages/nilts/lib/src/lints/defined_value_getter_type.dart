@@ -39,7 +39,7 @@ class DefinedValueGetterType extends DartLintRule {
   static const _code = LintCode(
     name: 'defined_value_getter_type',
     problemMessage: '`ValueGetter<T>` type is defined in Flutter SDK.',
-    url: 'https://github.com/ronnnnn/nilts#defined_value_getter_type',
+    url: 'https://github.com/dassssshers/nilts#defined_value_getter_type',
   );
 
   @override

@@ -79,7 +79,7 @@ class NoSupportMultiTextDirection extends DartLintRule {
     name: 'no_support_multi_text_direction',
     problemMessage:
         'This configuration is not affected by changes of `TextDirection`.',
-    url: 'https://github.com/ronnnnn/nilts#no_support_multi_text_direction',
+    url: 'https://github.com/dassssshers/nilts#no_support_multi_text_direction',
   );
 
   @override

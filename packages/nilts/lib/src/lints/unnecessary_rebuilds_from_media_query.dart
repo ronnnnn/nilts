@@ -57,7 +57,7 @@ class UnnecessaryRebuildsFromMediaQuery extends DartLintRule {
     problemMessage: 'Using `MediaQuery.of` or `MediaQuery.maybeOf` '
         'may cause unnecessary rebuilds.',
     url:
-        'https://github.com/ronnnnn/nilts#unnecessary_rebuilds_from_media_query',
+        'https://github.com/dassssshers/nilts#unnecessary_rebuilds_from_media_query',
   );
 
   @override

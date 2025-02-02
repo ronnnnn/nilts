@@ -39,7 +39,7 @@ class DefinedAsyncValueGetterType extends DartLintRule {
   static const _code = LintCode(
     name: 'defined_async_value_getter_type',
     problemMessage: '`AsyncValueGetter<T>` type is defined in Flutter SDK.',
-    url: 'https://github.com/ronnnnn/nilts#defined_async_value_getter_type',
+    url: 'https://github.com/dassssshers/nilts#defined_async_value_getter_type',
   );
 
   @override

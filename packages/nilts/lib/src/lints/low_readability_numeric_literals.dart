@@ -38,7 +38,8 @@ class LowReadabilityNumericLiterals extends DartLintRule {
     problemMessage:
         'Numeric literals with 5 or more digits should use digit separators '
         'for better readability.',
-    url: 'https://github.com/ronnnnn/nilts#low_readability_numeric_literals',
+    url:
+        'https://github.com/dassssshers/nilts#low_readability_numeric_literals',
   );
 
   @override

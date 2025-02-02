@@ -17,7 +17,7 @@ Fixes #<issue number>
 
 <!-- Please check all of the followings before submitting your PR -->
 
-- [ ] I have read the [CONTRIBUTING](https://github.com/ronnnnn/nilts/blob/main/CONTRIBUTING.md) docs.
+- [ ] I have read the [CONTRIBUTING](https://github.com/dassssshers/nilts/blob/main/CONTRIBUTING.md) docs.
 - [ ] I have written an related issue or linked with existing issues.
 - [ ] I have written tests and passed all of them.
     - Use `melos test` to run tests.
