@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.2](https://github.com/dassssshers/nilts/compare/nilts-v0.18.1...nilts-v0.18.2) (2025-02-02)
+
+
+### Documentation
+
+* transfer owner ([#230](https://github.com/dassssshers/nilts/issues/230)) ([52bcaa4](https://github.com/dassssshers/nilts/commit/52bcaa49c30e580d6cf0f2cf30b1d68570455c63))
+
 ## [0.18.1](https://github.com/dassssshers/nilts/compare/nilts-v0.18.0...nilts-v0.18.1) (2025-01-20)
 
 
