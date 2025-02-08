@@ -1,4 +1,6 @@
-name: Auto Fix 💊
+# needed to securely identify the workflow
+# https://autofix.ci/security
+name: autofix.ci
 
 on:
   pull_request:
