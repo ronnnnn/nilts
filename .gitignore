@@ -1,7 +1,3 @@
-# Dart
-**/.dart_tool/
-**/pubspec_overrides.yaml
-
 # IntelliJ related
 *.iml
 *.ipr
@@ -14,6 +10,14 @@
 # Miscellaneous
 **/.DS_Store
 
-# Flutter/Dart/Pub related
+# Dart related
+**/.dart_tool/
+**/pubspec_overrides.yaml
 # Libraries should not include pubspec.lock, per https://dart.dev/guides/libraries/private-files#pubspeclock.
 pubspec.lock
+
+# Node.js related
+node_modules/
+
+# bun related
+bun.lock

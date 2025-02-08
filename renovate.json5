@@ -1,63 +1,52 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
     // https://docs.renovatebot.com/presets-config/#configbest-practices
-    "config:best-practices",
-    ":semanticCommits",
-    ":semanticCommitTypeAll(upgrade)",
-    ":semanticCommitScopeDisabled",
-    "schedule:daily"
+    'config:best-practices',
+    ':semanticCommits',
+    ':semanticCommitTypeAll(upgrade)',
+    ':semanticCommitScopeDisabled',
+    'schedule:daily',
   ],
-  "timezone": "Asia/Tokyo",
-  "labels": [
-    "dep"
-  ],
-  "branchPrefix": "upgrade-renovate-",
-  "major": {
-    "minimumReleaseAge": "5 days"
+  timezone: 'Asia/Tokyo',
+  labels: ['dep'],
+  branchPrefix: 'upgrade-renovate-',
+  major: {
+    minimumReleaseAge: '5 days',
   },
-  "minor": {
-    "minimumReleaseAge": "3 days"
+  minor: {
+    minimumReleaseAge: '3 days',
   },
-  "patch": {
-    "minimumReleaseAge": "2 days"
+  patch: {
+    minimumReleaseAge: '2 days',
   },
-  "assignees": [
-    "@ronnnnn"
-  ],
-  "assigneesSampleSize": 1,
+  assignees: ['@ronnnnn'],
+  assigneesSampleSize: 1,
   // https://docs.renovatebot.com/configuration-options/#configmigration
   // https://github.com/renovatebot/renovate/issues/16359
   configMigration: false,
   // https://docs.renovatebot.com/configuration-options/#vulnerabilityalerts
   vulnerabilityAlerts: {
     enabled: true,
-    labels: [
-      "A-dependencies",
-      "A-security"
-    ]
+    labels: ['A-dependencies', 'A-security'],
   },
   customManagers: [
     {
-      customType: "regex",
-      fileMatch: [
-        "^melos.yaml$"
-      ],
+      customType: 'regex',
+      fileMatch: ['^melos.yaml$'],
       matchStrings: [
         // https://semver.org/spec/v2.0.0.html
-        "dart pub global activate (?<depName>\\w+) (?<currentValue>(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+(?:[0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)"
+        'dart pub global activate (?<depName>\\w+) (?<currentValue>(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+(?:[0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?)',
       ],
-      datasourceTemplate: "dart",
+      datasourceTemplate: 'dart',
       // same versioning as dart datasource
-      versioningTemplate: "npm"
-    }
+      versioningTemplate: 'npm',
+    },
   ],
-  "packageRules": [
+  packageRules: [
     {
-      groupName: "custom_lint",
-      matchPackageNames: [
-        "/^custom_lint/"
-      ]
-    }
-  ]
+      groupName: 'custom_lint',
+      matchPackageNames: ['/^custom_lint/'],
+    },
+  ],
 }

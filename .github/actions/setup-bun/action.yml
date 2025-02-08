@@ -1,0 +1,12 @@
+name: Setup Bun 🔧
+description: Setup Bun
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Bun
+      uses: oven-sh/setup-bun@54cb141c5c91e2fdc396be3155a391f28e1822eb
+
+    - name: Bun Install
+      shell: bash
+      run: bun i --frozen-lockfile --ignore-scripts

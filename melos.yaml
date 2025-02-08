@@ -46,8 +46,7 @@ scripts:
   lint:
     run: |
       melos lint:dart && \
-      melos lint:flutter && \
-      melos lint:custom_lint
+      melos lint:flutter
     description: lint
 
   lint:dart:
@@ -57,10 +56,6 @@ scripts:
   lint:flutter:
     run: melos exec -c 1 --scope="nilts_test" -- flutter analyze --fatal-infos --fatal-warnings
     description: lint with flutter
-
-  lint:custom_lint:
-    run: melos exec -c 1 --scope="nilts_test" -- flutter pub run custom_lint
-    description: lint with custom_lint
 
   fmt:
     run: |
@@ -93,10 +88,20 @@ scripts:
     description: fix dart (dry-run)
 
   test:
+    run: |
+      melos test:custom_lint && \
+      melos test:unit
+    description: test
+
+  test:custom_lint:
+    run: melos exec -c 1 --scope="nilts_test" -- flutter pub run custom_lint
+    description: custom_lint test
+
+  test:unit:
     exec: very_good test
     packageFilters:
       scope: nilts_test
-    description: test on nilts_test
+    description: unit test
 
   build:example:
     run: |
