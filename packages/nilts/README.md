@@ -20,8 +20,8 @@ nilts is lint rules, quick fixes and assists for Dart and Flutter projects that 
 
 - [Usage](#usage)
 - [Configuration](#configuration)
-  - [Disabling strategy](#disabling-strategy)
-  - [Enabling strategy](#enabling-strategy)
+    - [Disabling strategy](#disabling-strategy)
+    - [Enabling strategy](#enabling-strategy)
 - [Lint rules and quick fixes](#lint-rules-and-quick-fixes)
     - [Overview](#overview)
     - [Details](#details)
