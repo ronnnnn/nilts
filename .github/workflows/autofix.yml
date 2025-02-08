@@ -26,7 +26,7 @@ jobs:
         run: bun fmt
 
       - name: Setup Flutter
-        uses:  ./.github/actions/setup-flutter
+        uses: ./.github/actions/setup-flutter
       - name: Format Flutter
         run: melos fmt
 
