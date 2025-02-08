@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
 
       - name: Setup Bun
-        uses: ./github/actions/setup-bun
+        uses: ./.github/actions/setup-bun
       - name: Format with Prettier
         run: bun fmt
 
