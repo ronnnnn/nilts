@@ -1,0 +1,18 @@
+# IntelliJ related
+**/.idea/
+
+# VSCode related
+**/.vscode/
+
+# Dart related
+**/.dart_tool/
+**/pubspec_overrides.yaml
+
+# Node.js related
+node_modules/
+
+# Build
+examples/nilts_example/build/
+
+# CHANGELOG
+**/CHANGELOG.md

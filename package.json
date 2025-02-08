@@ -1,0 +1,12 @@
+{
+  "name": "nilts",
+  "private": true,
+  "scripts": {
+    "fmt": "prettier --write '**/*.+(md|yaml|yml|json|json5|xml)'"
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "3.4.1",
+    "prettier": "3.4.2",
+    "prettier-plugin-packagejson": "2.5.8"
+  }
+}

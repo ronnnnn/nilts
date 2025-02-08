@@ -1,0 +1,11 @@
+{
+  $schema: 'https://json.schemastore.org/prettierrc',
+  bracketSameLine: true,
+  bracketSpacing: true,
+  plugins: ['@prettier/plugin-xml', 'prettier-plugin-packagejson'],
+  semi: true,
+  singleQuote: true,
+  trailingComma: 'all',
+  useTabs: false,
+  xmlWhitespaceSensitivity: 'ignore',
+}

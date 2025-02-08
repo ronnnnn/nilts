@@ -1,0 +1,28 @@
+name: Auto Fix 💊
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+
+      - name: Setup Bun
+        uses: ./github/actions/setup-bun
+      - name: Format with Prettier
+        run: bun fmt
+
+      - name: Setup Flutter
+        uses:  ./.github/actions/setup-flutter
+      - name: Format Flutter
+        run: melos fmt
+
+      - name: Auto Fix
+        uses: autofix-ci/action@551dded8c6cc8a1054039c8bc0b8b48c51dfc6ef

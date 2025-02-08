@@ -34,7 +34,7 @@ class _NiltsLint extends PluginBase {
         if (_dartVersion >= const DartVersion(major: 3, minor: 2, patch: 0))
           const FixedTextScaleRichText()
         else
-          const FixedTextScaleRichTextLegacy(),
+            const FixedTextScaleRichTextLegacy(),
         const FlakyTestsWithSetUpAll(),
         if (_dartVersion >= const DartVersion(major: 3, minor: 6, patch: 0))
           const LowReadabilityNumericLiterals(),

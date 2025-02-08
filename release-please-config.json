@@ -33,7 +33,7 @@
           "type": "revert",
           "section": "Reverts"
         },
-                {
+        {
           "type": "style",
           "section": "Code Style"
         },
