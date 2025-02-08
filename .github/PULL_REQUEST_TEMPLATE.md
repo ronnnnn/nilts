@@ -21,6 +21,4 @@ Fixes #<issue number>
 - [ ] I have written an related issue or linked with existing issues.
 - [ ] I have written tests and passed all of them.
     - Use `melos test` to run tests.
-- [ ] I have passed all of the analyzer and formatter.
-    - Use `melos pretty` to automatically apply formatting.
 - [ ] I have updated docs (if needed).
