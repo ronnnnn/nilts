@@ -733,11 +733,15 @@ Upcoming... 🚀
 
 ### Lint rule errors don't appear and quick fixes don't work in IDE
 
+> [!IMPORTANT]
+> This issue is solved on nilts 0.18.3 using custom_lint 0.7.3.
+
 Since custom_lint 0.6.7, the IDE has not shown lint rule errors in some cases.
 
 See also:
 
 - [analysis.setContextRoots failed - RequestErrorCode.PLUGIN_ERROR ProcessException: / No such file or directory / Command: flutter pub get · Issue #270 · invertase/dart_custom_lint](https://github.com/invertase/dart_custom_lint/issues/270)
+- [IntelliJ and Android Studio don't show custom lints · Issue #307 · invertase/dart_custom_lint](https://github.com/invertase/dart_custom_lint/issues/307)
 
 ### Quick fix priorities
 
