@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.18.3](https://github.com/dassssshers/nilts/compare/nilts-v0.18.2...nilts-v0.18.3) (2025-02-09)
+
+
+### Code Style
+
+* auto format ([#237](https://github.com/dassssshers/nilts/issues/237)) ([b362564](https://github.com/dassssshers/nilts/commit/b3625649fd024ec3e16da15aae20ce08d7ad5b2f))
+
+
+### Dependency Upgrades
+
+* custom_lint 0.7.3 ([#239](https://github.com/dassssshers/nilts/issues/239)) ([834ab30](https://github.com/dassssshers/nilts/commit/834ab304e23484f8a9865105397e2eb8e5ce4af1))
+
 ## [0.18.2](https://github.com/dassssshers/nilts/compare/nilts-v0.18.1...nilts-v0.18.2) (2025-02-02)
 
 
