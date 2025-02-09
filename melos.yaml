@@ -35,7 +35,7 @@ command:
 scripts:
   prepare:
     run: |
-      dart pub global activate custom_lint 0.7.1 && \
+      dart pub global activate custom_lint 0.7.3 && \
       dart pub global activate very_good_cli 0.25.0
     description: prepare for develop
 
