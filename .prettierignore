@@ -12,7 +12,7 @@
 node_modules/
 
 # Build
-examples/nilts_example/build/
+**/build/
 
 # CHANGELOG
 **/CHANGELOG.md

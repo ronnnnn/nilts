@@ -44,9 +44,24 @@ If you are not familiar with Melos, you should read [Melos documentation](https:
 You should run only `melos bootstrap` and `melos prepare` commands.
 
 ```bash
-// You can use `melos bs` instead
+# You can use `melos bs` instead
 melos bootstrap
 melos prepare
+```
+
+### Setup Node.js packages (optional)
+
+This is optional because nilts can detect not formatted files on CI.
+
+If you want to format YAML, Markdown, XML, or JSON files, you can use prepared Node.js packages.
+nilts uses [Prettier](https://prettier.io) packages to format these files.
+These packages are managed by [bun](https://bun.sh/) whose version is defined on [`.tool-versions`](https://github.com/dassssshers/nilts/blob/main/.tool-versions) file.
+
+```bash
+# Install packages
+bun i
+# Format files
+bun fmt
 ```
 
 ## Create a branch and make commit your changes
