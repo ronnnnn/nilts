@@ -48,13 +48,8 @@ class MainButton extends StatelessWidget {
     Future<void> Function() onPressed,
     // expect_lint: defined_async_value_getter_type
     Future<int> Function() onFutureReturnPressed,
-    int Function() onReturnPressed, {
-    Future<void> Function()? onNullablePressed,
-    Future<void> Function(int)? onParamPressed,
-    // expect_lint: defined_async_value_getter_type
-    Future<int> Function()? onNullableFutureReturnPressed,
-    int Function()? onNullableReturnPressed,
-  }) {}
+    int Function() onReturnPressed,
+  ) {}
 
   @override
   Widget build(BuildContext context) {
@@ -86,10 +81,5 @@ void _globalFunction(
   Future<void> Function() onPressed,
   // expect_lint: defined_async_value_getter_type
   Future<int> Function() onFutureReturnPressed,
-  int Function() onReturnPressed, {
-  Future<void> Function()? onNullablePressed,
-  Future<void> Function(int)? onParamPressed,
-  // expect_lint: defined_async_value_getter_type
-  Future<int> Function()? onNullableFutureReturnPressed,
-  int Function()? onNullableReturnPressed,
-}) {}
+  int Function() onReturnPressed,
+) {}

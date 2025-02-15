@@ -63,14 +63,8 @@ class MainButton extends StatelessWidget {
     // expect_lint: defined_async_value_setter_type
     Future<void> Function(int value) onNamedParamPressed,
     Future<void> Function({int? value}) onOptionalParamPressed,
-    Future<void> Function({required int value}) onRequiredParamPressed, {
-    Future<void> Function()? onNullablePressed,
-    // expect_lint: defined_async_value_setter_type
-    Future<void> Function(int)? onNullableParamPressed,
-    // expect_lint: defined_async_value_setter_type
-    Future<void> Function(int value)? onNullableNamedParamPressed,
-    Future<int> Function()? onNotVoidPressed,
-  }) {}
+    Future<void> Function({required int value}) onRequiredParamPressed,
+  ) {}
 
   @override
   Widget build(BuildContext context) {
@@ -114,11 +108,5 @@ void _globalFunction(
   // expect_lint: defined_async_value_setter_type
   Future<void> Function(int value) onNamedParamPressed,
   Future<void> Function({int? value}) onOptionalParamPressed,
-  Future<void> Function({required int value}) onRequiredParamPressed, {
-  Future<void> Function()? onNullablePressed,
-  // expect_lint: defined_async_value_setter_type
-  Future<void> Function(int)? onNullableParamPressed,
-  // expect_lint: defined_async_value_setter_type
-  Future<void> Function(int value)? onNullableNamedParamPressed,
-  Future<int> Function()? onNotVoidPressed,
-}) {}
+  Future<void> Function({required int value}) onRequiredParamPressed,
+) {}

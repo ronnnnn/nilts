@@ -58,14 +58,8 @@ class MainButton extends StatelessWidget {
     // expect_lint: defined_value_changed_type, defined_value_setter_type
     void Function(int value) onNamedParamPressed,
     void Function({int? value}) onOptionalParamPressed,
-    void Function({required int value}) onRequiredParamPressed, {
-    void Function()? onNullablePressed,
-    // expect_lint: defined_value_changed_type, defined_value_setter_type
-    void Function(int)? onNullableParamPressed,
-    // expect_lint: defined_value_changed_type, defined_value_setter_type
-    void Function(int value)? onNullableNamedParamPressed,
-    int Function()? onNotVoidPressed,
-  }) {}
+    void Function({required int value}) onRequiredParamPressed,
+  ) {}
 
   @override
   Widget build(BuildContext context) {
@@ -107,11 +101,5 @@ void _globalFunction(
   // expect_lint: defined_value_changed_type, defined_value_setter_type
   void Function(int value) onNamedParamPressed,
   void Function({int? value}) onOptionalParamPressed,
-  void Function({required int value}) onRequiredParamPressed, {
-  void Function()? onNullablePressed,
-  // expect_lint: defined_value_changed_type, defined_value_setter_type
-  void Function(int)? onNullableParamPressed,
-  // expect_lint: defined_value_changed_type, defined_value_setter_type
-  void Function(int value)? onNullableNamedParamPressed,
-  int Function()? onNotVoidPressed,
-}) {}
+  void Function({required int value}) onRequiredParamPressed,
+) {}

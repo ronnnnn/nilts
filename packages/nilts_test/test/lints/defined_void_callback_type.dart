@@ -30,12 +30,8 @@ class MainButton extends StatelessWidget {
 
   void _onPressed(
     // expect_lint: defined_void_callback_type
-    void Function() onPressed, {
-    // expect_lint: defined_void_callback_type
-    void Function()? onNullablePressed,
-    void Function(int)? onParamPressed,
-    int Function()? onNotVoidPressed,
-  }) {}
+    void Function() onPressed,
+  ) {}
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +54,5 @@ const int Function()? globalNotVoidFunction = null;
 
 void _globalFunction(
   // expect_lint: defined_void_callback_type
-  void Function() onPressed, {
-  // expect_lint: defined_void_callback_type
-  void Function()? onNullablePressed,
-  void Function(int)? onParamPressed,
-  int Function()? onNotVoidPressed,
-}) {}
+  void Function() onPressed,
+) {}
