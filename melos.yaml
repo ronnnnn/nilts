@@ -50,11 +50,13 @@ scripts:
     description: lint
 
   lint:dart:
-    run: melos exec -c 1 --scope="nilts" -- dart analyze --fatal-infos --fatal-warnings
+    run: melos exec -c 1 --ignore="nilts_test" -- dart analyze --fatal-infos --fatal-warnings
     description: lint with dart
 
   lint:flutter:
-    run: melos exec -c 1 --scope="nilts_test" -- flutter analyze --fatal-infos --fatal-warnings
+    exec: flutter analyze --fatal-infos --fatal-warnings
+    packageFilters:
+      scope: nilts_test
     description: lint with flutter
 
   fmt:
@@ -92,13 +94,15 @@ scripts:
     description: test
 
   test:custom_lint:
-    run: melos exec -c 1 --scope="nilts_test" -- flutter pub run custom_lint
+    exec: flutter pub run custom_lint
+    packageFilters:
+      scope: nilts_test
     description: custom_lint test
 
   test:unit:
     exec: very_good test
     packageFilters:
-      scope: nilts_test
+      scope: nilts_core
     description: unit test
 
   build:example:
@@ -108,9 +112,13 @@ scripts:
     description: build on nilts_example
 
   build:example:android:
-    run: melos exec -c 1 --scope="nilts_example" -- flutter build appbundle
+    exec: flutter build appbundle
+    packageFilters:
+      scope: nilts_example
     description: build android on nilts_example
 
   build:example:ios:
-    run: melos exec -c 1 --scope="nilts_example" -- flutter build ios --no-codesign
+    exec: flutter build ios --no-codesign
+    packageFilters:
+      scope: nilts_example
     description: build ios on nilts_example

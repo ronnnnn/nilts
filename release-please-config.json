@@ -58,6 +58,65 @@
       "pull-request-title-pattern": "release: ${component} ${version}",
       "release-label": "release",
       "release-type": "dart"
+    },
+    "packages/nilts_core": {
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "changelog-path": "CHANGELOG.md",
+      "changelog-sections": [
+        {
+          "type": "build",
+          "section": "Build System"
+        },
+        {
+          "type": "clean",
+          "section": "Code Cleanup"
+        },
+        {
+          "type": "docs",
+          "section": "Documentation"
+        },
+        {
+          "type": "feat",
+          "section": "New Features"
+        },
+        {
+          "type": "fix",
+          "section": "Bug Fixes"
+        },
+        {
+          "type": "refactor",
+          "section": "Code Refactoring"
+        },
+        {
+          "type": "revert",
+          "section": "Reverts"
+        },
+        {
+          "type": "style",
+          "section": "Code Style"
+        },
+        {
+          "type": "test",
+          "section": "Tests"
+        },
+        {
+          "type": "update",
+          "section": "Feature Updates"
+        },
+        {
+          "type": "upgrade",
+          "section": "Dependency Upgrades"
+        }
+      ],
+      "draft": false,
+      "include-v-in-tag": true,
+      "label": "release",
+      "package-name": "nilts_core",
+      "prerelease": false,
+      "pull-request-title-pattern": "release: ${component} ${version}",
+      "release-label": "release",
+      "release-type": "dart"
     }
   },
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"

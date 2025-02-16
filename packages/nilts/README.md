@@ -8,9 +8,9 @@ nilts is lint rules, quick fixes and assists for Dart and Flutter projects that 
 [![pub][badge-pub]](https://pub.dev/packages/nilts)
 [![license][badge-license]](https://github.com/dassssshers/nilts/blob/main/packages/nilts/LICENSE)
 
-[badge-build]: https://img.shields.io/github/actions/workflow/status/ronnnnn/nilts/build.yml?style=for-the-badge&logo=github%20actions&logoColor=%232088FF&color=gray&link=https%3A%2F%2Fgithub.com%2Fronnnnn%2Fnilts%2Factions%2Fworkflows%2Fbuild.yml
+[badge-build]: https://img.shields.io/github/actions/workflow/status/dassssshers/nilts/build.yml?style=for-the-badge&logo=github%20actions&logoColor=%232088FF&color=gray&link=https%3A%2F%2Fgithub.com%2Fdassssshers%2Fnilts%2Factions%2Fworkflows%2Fbuild.yml
 [badge-pub]: https://img.shields.io/pub/v/nilts?style=for-the-badge&logo=dart&logoColor=%230175C2&color=gray&link=https%3A%2F%2Fpub.dev%2Fpackages%2Fnilts
-[badge-license]: https://img.shields.io/badge/license-mit-green?style=for-the-badge&logo=github&logoColor=%23181717&color=gray&link=https%3A%2F%2Fgithub.com%2Fronnnnn%2Fnilts%2Fblob%2Fmain%2Fpackages%2Fnilts%2FLICENSE
+[badge-license]: https://img.shields.io/badge/license-mit-green?style=for-the-badge&logo=github&logoColor=%23181717&color=gray&link=https%3A%2F%2Fgithub.com%2Fdassssshers%2Fnilts%2Fblob%2Fmain%2Fpackages%2Fnilts%2FLICENSE
 
 </div>
 

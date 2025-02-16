@@ -1,0 +1,35 @@
+# Additional information about this file can be found at
+# https://dart.dev/tools/pub/pubspec
+
+name: nilts_core
+version: 0.1.0
+description: core package for nilts.
+homepage: https://github.com/dassssshers/nilts
+repository: https://github.com/dassssshers/nilts
+issue_tracker: https://github.com/dassssshers/nilts/issues
+platforms:
+  android:
+  ios:
+  linux:
+  macos:
+  web:
+  windows:
+funding:
+  - https://github.com/sponsors/ronnnnn
+topics:
+  - lints
+  - lint
+  - analysis
+  - code-style
+  - tools
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  analyzer: ^7.0.0
+  meta: ^1.9.1
+
+dev_dependencies:
+  test: ^1.25.15
+  very_good_analysis: ^7.0.0
