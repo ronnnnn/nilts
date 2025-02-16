@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.19.0](https://github.com/dassssshers/nilts/compare/nilts-v0.18.3...nilts-v0.19.0) (2025-02-16)
+
+
+### Documentation
+
+* update resolved known issues ([#240](https://github.com/dassssshers/nilts/issues/240)) ([94fa174](https://github.com/dassssshers/nilts/commit/94fa174419989973f6ee479df71a790d981a9a09))
+
+
+### New Features
+
+* nilts_core ([#250](https://github.com/dassssshers/nilts/issues/250)) ([8fae1f4](https://github.com/dassssshers/nilts/commit/8fae1f444a93368d0987c4fa2f4c475c47c6f4e8))
+
+
+### Feature Updates
+
+* flutter 3.29 ([#248](https://github.com/dassssshers/nilts/issues/248)) ([54e22ab](https://github.com/dassssshers/nilts/commit/54e22abb7fa6700604f5c4e8f9b426dc4d35c2b1))
+
 ## [0.18.3](https://github.com/dassssshers/nilts/compare/nilts-v0.18.2...nilts-v0.18.3) (2025-02-09)
 
 
