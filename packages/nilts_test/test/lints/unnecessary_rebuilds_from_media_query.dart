@@ -107,11 +107,7 @@ class MainApp extends StatelessWidget {
     final maybeDisplayFeatures = MediaQuery.maybeOf(context)?.displayFeatures;
 
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: Scaffold(body: Center(child: Text('Hello World!'))),
     );
   }
 }

@@ -15,10 +15,7 @@ class MainApp extends StatelessWidget {
         // expect_lint: shrink_wrapped_scroll_view
         ListView(shrinkWrap: true),
         // expect_lint: shrink_wrapped_scroll_view
-        ListView.builder(
-          itemBuilder: (_, __) => null,
-          shrinkWrap: true,
-        ),
+        ListView.builder(itemBuilder: (_, __) => null, shrinkWrap: true),
         // expect_lint: shrink_wrapped_scroll_view
         ListView.custom(
           childrenDelegate: SliverChildListDelegate([]),
@@ -55,15 +52,9 @@ class MainApp extends StatelessWidget {
           shrinkWrap: true,
         ),
         // expect_lint: shrink_wrapped_scroll_view
-        GridView.count(
-          crossAxisCount: 2,
-          shrinkWrap: true,
-        ),
+        GridView.count(crossAxisCount: 2, shrinkWrap: true),
         // expect_lint: shrink_wrapped_scroll_view
-        GridView.extent(
-          maxCrossAxisExtent: 2,
-          shrinkWrap: true,
-        ),
+        GridView.extent(maxCrossAxisExtent: 2, shrinkWrap: true),
         // expect_lint: shrink_wrapped_scroll_view
         const CustomScrollView(shrinkWrap: true),
       ],

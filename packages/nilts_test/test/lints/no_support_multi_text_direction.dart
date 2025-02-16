@@ -34,18 +34,10 @@ class Alignments extends StatelessWidget {
           // expect_lint: no_support_multi_text_direction
           alignment: Alignment.topRight,
         ),
-        Align(
-          alignment: Alignment.bottomCenter,
-        ),
-        Align(
-          alignment: Alignment.center,
-        ),
-        Align(
-          alignment: Alignment.topCenter,
-        ),
-        Align(
-          alignment: Alignment(12, 12),
-        ),
+        Align(alignment: Alignment.bottomCenter),
+        Align(alignment: Alignment.center),
+        Align(alignment: Alignment.topCenter),
+        Align(alignment: Alignment(12, 12)),
       ],
     );
   }
@@ -74,18 +66,12 @@ class Insets extends StatelessWidget {
           // expect_lint: no_support_multi_text_direction
           padding: EdgeInsets.only(top: 16, right: 12),
         ),
-        const Padding(
-          padding: EdgeInsets.all(12),
-        ),
+        const Padding(padding: EdgeInsets.all(12)),
         Padding(
           padding: EdgeInsets.fromViewPadding(View.of(context).padding, 0),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 16, bottom: 12),
-        ),
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 12),
-        ),
+        const Padding(padding: EdgeInsets.only(top: 16, bottom: 12)),
+        const Padding(padding: EdgeInsets.symmetric(horizontal: 12)),
       ],
     );
   }
