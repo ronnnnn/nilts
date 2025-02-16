@@ -6,6 +6,7 @@
 // ignore_for_file: defined_value_setter_type
 // ignore_for_file: defined_void_callback_type
 // ignore_for_file: defined_async_value_getter_type
+// ignore_for_file: unused_element_parameter
 
 import 'package:flutter/material.dart';
 
@@ -55,11 +56,7 @@ class MainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: () {
-        _onPressed(
-          () {},
-          () => 0,
-          () async => 0,
-        );
+        _onPressed(() {}, () => 0, () async => 0);
         onPressed();
       },
       child: const Text('Hello World!'),

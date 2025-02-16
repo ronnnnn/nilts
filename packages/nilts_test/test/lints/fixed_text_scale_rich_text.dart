@@ -11,21 +11,13 @@ class MainApp extends StatelessWidget {
     return Column(
       children: [
         // expect_lint: fixed_text_scale_rich_text
+        RichText(text: const TextSpan(text: 'Hello World!')),
         RichText(
-          text: const TextSpan(
-            text: 'Hello World!',
-          ),
-        ),
-        RichText(
-          text: const TextSpan(
-            text: 'Hello World!',
-          ),
+          text: const TextSpan(text: 'Hello World!'),
           textScaler: MediaQuery.textScalerOf(context),
         ),
         RichText(
-          text: const TextSpan(
-            text: 'Hello World!',
-          ),
+          text: const TextSpan(text: 'Hello World!'),
           textScaleFactor: MediaQuery.textScaleFactorOf(context),
         ),
       ],

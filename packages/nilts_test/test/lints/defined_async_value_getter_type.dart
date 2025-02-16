@@ -5,6 +5,7 @@
 // ignore_for_file: defined_value_getter_type
 // ignore_for_file: defined_async_callback_type
 // ignore_for_file: defined_async_value_setter_type
+// ignore_for_file: unused_element_parameter
 
 import 'dart:async';
 
@@ -60,11 +61,7 @@ class MainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: () {
-        _onPressed(
-          () async {},
-          () async => 0,
-          () => 0,
-        );
+        _onPressed(() async {}, () async => 0, () => 0);
         onPressed();
       },
       child: const Text('Hello World!'),

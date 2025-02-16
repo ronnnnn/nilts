@@ -73,10 +73,7 @@ void main() {
       () => DartVersion.fromString('3.0.5-0.0.stable'),
       throwsArgumentError,
     );
-    expect(
-      () => DartVersion.fromString('3.0.5-0.0.'),
-      throwsArgumentError,
-    );
+    expect(() => DartVersion.fromString('3.0.5-0.0.'), throwsArgumentError);
   });
 
   test('Test equals', () async {
