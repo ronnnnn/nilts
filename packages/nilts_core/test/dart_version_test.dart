@@ -1,5 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
-import 'package:nilts/src/dart_version.dart';
+import 'package:nilts_core/nilts_core.dart';
+import 'package:test/test.dart';
 
 void main() {
   test('Test regex match', () async {
