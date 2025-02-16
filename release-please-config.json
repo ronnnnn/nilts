@@ -49,6 +49,10 @@
         {
           "type": "upgrade",
           "section": "Dependency Upgrades"
+        },
+        {
+          "type": "release",
+          "section": "Release"
         }
       ],
       "draft": false,
@@ -108,6 +112,10 @@
         {
           "type": "upgrade",
           "section": "Dependency Upgrades"
+        },
+        {
+          "type": "release",
+          "section": "Release"
         }
       ],
       "draft": false,

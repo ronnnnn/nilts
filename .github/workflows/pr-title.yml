@@ -36,5 +36,6 @@ jobs:
             test
             update
             upgrade
+            release
           requireScope: false
           wip: true
