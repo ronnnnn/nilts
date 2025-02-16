@@ -1,6 +1,6 @@
 {
+  "separate-pull-requests": true,
   "packages": {
-    "separate-pull-requests": false,
     "packages/nilts": {
       "bump-minor-pre-major": true,
       "bump-patch-for-minor-pre-major": false,
