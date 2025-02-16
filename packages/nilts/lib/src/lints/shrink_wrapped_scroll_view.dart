@@ -5,7 +5,7 @@ import 'package:analyzer/error/error.dart' as analyzer;
 import 'package:analyzer/error/listener.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
-import 'package:nilts/src/utils/library_element_ext.dart';
+import 'package:nilts_core/nilts_core.dart';
 
 /// A class for `shrink_wrapped_scroll_view` rule.
 ///

@@ -7,7 +7,7 @@ import 'package:analyzer/error/listener.dart';
 import 'package:analyzer/source/source_range.dart';
 import 'package:custom_lint_builder/custom_lint_builder.dart';
 import 'package:nilts/src/change_priority.dart';
-import 'package:nilts/src/utils/library_element_ext.dart';
+import 'package:nilts_core/nilts_core.dart';
 
 /// A class for `flaky_tests_with_set_up_all` rule.
 ///
