@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.20.0](https://github.com/dassssshers/nilts/compare/nilts-v0.19.0...nilts-v0.20.0) (2025-03-02)
+
+
+### Dependency Upgrades
+
+* custom_lint 0.7.5 ([a1717c5](https://github.com/dassssshers/nilts/commit/a1717c526d38a07e7e72d719f4a6b6a072940402))
+* custom_lint 0.7.5, analyzer_plugin 0.13.0 ([#265](https://github.com/dassssshers/nilts/issues/265)) ([a1717c5](https://github.com/dassssshers/nilts/commit/a1717c526d38a07e7e72d719f4a6b6a072940402))
+
+
+### Release
+
+* 0.20.0 ([#267](https://github.com/dassssshers/nilts/issues/267)) ([e1b4663](https://github.com/dassssshers/nilts/commit/e1b4663892bac4aba3fb56923689fbbe479b0238))
+
 ## [0.19.0](https://github.com/dassssshers/nilts/compare/nilts-v0.18.3...nilts-v0.19.0) (2025-02-16)
 
 
